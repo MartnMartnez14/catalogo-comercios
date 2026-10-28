@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<!-- ===========================================================================
+  PROYECTO / RUBRO : Electricidad, Ferretería Industrial y Barraca (3 en 1)
+  VERSIÓN          : v1.0 (Estático HTML5 + CSS3 + JS Vanilla — Inmune a PHP)
+  TIPO             : PROTOTIPO DEMO ANÓNIMO (Catálogo Bluffer 23)
+  CONFIGURACIÓN RÁPIDA:
+    - Teléfono WhatsApp : Buscar constante CONFIG_COMERCIO en [SECCIÓN 08]
+    - Colores de Marca  : Buscar :root y [data-theme] en [SECCIÓN 02]
+    - Catálogo/Precios  : Buscar tarjetas .hw-card en [SECCIÓN 06]
+============================================================================ -->
+<html lang="es" data-theme="electricidad">
+<head>
+<!-- ========================================================================
+     [SECCIÓN 01: CABECERA, META TAGS & SEO LOCAL]
+     ======================================================================== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElectroObra Central | Electricidad, Ferretería Industrial & Barraca</title>
+<meta name="description" content="Materiales eléctricos homologados, iluminación LED, herramientas industriales, sanitaria, pinturería y materiales de construcción. Cotizá tu lista de obra por WhatsApp.">
+<meta name="keywords" content="casa de electricidad, ferretería industrial, barraca de construcción, iluminación led, materiales de obra whatsapp, uruguay">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%230284c7%22/><text x=%2250%22 y=%2268%22 font-size=%2252%22 text-anchor=%22middle%22>⚡</text></svg>">
+<meta name="theme-color" content="#0284c7">
+
+<meta property="og:title" content="ElectroObra Central — Electricidad, Ferretería & Barraca">
+<meta property="og:description" content="Enviá tu lista de materiales por WhatsApp y recibí presupuesto cerrado en minutos. Descuentos a instaladores, gremio y obras.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_UY">
+<meta property="og:site_name" content="ElectroObra Central">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* ==========================================================================
+     [SECCIÓN 02: VARIABLES CSS Y PALETAS DE TEMAS 3 EN 1 (:root / data-theme)]
+     Aquí se definen colores, gradientes multicapa (mesh), sombras y tipografías.
+     ========================================================================== */
+
+  /* MODO 1: CASA DE ELECTRICIDAD & ILUMINACIÓN LED (Azul Técnico & Amarillo Voltaje) */
+  :root,
+  [data-theme="electricidad"] {
+    --brand:      #0284c7;
+    --brand-d:    #0369a1;
+    --brand-l:    #e0f2fe;
+    --accent:     #eab308;
+    --accent-l:   #fef9c3;
+    --ink:        #0f172a;
+    --ink2:       #334155;
+    --ink3:       #64748b;
+    --bg:         #ffffff;
+    --surface:    #f8fafc;
+    --card-bg:    #ffffff;
+    --line:       #e2e8f0;
+    --header-bg:  rgba(255, 255, 255, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 12% 18%, rgba(2, 132, 199, 0.16), transparent 42%),
+      radial-gradient(circle at 86% 22%, rgba(234, 179, 8, 0.14), transparent 38%),
+      radial-gradient(circle at 50% 88%, rgba(14, 165, 233, 0.08), transparent 46%),
+      linear-gradient(135deg, #f8fafc 0%, #f0f9ff 55%, #fefce8 100%);
+    --radius:     16px;
+    --shadow:     0 12px 30px rgba(15, 23, 42, 0.06);
+    --sans:       'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  /* MODO 2: FERRETERÍA INDUSTRIAL & HERRAMIENTAS (Naranja Maquinaria & Carbón) */
+  [data-theme="ferreteria"] {
+    --brand:      #ea580c;
+    --brand-d:    #c2410c;
+    --brand-l:    #ffedd5;
+    --accent:     #0f172a;
+    --accent-l:   #e2e8f0;
+    --ink:        #0f172a;
+    --ink2:       #334155;
+    --ink3:       #64748b;
+    --bg:         #ffffff;
+    --surface:    #f8fafc;
+    --card-bg:    #ffffff;
+    --line:       #e2e8f0;
+    --header-bg:  rgba(255, 255, 255, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 15% 20%, rgba(234, 88, 12, 0.16), transparent 45%),
+      radial-gradient(circle at 85% 25%, rgba(15, 23, 42, 0.08), transparent 40%),
+      linear-gradient(135deg, #ffffff 0%, #fff7ed 55%, #f1f5f9 100%);
+    --shadow:     0 12px 30px rgba(15, 23, 42, 0.07);
+  }
+
+  /* MODO 3: BARRACA DE CONSTRUCCIÓN, SANITARIA & PINTURERÍA (Verde Obra & Ámbar) */
+  [data-theme="barraca"] {
+    --brand:      #15803d;
+    --brand-d:    #166534;
+    --brand-l:    #dcfce7;
+    --accent:     #d97706;
+    --accent-l:   #fef3c7;
+    --ink:        #1c1917;
+    --ink2:       #44403c;
+    --ink3:       #78716c;
+    --bg:         #fffdf9;
+    --surface:    #f7f6f2;
+    --card-bg:    #ffffff;
+    --line:       #e5e0d8;
+    --header-bg:  rgba(255, 253, 249, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 15% 20%, rgba(21, 128, 61, 0.14), transparent 42%),
+      radial-gradient(circle at 85% 22%, rgba(217, 119, 6, 0.14), transparent 38%),
+      linear-gradient(135deg, #fffdf9 0%, #f0fdf4 55%, #fffbeb 100%);
+    --shadow:     0 12px 30px rgba(28, 25, 23, 0.07);
+  }
+
+  /* ==========================================================================
+     [SECCIÓN 03: ESTILOS DE COMPONENTES (HEADER, COTIZADOR DE LISTA, CATÁLOGO)]
+     Estilos visuales reutilizables y reglas de adaptación móvil (@media).
+     ========================================================================== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 135px; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  button, input, select, textarea { font: inherit; }
+
+  .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2.25rem); }
+
+  /* BARRA SELECTORA DE MODO DEMO 3 EN 1 */
+  .theme-switcher-bar {
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 0.5rem 0;
+    font-size: 0.78rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+  }
+  .theme-switcher-inner {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+  .ts-label {
+    display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: #facc15;
+  }
+  .ts-buttons { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .ts-btn {
+    background: rgba(255,255,255,0.08);
+    color: #e2e8f0;
+    border: 1px solid rgba(255,255,255,0.14);
+    padding: 0.26rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .ts-btn:hover { background: rgba(255,255,255,0.16); }
+  .ts-btn.active {
+    background: #facc15;
+    color: #0f172a;
+    border-color: #facc15;
+  }
+
+  /* TOPBAR GREMIO Y FLETES */
+  .topbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    font-size: 0.8rem;
+    color: var(--ink2);
+    padding: 0.45rem 0;
+  }
+  .topbar-inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;
+  }
+  .topbar-badges { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; font-weight: 600; }
+
+  /* HEADER STICKY */
+  header.site-header {
+    position: sticky;
+    top: 39px;
+    z-index: 1000;
+    background: var(--header-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 1rem;
+  }
+  .brand { display: flex; align-items: center; gap: 0.75rem; }
+  .brand-mark {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--brand); color: #ffffff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.25rem;
+    box-shadow: 0 6px 16px rgba(2, 132, 199, 0.22);
+  }
+  .brand-text strong { display: block; font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .brand-text span { font-size: 0.74rem; color: var(--ink3); font-weight: 600; }
+
+  .nav-links { display: flex; align-items: center; gap: 1.5rem; font-size: 0.9rem; font-weight: 600; color: var(--ink2); }
+  .nav-links a:hover { color: var(--brand); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 0.68rem 1.25rem; border-radius: 100px; font-weight: 700; font-size: 0.88rem;
+    border: 1px solid transparent; cursor: pointer; transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--brand); color: #ffffff; box-shadow: 0 8px 20px rgba(2, 132, 199, 0.22); }
+  .btn-primary:hover { background: var(--brand-d); }
+  .btn-wa { background: #16a34a; color: #ffffff; box-shadow: 0 8px 20px rgba(22, 163, 74, 0.25); }
+  .btn-wa:hover { background: #15803d; }
+  .btn-outline { background: transparent; border-color: var(--line); color: var(--ink); }
+  .btn-outline:hover { border-color: var(--brand); color: var(--brand); }
+
+  /* HERO DINÁMICO */
+  .hero {
+    background: var(--hero-mesh);
+    padding: clamp(2.5rem, 6vw, 4.75rem) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(1.75rem, 4vw, 3rem);
+    align-items: center;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--brand-l); color: var(--brand);
+    padding: 0.35rem 0.9rem; border-radius: 100px;
+    font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.1rem, 4.3vw, 3.3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+  .hero h1 span { color: var(--brand); }
+  .hero p.lead {
+    font-size: clamp(1rem, 1.4vw, 1.12rem);
+    color: var(--ink2);
+    max-width: 580px;
+    margin-bottom: 1.65rem;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2rem; }
+  .trust-row {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem;
+    padding-top: 1.35rem; border-top: 1px solid var(--line);
+  }
+  .trust-item strong { display: block; font-size: 1rem; font-weight: 800; color: var(--ink); }
+  .trust-item span { font-size: 0.78rem; color: var(--ink3); }
+
+  /* CAJA RÁPIDA PARA ENVIAR LISTA DE MATERIALES DE OBRA A COTIZAR */
+  .list-quoter {
+    background: var(--card-bg);
+    border: 2px solid var(--brand);
+    border-radius: calc(var(--radius) + 4px);
+    padding: clamp(1.35rem, 3vw, 1.75rem);
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .lq-badge {
+    position: absolute; top: -12px; right: 20px;
+    background: var(--brand); color: #ffffff;
+    font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
+    padding: 0.28rem 0.8rem; border-radius: 100px; letter-spacing: 0.05em;
+  }
+  .list-quoter h2 { font-size: 1.22rem; font-weight: 800; margin-bottom: 0.25rem; }
+  .list-quoter > p { font-size: 0.83rem; color: var(--ink2); margin-bottom: 0.9rem; }
+
+  .quick-add-bar {
+    display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.8rem;
+  }
+  .qa-chip {
+    background: var(--surface); border: 1px dashed var(--line); color: var(--ink2);
+    padding: 0.26rem 0.6rem; border-radius: 8px; font-size: 0.73rem; font-weight: 700;
+    cursor: pointer; transition: all 0.18s;
+  }
+  .qa-chip:hover {
+    background: var(--brand-l); border-color: var(--brand); color: var(--brand);
+  }
+  .form-group { margin-bottom: 0.85rem; }
+  .form-group label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--ink2); margin-bottom: 0.3rem; }
+  .form-control {
+    width: 100%; padding: 0.65rem 0.85rem; border-radius: 12px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    font-size: 0.86rem; font-weight: 500;
+  }
+  textarea.form-control { min-height: 92px; resize: vertical; }
+  .delivery-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+
+  /* SECCIONES GENERALES */
+  section { padding: clamp(3rem, 6vw, 4.75rem) 0; }
+  .section-alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .sec-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;
+  }
+  .sec-header h2 { font-size: clamp(1.65rem, 3vw, 2.3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+  .sec-header p { color: var(--ink2); max-width: 520px; font-size: 0.94rem; }
+
+  /* BARRA DE FILTROS TÉCNICOS */
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.85rem; }
+  .filter-btn {
+    padding: 0.55rem 1.05rem; border-radius: 100px;
+    border: 1px solid var(--line); background: var(--card-bg); color: var(--ink2);
+    font-size: 0.84rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--brand); color: #ffffff; border-color: var(--brand);
+  }
+
+  /* GRILLA DE RUBROS Y MATERIALES */
+  .hw-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.25rem;
+  }
+  .hw-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.35rem;
+    display: flex; flex-direction: column; justify-content: space-between; gap: 1rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .hw-card:hover { transform: translateY(-4px); border-color: var(--brand); }
+  .hw-card.featured {
+    border: 2px solid var(--brand);
+    background: linear-gradient(180deg, var(--brand-l) 0%, var(--card-bg) 38%);
+  }
+  .hc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
+  .hc-emoji {
+    width: 48px; height: 48px; border-radius: 14px;
+    background: var(--surface); border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center; font-size: 1.55rem;
+  }
+  .hc-tag {
+    font-size: 0.7rem; font-weight: 800; padding: 0.22rem 0.65rem; border-radius: 100px;
+    background: var(--brand-l); color: var(--brand); text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .hw-card h3 { font-size: 1.08rem; font-weight: 800; margin-top: 0.65rem; }
+  .hw-card p { font-size: 0.85rem; color: var(--ink2); margin-top: 0.3rem; }
+  .hc-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 0.9rem; border-top: 1px dashed var(--line); gap: 0.75rem;
+  }
+  .hc-price { font-size: 0.76rem; color: var(--ink3); }
+  .hc-price strong { display: block; font-size: 1.2rem; font-weight: 800; color: var(--ink); }
+
+  /* BENTO DE BENEFICIOS GREMIO Y FLETES */
+  .bento-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+  }
+  .bento-item {
+    background: var(--card-bg); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .bento-item.span-2 { grid-column: span 2; }
+  .bento-icon { font-size: 1.8rem; margin-bottom: 0.65rem; }
+  .bento-item h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .bento-item p { font-size: 0.88rem; color: var(--ink2); }
+
+  /* FAQ ACORDEÓN */
+  .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
+  details.faq-item {
+    background: var(--card-bg); border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.25rem;
+  }
+  details.faq-item summary {
+    font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  }
+  details.faq-item p { margin-top: 0.65rem; font-size: 0.88rem; color: var(--ink2); }
+
+  /* UBICACIÓN Y HORARIOS */
+  .loc-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 1.5rem; align-items: stretch; }
+  .loc-card {
+    background: var(--card-bg); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 1.65rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1.25rem;
+  }
+  .hours-list li {
+    display: flex; justify-content: space-between; padding: 0.55rem 0;
+    border-bottom: 1px dashed var(--line); font-size: 0.88rem;
+  }
+  .map-frame {
+    width: 100%; min-height: 320px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  }
+
+  /* FOOTER Y BOTÓN FLOTANTE */
+  footer.site-footer {
+    background: #0f172a; color: #cbd5e1; padding: 2.5rem 0; font-size: 0.84rem;
+  }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .wa-float {
+    position: fixed; bottom: 22px; right: 22px; z-index: 999;
+    background: #16a34a; color: #ffffff;
+    padding: 0.8rem 1.25rem; border-radius: 100px;
+    font-weight: 800; font-size: 0.88rem;
+    box-shadow: 0 10px 26px rgba(22, 163, 74, 0.4);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid, .loc-grid, .bento-grid, .delivery-row { grid-template-columns: 1fr; }
+    .bento-item.span-2 { grid-column: span 1; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================================================
+     [SECCIÓN 04: BARRA SUPERIOR, SELECTOR 3 EN 1 Y NAVEGACIÓN PRINCIPAL]
+     ======================================================================== -->
+<div class="theme-switcher-bar">
+  <div class="container theme-switcher-inner">
+    <span class="ts-label">🎨 DEMO ADAPTABLE 3 EN 1 · Probá el estilo para tu comercio:</span>
+    <div class="ts-buttons" id="themeButtons">
+      <button type="button" class="ts-btn active" data-set-theme="electricidad">⚡ 1. Electricidad & Iluminación</button>
+      <button type="button" class="ts-btn" data-set-theme="ferreteria">🛠️ 2. Ferretería Industrial</button>
+      <button type="button" class="ts-btn" data-set-theme="barraca">🧱 3. Barraca & Construcción</button>
+    </div>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-badges">
+      <span>📍 Av. Principal 1234, Ciudad Ejemplo</span>
+      <span>🕒 Lun a Vie: 07:30 a 18:30 · Sáb: 08:00 a 13:30 hs</span>
+    </div>
+    <div class="topbar-badges">
+      <span>🚚 Flete Propio a Obra en el Día</span>
+      <span>🧾 Descuento Especial a Instaladores & Gremio</span>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <div class="brand-mark" id="brandMark">EO</div>
+      <div class="brand-text">
+        <strong id="brandTitle">ElectroObra Central</strong>
+        <span id="brandSub">Electricidad, Ferretería & Barraca</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#catalogo">Rubros & Ofertas</a>
+      <a href="#gremio">Beneficios Gremio & Fletes</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+    <a href="https://wa.me/59899123456?text=Hola%20ElectroObra!%20Quiero%20cotizar%20una%20lista%20de%20materiales" target="_blank" rel="noopener" class="btn btn-wa">
+      💬 Mostrador WhatsApp
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- ========================================================================
+       [SECCIÓN 05: HERO DINÁMICO Y CAJA PARA COTIZAR LISTA DE MATERIALES]
+       ======================================================================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow" id="heroEyebrow">⚡ Materiales Homologados & Stock Permanente</span>
+        <h1 id="heroHeadline">Todo para tu obra o instalación, <span>cotizado en minutos</span> por WhatsApp.</h1>
+        <p class="lead" id="heroLead">
+          Ahorrá tiempo de recorrida: escribí o pegá tu lista de materiales eléctricos, herramientas, sanitaria o construcción y recibí el presupuesto detallado con entrega en obra o retiro listo en mostrador.
+        </p>
+        <div class="hero-actions">
+          <a href="#catalogo" class="btn btn-primary">📦 Ver Ofertas por Rubro →</a>
+          <a href="#gremio" class="btn btn-outline">👷 Cuenta Gremio / Empresas</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-item">
+            <strong>Norma UNIT / UTE</strong>
+            <span>Materiales 100% certificados</span>
+          </div>
+          <div class="trust-item">
+            <strong>Flete Propio</strong>
+            <span>Descarga en obra en el día</span>
+          </div>
+          <div class="trust-item">
+            <strong>Precio Gremio</strong>
+            <span>Para técnicos y constructoras</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAJA INTERACTIVA: COTIZÁ TU LISTA DE MATERIALES DE OBRA -->
+      <aside class="list-quoter" aria-label="Cotizador rápido de lista de materiales">
+        <span class="lq-badge">📋 Cotizador de Obra</span>
+        <h2>Cotizá tu Lista de Materiales</h2>
+        <p>Tocá los botones rápidos para sumar rubros o escribí tu listado abajo:</p>
+
+        <div class="quick-add-bar" id="quickAddBar">
+          <button type="button" class="qa-chip" data-item="• Rollos cable 2mm / 4mm + Térmicas y Diferencial">+ ⚡ Cables y Térmicas</button>
+          <button type="button" class="qa-chip" data-item="• Paneles LED / Focos y llaves completas">+ 💡 Iluminación LED</button>
+          <button type="button" class="qa-chip" data-item="• Bolsas de Pórtland, Arena, Pedregullo y Varillas">+ 🧱 Áridos y Pórtland</button>
+          <button type="button" class="qa-chip" data-item="• Pintura Látex Interior/Exterior 20L + Membrana">+ 🎨 Pintura 20L</button>
+          <button type="button" class="qa-chip" data-item="• Caños y conexiones Termofusión / PVC">+ 🚿 Sanitaria</button>
+        </div>
+
+        <div class="form-group">
+          <label for="matList">1. Tu lista de materiales (cantidades y medidas)</label>
+          <textarea id="matList" class="form-control" placeholder="Ej:&#10;• 2 rollos cable 2.5mm&#10;• 10 bolsas pórtland + 1m3 arena&#10;• 4 llaves térmicas 16A..."></textarea>
+        </div>
+
+        <div class="delivery-row">
+          <div class="form-group">
+            <label for="matDelivery">2. Modalidad de entrega</label>
+            <select id="matDelivery" class="form-control">
+              <option value="Retiro rápido en Mostrador">🏪 Retiro en Mostrador</option>
+              <option value="Envío con Flete a Obra / Domicilio">🚚 Envío con Flete a Obra</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="matClient">3. Tipo de cliente</label>
+            <select id="matClient" class="form-control">
+              <option value="Particular / Hogar">🏠 Particular / Hogar</option>
+              <option value="Instalador / Gremio">👷 Instalador / Gremio</option>
+              <option value="Empresa con RUT">🏢 Empresa (Factura RUT)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="button" id="btnSendList" class="btn btn-wa" style="width: 100%; margin-top: 0.25rem;">
+          📲 Enviar Lista a Cotizar por WhatsApp →
+        </button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       [SECCIÓN 06: CATÁLOGO TÉCNICO FILTRABLE POR RUBROS]
+       ======================================================================== -->
+  <section id="catalogo">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">🛠️ Stock Inmediato</span>
+          <h2>Destacados por rubro técnico</h2>
+        </div>
+        <p>Filtrá entre electricidad, herramientas industriales, barraca de obra y sanitaria/pinturería para consultar precio del día o encargar.</p>
+      </div>
+
+      <div class="filter-bar" id="hwFilters">
+        <button type="button" class="filter-btn active" data-filter="todos">Todos los Rubros (8)</button>
+        <button type="button" class="filter-btn" data-filter="electricidad">⚡ Electricidad & LED</button>
+        <button type="button" class="filter-btn" data-filter="herramientas">🛠️ Herramientas & Máquinas</button>
+        <button type="button" class="filter-btn" data-filter="construccion">🧱 Construcción & Barraca</button>
+        <button type="button" class="filter-btn" data-filter="sanitaria">🚿 Sanitaria & Pintura</button>
+      </div>
+
+      <div class="hw-grid" id="hwGrid">
+        <!-- Item 1 -->
+        <article class="hw-card featured" data-cat="electricidad">
+          <div>
+            <div class="hc-top">
+              <div class="hc-emoji">⚡</div>
+              <span class="hc-tag">⭐ Norma UNIT · Pack Obra</span>
+            </div>
+            <h3>Kit Tablero Eléctrico Homologado (Térmicas + Diferencial)</h3>
+            <p>Caja embutir o exterior para 12 módulos, interruptor diferencial 40A 30mA y 4 llaves termomagnéticas bipolares certificadas.</p>
+          </div>
+          <div class="hc-foot">
+            <div class="hc-price">Kit completo<strong>$ 2.690</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20consultar%20por:%20Kit%20Tablero%20El%C3%A9ctrico%20Homologado%20($2.690)" target="_blank" rel="noopener" class="btn btn-primary">Pedir por WA →</a>
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="hw-card" data-cat="electricidad">
+          <div>
+            <div class="hc-top">
+              <div class="hc-emoji">💡</div>
+              <span class="hc-tag">Ahorro Energético</span>
+            </div>
+            <h3>Reflectores LED Exterior IP66 & Paneles Embutir</h3>
+            <p>Proyectores de alta potencia (30W, 50W, 100W y 200W) resistentes a lluvia, tortugas LED, cintas neón y plafones para galpones o comercios.</p>
+          </div>
+          <div class="hc-foot">
+            <div class="hc-price">Desde (Reflector 30W)<strong>$ 420</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20cotizar:%20Reflectores%20y%20Paneles%20LED" target="_blank" rel="noopener" class="btn btn-outline">Cotizar →</a>
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="hw-card" data-cat="herramientas">
+          <div>
+            <div class="hc-top">
+              <div class="hc-emoji">🪛</div>
+              <span class="hc-tag">12 Meses Garantía</span>
+            </div>
+            <h3>Taladro Percutor Inalámbrico 20V + 2 Baterías Litio</h3>
+            <p>Maletín rígido con mandril metálico 13mm, torque regulable, luz LED de trabajo, cargador rápido y set de mechas y puntas.</p>
+          </div>
+          <div class="hc-foot">
+            <div class="hc-price">Equipo completo<strong>$ 3.850</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20consultar%20por:%20Taladro%20Percutor%20Inal%C3%A1mbrico%2020V%20($3.850)" target="_blank" rel="noopener" class="btn btn-outline">Consultar →</a>
+          </div>
+        </article>
+
+        <!-- Item 4 -->
+        <article class="hw-card" data-cat="herramientas">
+          <div>
+            <div class="hc-top">
+              <div class="hc-emoji">⚙️</div>
+              <span class="hc-tag">Uso Profesional</span>
+            </div>
+            <h3>Amoladora Angular 115mm 850W + Pack 10 Discos Corte</h3>
+            <p>Cabezal compacto para lugares de difícil acceso, protección contra rearranque y pack de discos de corte fino para hierro e inoxidable.</p>
+          </div>
+          <div class="hc-foot">
+            <div class="hc-price">Combo Oferta<strong>$ 2.390</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20pedir:%20Combo%20Amoladora%20850W%20+%2010%20Discos%20($2.390)" target="_blank" rel="noopener" class="btn btn-outline">Pedir →</a>
+          </div>
+        </article>
+
+        <!-- Item 5 -->
+        <article class="hw-card" data-cat="construccion">
+          <div>
+            <div class="hc-top">
+              <div class="hc-emoji">🧱</div>
+              <span class="hc-tag">Barraca & Obra</span>
+            </div>
+            <h3>Cemento Pórtland (25 kg), Arena, Pedregullo y Bloques</h3>
+            <p>Abastecimiento para reformas y obras desde cero: bolsas o bolsones Big Bag de 1 m³, ticholos, bloques vibrados, mallas electrosoldadas y varillas.</p>
+          </div>
+          <div class="hc-foot">
+            <div class="hc-price">Bolsa Pórtland 25 kg<strong>$ 285</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20cotizar%20P%C3%B3rtland,%20%C3%A1ridos%20y%20materiales%20de%20obra%20con%20flete" target="_blank" rel="noopener" class="btn btn-primary">Cotizar Obra →</a>
+          </div>
+        </article>
+
+        <!-- Item 6 -->
+        <article class="hw-card" data-cat="construccion">
+          <div>
+            <div class="hc-top">
+              <div class="hc-emoji">🏗️</div>
+              <span class="hc-tag">Construcción en Seco</span>
+            </div>
+            <h3>Placas de Yeso, Perfilería Galvanizada y Chapas Techo</h3>
+            <p>Soluciones rápidas para divisiones interiores, cielorrasos, lana de vidrio aislante, chapas trapezoidales/acanaladas y tornillería autoperforante.</p>
+          </div>
+          <div class="hc-foot">
+            <div class="hc-price">Cálculo por m²<strong>Sin Cargo</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20cotizar%20materiales%20para%20techo%20o%20construcci%C3%B3n%20en%20seco" target="_blank" rel="noopener" class="btn btn-outline">Cotizar m² →</a>
+          </div>
+        </article>
+
+        <!-- Item 7 -->
+        <article class="hw-card" data-cat="sanitaria">
+          <div>
+            <div class="hc-top">
+              <div class="hc-emoji">🎨</div>
+              <span class="hc-tag">Impermeabilización</span>
+            </div>
+            <h3>Membrana Líquida Fibrada 20 L & Látex Antihongos</h3>
+            <p>Máxima elasticidad para azoteas, techos y muros exteriores. Alta blancura y poder cubritivo para interiores y fachadas.</p>
+          </div>
+          <div class="hc-foot">
+            <div class="hc-price">Balde 20 Litros<strong>$ 2.490</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20consultar%20por:%20Membrana%20L%C3%ADquida%20o%20L%C3%A1tex%2020L%20($2.490)" target="_blank" rel="noopener" class="btn btn-outline">Pedir →</a>
+          </div>
+        </article>
+
+        <!-- Item 8 -->
+        <article class="hw-card" data-cat="sanitaria">
+          <div>
+            <div class="hc-top">
+              <div class="hc-emoji">🚿</div>
+              <span class="hc-tag">Sanitaria Completa</span>
+            </div>
+            <h3>Línea Termofusión Agua Fría/Caliente, PVC y Tanques</h3>
+            <p>Caños, llaves de paso, bombas presurizadoras, griferías monocomando, calefones y tanques de agua tricapa de 500 a 1.100 litros.</p>
+          </div>
+          <div class="hc-foot">
+            <div class="hc-price">Asesoramiento técnico<strong>Consultar</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20cotizar%20materiales%20de%20sanitaria%20y%20termofusi%C3%B3n" target="_blank" rel="noopener" class="btn btn-outline">Consultar →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       [SECCIÓN 07: BENTO GREMIO, PREGUNTAS FRECUENTES, MAPA Y FOOTER]
+       ======================================================================== -->
+  <section id="gremio" class="section-alt">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">👷 Aliados del Profesional y la Familia</span>
+          <h2>Ventajas de comprar en nuestro mostrador técnico</h2>
+        </div>
+        <p>Te ayudamos a calcular exactamente lo que precisás para no gastar de más ni frenar tu obra.</p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-item span-2">
+          <div class="bento-icon">📲</div>
+          <h3>Armado de Pedido por WhatsApp sin Hacer Fila en Mostrador</h3>
+          <p>Si sos electricista, sanitario, constructor o estás refaccionando tu casa, mandanos una foto del papel con la lista de materiales. Te pasamos el presupuesto cerrado y te dejamos la bolsa o el pallet listo para cargar cuando pases.</p>
+        </div>
+        <div class="bento-item">
+          <div class="bento-icon">🚚</div>
+          <h3>Flete Propio y Camión Grúa</h3>
+          <p>Entregamos áridos, hierro, bloques, tanques y pedidos eléctricos en toda la zona con coordinación horaria precisa.</p>
+        </div>
+        <div class="bento-item">
+          <div class="bento-icon">👷</div>
+          <h3>Lista de Precios Gremio</h3>
+          <p>Bonificaciones especiales por volumen para instaladores electricistas, sanitarios, pintores, herreros y empresas constructoras.</p>
+        </div>
+        <div class="bento-item span-2">
+          <div class="bento-icon">🔄</div>
+          <h3>Acopio de Materiales y Cambios sin Complicaciones</h3>
+          <p>Congelá el precio de tus materiales comprando por acopio y retirando a medida que avanza tu obra. Si te sobraron cajas cerradas o rollos sin abrir, te los cambiamos al instante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES -->
+  <section id="faq">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">❓ Preguntas Frecuentes</span>
+          <h2>Consultas sobre envíos, pagos y acopio</h2>
+        </div>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>¿Puedo mandar una foto de la lista que me dio el electricista o albañil?</summary>
+          <p>¡Sí, claro! Podés escribir la lista en el cotizador de arriba o abrir nuestro WhatsApp y mandarnos directamente la foto del cuaderno o plano. Nuestro equipo técnico la pasa en limpio y te cotiza todo en minutos.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cuánto demora el envío con flete a obra?</summary>
+          <p>Los pedidos confirmados en la mañana se entregan en el correr de la tarde del mismo día, o en la primera vuelta de la mañana siguiente según tu comodidad.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué medios de pago y financiación trabajan?</summary>
+          <p>Aceptamos efectivo, transferencia bancaria BROU/otros bancos, débito y tarjetas de crédito hasta en 6 y 12 cuotas sin recargo en compras de obra.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN Y HORARIOS -->
+  <section id="ubicacion" class="section-alt">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">📍 Casa Central y Depósito</span>
+          <h2>Ubicación y horarios de atención</h2>
+        </div>
+      </div>
+      <div class="loc-grid">
+        <div class="loc-card">
+          <div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.4rem;">ElectroObra Central — Mostrador & Playa de Carga</h3>
+            <p style="color: var(--ink2); font-size: 0.9rem; margin-bottom: 1.25rem;">Av. Principal 1234, Ciudad Ejemplo (Estacionamiento propio para clientes)</p>
+            <ul class="hours-list">
+              <li><span>Lunes a Viernes (Horario corrido)</span><strong>07:30 a 18:30 hs</strong></li>
+              <li><span>Sábados</span><strong>08:00 a 13:30 hs</strong></li>
+              <li><span>Repartos de Flete</span><strong>Lun a Sáb · Mañana y Tarde</strong></li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20consultar%20stock%20en%20ElectroObra" target="_blank" rel="noopener" class="btn btn-wa">💬 Consultar al Mostrador</a>
+          </div>
+        </div>
+        <div class="map-frame">
+          <iframe
+            title="Mapa de ubicación de ElectroObra Central"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-56.2300%2C-34.7350%2C-56.2050%2C-34.7200&amp;layer=mapnik"
+            style="width:100%; height:100%; border:0; min-height:320px;"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>ElectroObra Central</strong> · Prototipo Demostrativo v1.0 (100% Estático &amp; Seguro)
+    </div>
+    <div>
+      Av. Principal 1234, Ciudad Ejemplo · Ventas / WA: 099 123 456
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/59899123456?text=Hola%20ElectroObra!%20Quiero%20cotizar%20materiales%20por%20WhatsApp" target="_blank" rel="noopener" class="wa-float" aria-label="Cotizar por WhatsApp">
+  ⚡ Cotizar Lista WA
+</a>
+
+<!-- ==========================================================================
+     [SECCIÓN 08: MOTOR JAVASCRIPT — CONFIGURACIÓN, TEMAS 3 EN 1 Y LISTA OBRA]
+     ========================================================================== -->
+<script>
+  // --- 8.1 CONFIGURACIÓN CENTRAL DEL COMERCIO (Cambiar aquí al pasar a cliente) ---
+  const CONFIG_COMERCIO = {
+    whatsapp: '59899123456',
+    nombre: 'ElectroObra Central',
+    moneda: '$'
+  };
+
+  // --- 8.2 DICCIONARIO DE MODOS 3 EN 1 (Electricidad / Ferretería / Barraca) ---
+  const THEME_CONFIG = {
+    electricidad: {
+      mark: 'EO',
+      title: 'ElectroObra Central',
+      sub: 'Electricidad, Iluminación LED & Materiales',
+      eyebrow: '⚡ Materiales Homologados & Stock Permanente',
+      headline: 'Todo para tu obra o instalación, <span>cotizado en minutos</span> por WhatsApp.',
+      lead: 'Ahorrá tiempo de recorrida: escribí o pegá tu lista de materiales eléctricos, iluminación LED, herramientas o sanitaria y recibí el presupuesto detallado al instante.'
+    },
+    ferreteria: {
+      mark: 'FI',
+      title: 'Ferretería Titán',
+      sub: 'Herramientas Industriales, Bulonería & Pintura',
+      eyebrow: '🛠️ Maquinaria Profesional, Repuestos & Insumos',
+      headline: 'Las herramientas que tu trabajo exige, <span>con respaldo y garantía</span>.',
+      lead: 'Máquinas eléctricas e inalámbricas, discos, soldadoras, bulonería industrial, seguridad laboral y pinturería completa. Consultá stock y precio gremio por WhatsApp.'
+    },
+    barraca: {
+      mark: 'BC',
+      title: 'Barraca Del Sur',
+      sub: 'Materiales de Construcción, Hierros & Sanitaria',
+      eyebrow: '🧱 Desde los Cimientos hasta el Techo con Flete Propio',
+      headline: 'Materiales fuertes para tu obra, <span>entregados en el día</span> donde estés.',
+      lead: 'Pórtland, áridos en bolsones o a granel, bloques, varillas, chapas, construcción en seco y sanitaria completa. Enviá tu lista de obra por WhatsApp y te cotizamos en el acto.'
+    }
+  };
+
+  /**
+   * Construye y abre el enlace oficial de WhatsApp con el mensaje pre-armado.
+   * @param {string} detallePedido - Texto descriptivo de la lista de materiales.
+   */
+  function abrirWhatsApp(detallePedido) {
+    const mensaje = `Hola ${CONFIG_COMERCIO.nombre}! ${detallePedido}`;
+    const url = `https://wa.me/${CONFIG_COMERCIO.whatsapp}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
+  // --- 8.3 CAMBIO DE TEMA 3 EN 1 EN VIVO ---
+  document.querySelectorAll('[data-set-theme]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const theme = btn.getAttribute('data-set-theme');
+      document.documentElement.setAttribute('data-theme', theme);
+      document.querySelectorAll('[data-set-theme]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cfg = THEME_CONFIG[theme];
+      if (cfg) {
+        document.getElementById('brandMark').textContent = cfg.mark;
+        document.getElementById('brandTitle').textContent = cfg.title;
+        document.getElementById('brandSub').textContent = cfg.sub;
+        document.getElementById('heroEyebrow').textContent = cfg.eyebrow;
+        document.getElementById('heroHeadline').innerHTML = cfg.headline;
+        document.getElementById('heroLead').innerHTML = cfg.lead;
+        CONFIG_COMERCIO.nombre = cfg.title;
+      }
+    });
+  });
+
+  // --- 8.4 CHIPS RÁPIDOS + ENVÍO DE LISTA DE MATERIALES A WHATSAPP ---
+  const matListInput = document.getElementById('matList');
+  document.querySelectorAll('#quickAddBar .qa-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const item = chip.getAttribute('data-item');
+      const actual = matListInput.value.trim();
+      matListInput.value = actual ? `${actual}\n${item}` : item;
+      matListInput.focus();
+    });
+  });
+
+  document.getElementById('btnSendList').addEventListener('click', () => {
+    const listText = matListInput.value.trim() || 'Consultar presupuesto general de materiales';
+    const delivery = document.getElementById('matDelivery').value;
+    const client = document.getElementById('matClient').value;
+    abrirWhatsApp(`Quiero cotizar la siguiente *Lista de Materiales*:\n${listText}\n\n• Entrega: *${delivery}*\n• Cliente: *${client}*`);
+  });
+
+  // --- 8.5 FILTRADO DEL CATÁLOGO TÉCNICO ---
+  document.querySelectorAll('#hwFilters .filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#hwFilters .filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+
+      document.querySelectorAll('#hwGrid .hw-card').forEach(card => {
+        const cat = card.getAttribute('data-cat');
+        card.style.display = (filter === 'todos' || cat === filter) ? 'flex' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

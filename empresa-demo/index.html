@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="servicios">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexo Corporativo | Servicios Profesionales & Soluciones para Empresas</title>
+<meta name="description" content="Soluciones integrales para empresas, comercios y particulares. Mantenimiento técnico, asesoría profesional, logística y proyectos a medida. Presupuesto sin cargo por WhatsApp.">
+<meta name="keywords" content="servicios empresariales, mantenimiento integral, estudio profesional, logística, presupuestos por whatsapp, empresas uruguay">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%230284c7%22/><text x=%2250%22 y=%2266%22 font-size=%2244%22 font-family=%22Arial%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>NX</text></svg>">
+<meta name="theme-color" content="#0284c7">
+
+<meta property="og:title" content="Nexo Corporativo — Soluciones & Servicios Profesionales">
+<meta property="og:description" content="Atención ágil para empresas, comercios y hogares. Garantía escrita, personal calificado y cotización en el día por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_UY">
+<meta property="og:site_name" content="Nexo Corporativo">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+  /* ─── TEMAS ADAPTABLES (SERVICIOS TÉCNICOS / ESTUDIO PROFESIONAL / LOGÍSTICA B2B) ─── */
+  :root,
+  [data-theme="servicios"] {
+    --brand:      #0284c7;
+    --brand-d:    #0369a1;
+    --brand-l:    #e0f2fe;
+    --accent:     #f59e0b;
+    --accent-l:   #fef3c7;
+    --ink:        #0f172a;
+    --ink2:       #475569;
+    --ink3:       #64748b;
+    --bg:         #ffffff;
+    --surface:    #f8fafc;
+    --card-bg:    #ffffff;
+    --line:       #e2e8f0;
+    --header-bg:  rgba(255, 255, 255, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 12% 18%, rgba(2, 132, 199, 0.14), transparent 42%),
+      radial-gradient(circle at 88% 22%, rgba(245, 158, 11, 0.12), transparent 38%),
+      radial-gradient(circle at 50% 90%, rgba(14, 165, 233, 0.08), transparent 45%),
+      linear-gradient(135deg, #f8fafc 0%, #f0f9ff 55%, #fefce8 100%);
+    --radius:     16px;
+    --shadow:     0 10px 30px rgba(15, 23, 42, 0.06);
+    --sans:       'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --serif:      'Playfair Display', Georgia, serif;
+  }
+
+  /* MODO ESTUDIO PROFESIONAL (Contable / Jurídico / Arquitectura · Azul Noche & Dorado) */
+  [data-theme="estudio"] {
+    --brand:      #1e3a8a;
+    --brand-d:    #172554;
+    --brand-l:    #dbeafe;
+    --accent:     #b45309;
+    --accent-l:   #fef3c7;
+    --ink:        #1c1917;
+    --ink2:       #57534e;
+    --ink3:       #78716c;
+    --bg:         #ffffff;
+    --surface:    #faf8f5;
+    --card-bg:    #ffffff;
+    --line:       #e7e5e4;
+    --header-bg:  rgba(255, 255, 255, 0.95);
+    --hero-mesh:
+      radial-gradient(circle at 15% 20%, rgba(30, 58, 138, 0.12), transparent 45%),
+      radial-gradient(circle at 85% 25%, rgba(180, 83, 9, 0.12), transparent 40%),
+      linear-gradient(135deg, #faf8f5 0%, #f3efe6 55%, #eef2ff 100%);
+    --shadow:     0 10px 32px rgba(28, 25, 23, 0.07);
+  }
+
+  /* MODO LOGÍSTICA & INDUSTRIA B2B (Oscuro Corporativo · Esmeralda & Ámbar) */
+  [data-theme="logistica"] {
+    --brand:      #10b981;
+    --brand-d:    #059669;
+    --brand-l:    rgba(16, 185, 129, 0.16);
+    --accent:     #f97316;
+    --accent-l:   rgba(249, 115, 22, 0.18);
+    --ink:        #f8fafc;
+    --ink2:       #cbd5e1;
+    --ink3:       #94a3b8;
+    --bg:         #0f172a;
+    --surface:    #1e293b;
+    --card-bg:    #1e293b;
+    --line:       #334155;
+    --header-bg:  rgba(15, 23, 42, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.18), transparent 42%),
+      radial-gradient(circle at 85% 20%, rgba(249, 115, 22, 0.15), transparent 38%),
+      linear-gradient(135deg, #0f172a 0%, #131c31 60%, #1e293b 100%);
+    --shadow:     0 14px 36px rgba(0, 0, 0, 0.35);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 130px; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  button, select, input, textarea { font: inherit; }
+
+  .container {
+    width: min(1200px, 100% - 2.2rem);
+    margin-inline: auto;
+  }
+
+  /* ─── BARRA DEMO 3-EN-1 (SELECTOR DE RUBRO CORPORATIVO) ─── */
+  .demo-switcher {
+    background: #090d16;
+    color: #e2e8f0;
+    font-size: 0.78rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .demo-switcher-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .demo-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    color: #38bdf8;
+  }
+  .theme-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .theme-btn {
+    background: rgba(255,255,255,0.07);
+    color: #cbd5e1;
+    border: 1px solid rgba(255,255,255,0.14);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .theme-btn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+  .theme-btn.active {
+    background: #38bdf8;
+    color: #090d16;
+    border-color: #38bdf8;
+  }
+
+  /* ─── TOPBAR INFORMATIVA ─── */
+  .topbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    font-size: 0.8rem;
+    color: var(--ink2);
+    padding: 0.45rem 0;
+  }
+  .topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .topbar-items {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 5px;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+  }
+
+  /* ─── HEADER STICKY ─── */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--header-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 74px;
+    gap: 1rem;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--brand), var(--brand-d));
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 16px rgba(2, 132, 199, 0.25);
+  }
+  .brand-text strong {
+    display: block;
+    font-size: 1.12rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .brand-text span {
+    font-size: 0.75rem;
+    color: var(--ink3);
+    font-weight: 600;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink2);
+  }
+  .nav-links a:hover { color: var(--brand); }
+  .header-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.25rem;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary {
+    background: var(--brand);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25);
+  }
+  .btn-primary:hover { background: var(--brand-d); }
+  .btn-wa {
+    background: #16a34a;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.25);
+  }
+  .btn-wa:hover { background: #15803d; }
+  .btn-outline {
+    background: var(--card-bg);
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  .btn-outline:hover { border-color: var(--brand); color: var(--brand); }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 0.45rem 0.65rem;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  /* ─── HERO DINÁMICO MULTICAPA ─── */
+  .hero {
+    background: var(--hero-mesh);
+    padding: clamp(2.75rem, 6vw, 4.75rem) 0;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(1.75rem, 4vw, 3rem);
+    align-items: center;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--brand-l);
+    color: var(--brand);
+    font-weight: 800;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 4.2vw, 3.15rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    margin-bottom: 1rem;
+  }
+  .hero h1 em {
+    font-family: var(--serif);
+    font-weight: 700;
+    color: var(--brand);
+    font-style: italic;
+  }
+  .hero-lead {
+    font-size: 1.05rem;
+    color: var(--ink2);
+    max-width: 580px;
+    margin-bottom: 1.65rem;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+  }
+  .trust-badges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+    padding-top: 1.35rem;
+    border-top: 1px solid var(--line);
+  }
+  .trust-item strong {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--brand);
+    line-height: 1.1;
+  }
+  .trust-item span {
+    font-size: 0.8rem;
+    color: var(--ink2);
+    font-weight: 600;
+  }
+
+  /* ─── TARJETA INTERACTIVA DE COTIZACIÓN EXPRESS EN EL HERO ─── */
+  .quote-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 1.65rem;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .quote-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+  }
+  .quote-card h2 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+  }
+  .quote-card p {
+    font-size: 0.85rem;
+    color: var(--ink2);
+    margin-bottom: 1.15rem;
+  }
+  .form-group {
+    margin-bottom: 0.85rem;
+  }
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ink2);
+    margin-bottom: 0.3rem;
+  }
+  .form-control {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 0.9rem;
+  }
+  .form-control:focus {
+    outline: none;
+    border-color: var(--brand);
+  }
+  .urgency-pills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.45rem;
+  }
+  .urg-btn {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink2);
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+  }
+  .urg-btn.active {
+    background: var(--brand-l);
+    border-color: var(--brand);
+    color: var(--brand);
+  }
+
+  /* ─── SECCIONES GENERALES ─── */
+  section {
+    padding: clamp(3rem, 6vw, 4.75rem) 0;
+  }
+  .section-alt {
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .sec-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .sec-header h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .sec-header p {
+    color: var(--ink2);
+    max-width: 560px;
+    font-size: 0.96rem;
+  }
+
+  /* ─── FILTROS Y BENTO GRID DE SERVICIOS ─── */
+  .filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+  }
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    border: 1px solid var(--line);
+    background: var(--card-bg);
+    color: var(--ink2);
+    font-size: 0.84rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover { border-color: var(--brand); color: var(--brand); }
+  .filter-btn.active {
+    background: var(--brand);
+    color: #fff;
+    border-color: var(--brand);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+  .srv-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.15rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .srv-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--brand);
+  }
+  .srv-card.featured {
+    border: 2px solid var(--brand);
+    background: linear-gradient(160deg, var(--card-bg) 75%, var(--brand-l) 100%);
+  }
+  .srv-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .srv-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--brand-l);
+    color: var(--brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.45rem;
+  }
+  .srv-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 100px;
+    background: var(--surface);
+    color: var(--ink2);
+    border: 1px solid var(--line);
+  }
+  .srv-card h3 {
+    font-size: 1.18rem;
+    font-weight: 800;
+    margin-top: 0.65rem;
+  }
+  .srv-card p {
+    font-size: 0.9rem;
+    color: var(--ink2);
+    margin-top: 0.35rem;
+  }
+  .srv-list {
+    margin-top: 0.75rem;
+    display: grid;
+    gap: 0.35rem;
+    font-size: 0.83rem;
+    color: var(--ink2);
+  }
+  .srv-list li::before {
+    content: "✓ ";
+    color: var(--brand);
+    font-weight: 800;
+  }
+  .srv-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line);
+    gap: 0.75rem;
+  }
+  .srv-price {
+    font-size: 0.82rem;
+    color: var(--ink3);
+    font-weight: 600;
+  }
+  .srv-price strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--ink);
+    font-weight: 800;
+  }
+
+  /* ─── PROCESO EN 4 PASOS ─── */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+  .step-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    position: relative;
+  }
+  .step-num {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--brand);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .step-card h3 {
+    font-size: 1.08rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+  }
+  .step-card p {
+    font-size: 0.88rem;
+    color: var(--ink2);
+  }
+
+  /* ─── PLANES CORPORATIVOS / ABONOS MENSUALES ─── */
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.25rem;
+  }
+  .plan-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.65rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.25rem;
+    box-shadow: var(--shadow);
+  }
+  .plan-card.popular {
+    border: 2px solid var(--brand);
+    position: relative;
+  }
+  .popular-pill {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: var(--brand);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+  }
+  .plan-price {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--brand);
+    margin: 0.5rem 0;
+  }
+  .plan-price span {
+    font-size: 0.85rem;
+    color: var(--ink3);
+    font-weight: 600;
+  }
+
+  /* ─── ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ) ─── */
+  .faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+    display: grid;
+    gap: 0.85rem;
+  }
+  .faq-item {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .faq-q {
+    width: 100%;
+    text-align: left;
+    padding: 1.15rem 1.35rem;
+    background: none;
+    border: none;
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.98rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    gap: 1rem;
+  }
+  .faq-q span.icon {
+    font-size: 1.2rem;
+    color: var(--brand);
+    transition: transform 0.2s ease;
+  }
+  .faq-item.open .faq-q span.icon {
+    transform: rotate(45deg);
+  }
+  .faq-a {
+    display: none;
+    padding: 0 1.35rem 1.15rem;
+    color: var(--ink2);
+    font-size: 0.9rem;
+    border-top: 1px dashed var(--line);
+    padding-top: 0.85rem;
+  }
+  .faq-item.open .faq-a {
+    display: block;
+  }
+
+  /* ─── UBICACIÓN Y CONTACTO ─── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  .contact-info-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+  .info-row {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+  }
+  .info-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--brand-l);
+    color: var(--brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+  .map-frame {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    min-height: 340px;
+    background: var(--surface);
+  }
+  .map-frame iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 340px;
+    border: 0;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #090d16;
+    color: #94a3b8;
+    padding: 3rem 0 2rem;
+    font-size: 0.88rem;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-copy {
+    padding-top: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  /* ─── BOTÓN WHATSAPP FLOTANTE ─── */
+  .wa-float {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 120;
+    background: #16a34a;
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 0.88rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    box-shadow: 0 12px 28px rgba(22, 163, 74, 0.4);
+    transition: transform 0.2s;
+  }
+  .wa-float:hover { transform: scale(1.04); }
+
+  @media (max-width: 900px) {
+    .hero-grid, .contact-grid { grid-template-columns: 1fr; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 74px;
+      left: 0;
+      right: 0;
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--line);
+      flex-direction: column;
+      padding: 1rem;
+      gap: 0.85rem;
+    }
+    .nav-links.open { display: flex; }
+    .menu-toggle { display: inline-flex; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- BARRA DEMO INTERACTIVA 3 EN 1 -->
+  <div class="demo-switcher">
+    <div class="container demo-switcher-inner">
+      <span class="demo-label">✨ Demo Corporativa 3 en 1 · Probá cómo se adapta a tu empresa:</span>
+      <div class="theme-pills">
+        <button type="button" class="theme-btn active" data-set-theme="servicios">🛠️ Mantenimiento & Servicios</button>
+        <button type="button" class="theme-btn" data-set-theme="estudio">⚖️ Estudio Contable / Profesional</button>
+        <button type="button" class="theme-btn" data-set-theme="logistica">🚚 Logística & Industria B2B</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-items">
+        <span><i class="status-dot"></i>Atención Comercial Activa · Respuesta en menos de 15 min</span>
+        <span>📍 Av. Principal 1234, Ciudad Ejemplo (Cobertura en toda la zona)</span>
+      </div>
+      <div class="topbar-items">
+        <span>🕒 Lun a Vie 08:30 a 18:30 · Sáb 09:00 a 13:00</span>
+        <a href="https://wa.me/59899123456?text=Hola!%20Me%20contacto%20desde%20su%20p%C3%A1gina%20web%20para%20hacer%20una%20consulta." target="_blank" rel="noopener"><strong>📞 099 123 456</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER STICKY -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <div class="brand-mark" id="brandMark">NX</div>
+        <div class="brand-text">
+          <strong id="brandName">Nexo Corporativo</strong>
+          <span id="brandSub">Servicios Integrales & Soluciones B2B</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Cómo Trabajamos</a>
+        <a href="#planes">Planes Empresas</a>
+        <a href="#faq">Preguntas Frecuentes</a>
+        <a href="#ubicacion">Contacto</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="https://wa.me/59899123456?text=Hola!%20Quisiera%20solicitar%20un%20presupuesto%20sin%20cargo." target="_blank" rel="noopener" class="btn btn-wa">
+          💬 Solicitar Presupuesto
+        </a>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO PRINCIPAL -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow" id="heroEyebrow">🛡️ Respaldo Profesional · Facturación Oficial</span>
+        <h1 id="heroTitle">Soluciones confiables para que tu <em>empresa o comercio</em> nunca se detenga.</h1>
+        <p class="hero-lead" id="heroLead">
+          Brindamos atención técnica, asesoramiento profesional y planes de mantenimiento preventivo a medida. Presupuestos claros en el día, personal certificado y garantía escrita en cada trabajo.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#servicios" class="btn btn-primary">Ver Catálogo de Servicios →</a>
+          <a href="https://wa.me/59899123456?text=Hola!%20Necesito%20coordinar%20una%20visita%20o%20asesoramiento%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn btn-outline">
+            📅 Coordinar Visita Técnica
+          </a>
+        </div>
+
+        <div class="trust-badges">
+          <div class="trust-item">
+            <strong>+10 Años</strong>
+            <span>De trayectoria comprobable</span>
+          </div>
+          <div class="trust-item">
+            <strong>&lt; 15 min</strong>
+            <span>Tiempo promedio de respuesta</span>
+          </div>
+          <div class="trust-item">
+            <strong>100%</strong>
+            <span>Presupuesto previo sin sorpresa</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COTIZADOR EXPRESS A WHATSAPP -->
+      <aside class="quote-card">
+        <span class="quote-badge">⚡ Sin Cargo</span>
+        <h2>Cotizador Rápido por WhatsApp</h2>
+        <p>Seleccioná qué necesitás y recibí una estimación o visita en minutos.</p>
+
+        <div class="form-group">
+          <label for="qService">1. ¿Qué servicio o área necesitás?</label>
+          <select id="qService" class="form-control">
+            <option value="Mantenimiento Integral / Reparación">🛠️ Mantenimiento Integral / Reparación</option>
+            <option value="Instalaciones Eléctricas, Redes o Climatización">❄️ Instalaciones Eléctricas, Redes o Climatización</option>
+            <option value="Asesoría Contable, Tributaria o Gestión Pyme">📊 Asesoría Contable, Tributaria o Gestión Pyme</option>
+            <option value="Logística, Distribución o Flota Dedicada">🚚 Logística, Distribución o Flota Dedicada</option>
+            <option value="Abono Mensual Preventivo para Comercio/Empresa">🏢 Abono Mensual Preventivo para Comercio/Empresa</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="qClientType">2. Tipo de cliente</label>
+          <select id="qClientType" class="form-control">
+            <option value="Comercio / Local">🏪 Comercio / Local</option>
+            <option value="Empresa / Oficina / Industria">🏢 Empresa / Oficina / Industria</option>
+            <option value="Particular / Hogar">🏠 Particular / Hogar</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>3. Prioridad de atención</label>
+          <div class="urgency-pills" id="urgencyPills">
+            <button type="button" class="urg-btn active" data-urg="Normal (Esta semana)">📅 Esta semana</button>
+            <button type="button" class="urg-btn" data-urg="Prioritaria (En 24 hs)">⚡ En 24 hs</button>
+            <button type="button" class="urg-btn" data-urg="Urgencia Hoy">🚨 Urgencia Hoy</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="qDetail">4. Breve detalle o localidad (opcional)</label>
+          <input type="text" id="qDetail" class="form-control" placeholder="Ej: Local en Las Piedras, revisión general...">
+        </div>
+
+        <button type="button" id="btnSendQuote" class="btn btn-wa" style="width: 100%; margin-top: 0.4rem;">
+          📲 Enviar Solicitud a WhatsApp →
+        </button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- BENTO GRID DE SERVICIOS -->
+  <section id="servicios">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">📋 Nuestras Áreas de Especialización</span>
+          <h2>Servicios pensados para resolver rápido</h2>
+        </div>
+        <p>Elegí un área para filtrar o consultá directamente por el servicio puntual que necesita tu comercio o empresa.</p>
+      </div>
+
+      <div class="filter-bar" id="serviceFilters">
+        <button type="button" class="filter-btn active" data-filter="todos">Todos los Servicios (6)</button>
+        <button type="button" class="filter-btn" data-filter="tecnico">🛠️ Mantenimiento & Obras</button>
+        <button type="button" class="filter-btn" data-filter="profesional">⚖️ Gestión & Consultoría</button>
+        <button type="button" class="filter-btn" data-filter="operativo">🚚 Logística & Abonos</button>
+      </div>
+
+      <div class="services-grid" id="servicesGrid">
+        <!-- Servicio 1 -->
+        <article class="srv-card featured" data-cat="tecnico">
+          <div>
+            <div class="srv-top">
+              <div class="srv-icon">🛠️</div>
+              <span class="srv-tag">⭐ Más Solicitado</span>
+            </div>
+            <h3>Mantenimiento Integral de Locales y Edificios</h3>
+            <p>Soluciones preventivas y correctivas en electricidad comercial, iluminación LED, sanitaria, cerrajería y pintura.</p>
+            <ul class="srv-list">
+              <li>Diagnóstico técnico en el lugar</li>
+              <li>Materiales homologados de primera línea</li>
+              <li>Garantía escrita por cada intervención</li>
+            </ul>
+          </div>
+          <div class="srv-foot">
+            <div class="srv-price">Visita y relevamiento<strong>Sin Cargo*</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20consultar%20por:%20Mantenimiento%20Integral%20de%20Locales%20y%20Edificios" target="_blank" rel="noopener" class="btn btn-primary">Cotizar →</a>
+          </div>
+        </article>
+
+        <!-- Servicio 2 -->
+        <article class="srv-card" data-cat="tecnico">
+          <div>
+            <div class="srv-top">
+              <div class="srv-icon">❄️</div>
+              <span class="srv-tag">Climatización & Redes</span>
+            </div>
+            <h3>Climatización Comercial, Cámaras y Redes</h3>
+            <p>Instalación, carga y limpieza profunda de equipos Inverter, cortinas de aire, cableado estructurado y cámaras CCTV.</p>
+            <ul class="srv-list">
+              <li>Optimización de consumo energético</li>
+              <li>Configuración de visualización en celular</li>
+              <li>Atención de urgencias para comercios</li>
+            </ul>
+          </div>
+          <div class="srv-foot">
+            <div class="srv-price">Presupuesto<strong>En el día</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20consultar%20por:%20Climatizaci%C3%B3n%20Comercial,%20C%C3%A1maras%20y%20Redes" target="_blank" rel="noopener" class="btn btn-outline">Cotizar →</a>
+          </div>
+        </article>
+
+        <!-- Servicio 3 -->
+        <article class="srv-card" data-cat="profesional">
+          <div>
+            <div class="srv-top">
+              <div class="srv-icon">📊</div>
+              <span class="srv-tag">Estudio & Pymes</span>
+            </div>
+            <h3>Asesoría Contable, Tributaria y Laboral</h3>
+            <p>Apertura de empresas (Unipersonal, SAS, SRL), liquidación de impuestos DGI/BPS, sueldos y certificaciones de ingresos.</p>
+            <ul class="srv-list">
+              <li>Calendario mensual de vencimientos al día</li>
+              <li>Atención directa sin intermediarios</li>
+              <li>Reuniones presenciales o por videollamada</li>
+            </ul>
+          </div>
+          <div class="srv-foot">
+            <div class="srv-price">Primera consulta<strong>Bonificada</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20consultar%20por:%20Asesor%C3%ADa%20Contable,%20Tributaria%20y%20Laboral" target="_blank" rel="noopener" class="btn btn-outline">Consultar →</a>
+          </div>
+        </article>
+
+        <!-- Servicio 4 -->
+        <article class="srv-card" data-cat="profesional">
+          <div>
+            <div class="srv-top">
+              <div class="srv-icon">📐</div>
+              <span class="srv-tag">Habilitaciones</span>
+            </div>
+            <h3>Habilitaciones Comerciales y Gestión Técnica</h3>
+            <p>Trámites ante Intendencia, Bomberos, Ministerio de Salud y planos técnicos para habilitar tu local sin demoras.</p>
+            <ul class="srv-list">
+              <li>Relevamiento normativo inicial</li>
+              <li>Seguimiento integral del expediente</li>
+              <li>Asesoramiento en adecuación del local</li>
+            </ul>
+          </div>
+          <div class="srv-foot">
+            <div class="srv-price">Evaluación inicial<strong>24 a 48 hs</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20consultar%20por:%20Habilitaciones%20Comerciales%20y%20Gesti%C3%B3n%20T%C3%A9cnica" target="_blank" rel="noopener" class="btn btn-outline">Consultar →</a>
+          </div>
+        </article>
+
+        <!-- Servicio 5 -->
+        <article class="srv-card" data-cat="operativo">
+          <div>
+            <div class="srv-top">
+              <div class="srv-icon">🚚</div>
+              <span class="srv-tag">Logística B2B</span>
+            </div>
+            <h3>Distribución Zonal, Fletes Corporativos y Reparto</h3>
+            <p>Rutas programadas en Canelones y Montevideo para distribuidoras, e-commerce y comercios con seguimiento en tiempo real.</p>
+            <ul class="srv-list">
+              <li>Unidades cerradas y habilitadas</li>
+              <li>Entregas en el día (Same-Day) o programadas</li>
+              <li>Tarifario preferencial por volumen semanal</li>
+            </ul>
+          </div>
+          <div class="srv-foot">
+            <div class="srv-price">Tarifas por ruta<strong>A medida</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20consultar%20por:%20Distribuci%C3%B3n%20Zonal%20y%20Log%C3%ADstica%20Corporativa" target="_blank" rel="noopener" class="btn btn-outline">Cotizar →</a>
+          </div>
+        </article>
+
+        <!-- Servicio 6 -->
+        <article class="srv-card" data-cat="operativo">
+          <div>
+            <div class="srv-top">
+              <div class="srv-icon">🧹</div>
+              <span class="srv-tag">Higiene & Oficinas</span>
+            </div>
+            <h3>Limpieza Corporativa, Vidrieras y Final de Obra</h3>
+            <p>Equipos supervisados para oficinas, clínicas, locales comerciales y puesta a punto post-reforma con maquinaria industrial.</p>
+            <ul class="srv-list">
+              <li>Personal en planilla e insumos incluidos</li>
+              <li>Horarios flexibles que no interrumpen ventas</li>
+              <li>Frecuencia diaria, semanal o puntual</li>
+            </ul>
+          </div>
+          <div class="srv-foot">
+            <div class="srv-price">Cotización por m²<strong>Sin Cargo</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20consultar%20por:%20Limpieza%20Corporativa%20o%20Final%20de%20Obra" target="_blank" rel="noopener" class="btn btn-outline">Cotizar →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO DE TRABAJO EN 4 PASOS -->
+  <section id="proceso" class="section-alt">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">⚙️ Metodología Simple y Transparente</span>
+          <h2>Cómo trabajamos en 4 pasos</h2>
+        </div>
+        <p>Sin burocracia ni costos ocultos: desde tu primer mensaje por WhatsApp hasta la entrega conformada.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h3>Contacto Directo</h3>
+          <p>Nos escribís por WhatsApp indicando tu necesidad, fotos o consulta. Te respondemos en menos de 15 minutos.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h3>Relevamiento y Presupuesto</h3>
+          <p>Realizamos el diagnóstico (remoto o presencial) y te enviamos una propuesta cerrada con plazos claros.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3>Ejecución Profesional</h3>
+          <p>Nuestro equipo realiza el trabajo cumpliendo normas de seguridad, orden y puntualidad acordada.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h3>Entrega y Garantía</h3>
+          <p>Verificamos juntos el resultado, emitimos factura oficial (RUT) y activamos el seguimiento post-servicio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES Y ABONOS PARA COMERCIOS / PYMES -->
+  <section id="planes">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">💼 Previsibilidad para tu Negocio</span>
+          <h2>Modalidades de Contratación</h2>
+        </div>
+        <p>Podés contratarnos por un trabajo puntual o asegurar atención prioritaria todo el año con un abono mensual.</p>
+      </div>
+
+      <div class="plans-grid">
+        <article class="plan-card">
+          <div>
+            <span class="srv-tag">Puntual / A Demanda</span>
+            <h3 style="margin-top:0.65rem; font-size:1.25rem;">Intervención o Consulta Única</h3>
+            <div class="plan-price">A Medida <span>/ por trabajo</span></div>
+            <p style="font-size:0.88rem; color:var(--ink2);">Ideal para resolver una reparación urgente, un trámite puntual o un proyecto específico.</p>
+            <ul class="srv-list" style="margin-top:1rem;">
+              <li>Presupuesto cerrado antes de empezar</li>
+              <li>Facturación oficial con RUT</li>
+              <li>Garantía escrita de satisfacción</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20cotizar%20un%20Servicio%20Puntual%20a%20medida." target="_blank" rel="noopener" class="btn btn-outline">Solicitar Presupuesto →</a>
+        </article>
+
+        <article class="plan-card popular">
+          <span class="popular-pill">🔥 Recomendado Comercios</span>
+          <div>
+            <span class="srv-tag">Abono Mensual Pyme</span>
+            <h3 style="margin-top:0.65rem; font-size:1.25rem;">Plan Continuidad Comercial</h3>
+            <div class="plan-price">$4.900 <span>UYU / mes + IVA</span></div>
+            <p style="font-size:0.88rem; color:var(--ink2);">Pensado para locales comerciales, oficinas y emprendimientos que quieren olvidarse de imprevistos.</p>
+            <ul class="srv-list" style="margin-top:1rem;">
+              <li>Visitas preventivas programadas cada mes</li>
+              <li>Atención de urgencias en el día sin costo extra de visita</li>
+              <li>Ejecutivo de cuenta asignado por WhatsApp</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/59899123456?text=Hola!%20Me%20interesa%20el%20Plan%20Continuidad%20Comercial%20($4.900/mes)." target="_blank" rel="noopener" class="btn btn-primary">Consultar Plan Pyme →</a>
+        </article>
+
+        <article class="plan-card">
+          <div>
+            <span class="srv-tag">Corporativo / Industrial</span>
+            <h3 style="margin-top:0.65rem; font-size:1.25rem;">Cobertura Multi-Sucursal</h3>
+            <div class="plan-price">Corporativo <span>/ SLA dedicado</span></div>
+            <p style="font-size:0.88rem; color:var(--ink2);">Para empresas con múltiples locales, depósitos o requerimientos técnicos permanentes.</p>
+            <ul class="srv-list" style="margin-top:1rem;">
+              <li>Acuerdo de Nivel de Servicio (SLA) a medida</li>
+              <li>Reportes mensuales de gestión y costos</li>
+              <li>Guardia técnica extendida</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/59899123456?text=Hola!%20Quisiera%20coordinar%20una%20reuni%C3%B3n%20por%20Cobertura%20Corporativa%20Multi-Sucursal." target="_blank" rel="noopener" class="btn btn-outline">Agendar Reunión →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES (FAQ) -->
+  <section id="faq" class="section-alt">
+    <div class="container">
+      <div class="sec-header" style="justify-content:center; text-align:center;">
+        <div>
+          <span class="eyebrow">❓ Dudas Comunes</span>
+          <h2>Preguntas Frecuentes</h2>
+        </div>
+      </div>
+
+      <div class="faq-list" id="faqList">
+        <div class="faq-item open">
+          <button type="button" class="faq-q">
+            <span>¿El presupuesto tiene algún costo o compromiso?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-a">
+            No. Todas las cotizaciones por WhatsApp y los relevamientos dentro de nuestra zona de cobertura base son 100% sin cargo. Siempre conocés el importe exacto antes de autorizar cualquier trabajo.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q">
+            <span>¿Emiten factura oficial con RUT para descontar impuestos?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-a">
+            Sí, emitimos factura electrónica oficial (e-Factura) con RUT en todos nuestros servicios puntuales y abonos mensuales, apta para DGI.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q">
+            <span>¿En qué zonas trabajan y cuánto demoran en asistir?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-a">
+            Cubrimos Progreso, Las Piedras, Canelones, La Paz y área metropolitana de Montevideo. Para urgencias operativas de comercios asistimos en el mismo día; las visitas programadas se coordinan dentro de las 24 a 48 hs.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q">
+            <span>¿Qué medios de pago aceptan?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-a">
+            Aceptamos transferencia bancaria (BROU, Itaú, Santander, Scotiabank), Mercado Pago, tarjetas de débito/crédito y cuentas corrientes convenidas para clientes con abono mensual.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN Y CONTACTO -->
+  <section id="ubicacion">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">📍 Oficinas y Cobertura</span>
+          <h2>Estamos cerca de tu empresa</h2>
+        </div>
+        <p>Escribinos por WhatsApp o visitanos en nuestra oficina comercial para conversar sobre tu proyecto.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <div style="display:grid; gap:1.15rem;">
+            <div class="info-row">
+              <div class="info-icon">📍</div>
+              <div>
+                <strong>Dirección Comercial</strong>
+                <p style="font-size:0.9rem; color:var(--ink2);">Av. Principal 1234, Ciudad Ejemplo, Canelones, Uruguay</p>
+              </div>
+            </div>
+            <div class="info-row">
+              <div class="info-icon">🕒</div>
+              <div>
+                <strong>Horario de Atención</strong>
+                <p style="font-size:0.9rem; color:var(--ink2);">Lunes a Viernes de 08:30 a 18:30 hs · Sábados de 09:00 a 13:00 hs (Guardia WhatsApp 24 hs para abonados)</p>
+              </div>
+            </div>
+            <div class="info-row">
+              <div class="info-icon">💬</div>
+              <div>
+                <strong>WhatsApp Directo y Teléfono</strong>
+                <p style="font-size:0.9rem; color:var(--ink2);">099 123 456 · contacto@empresa-ejemplo.com.uy</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20hacer%20una%20consulta%20comercial." target="_blank" rel="noopener" class="btn btn-wa" style="width:100%;">
+            💬 Hablar con un Asesor Ahora
+          </a>
+        </div>
+
+        <div class="map-frame">
+          <iframe
+            title="Ubicación en Google Maps"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52499.03596094894!2d-56.255400!3d-34.726100!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a1d29228206c1f%3A0x8f0d0f3e6087a83c!2sLas%20Piedras%2C%20Departamento%20de%20Canelones!5e0!3m2!1ses-419!2suy!4v1700000000000!5m2!1ses-419!2suy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <strong style="color:#fff; font-size:1.05rem;">Nexo Corporativo — Soluciones & Servicios</strong>
+          <p style="font-size:0.82rem; margin-top:0.2rem;">Av. Principal 1234, Ciudad Ejemplo · Tel: 099 123 456</p>
+        </div>
+        <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
+          <a href="#servicios">Servicios</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#planes">Planes</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        <span>© 2026 Nexo Corporativo. Todos los derechos reservados.</span>
+        <span>Prototipo Web Demostrativo · 100% Estático & Seguro · Desarrollado por <strong>Bluffer 23</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/59899123456?text=Hola!%20Vi%20su%20p%C3%A1gina%20web%20y%20quiero%20solicitar%20informaci%C3%B3n." target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
+    💬 WhatsApp Directo
+  </a>
+
+<script>
+  (function () {
+    const WA_PHONE = '59899123456';
+
+    // 1. Selector de Tema / Rubro 3-en-1
+    const themeProfiles = {
+      servicios: {
+        mark: 'NX',
+        name: 'Nexo Corporativo',
+        sub: 'Servicios Integrales & Mantenimiento',
+        eyebrow: '🛡️ Respaldo Profesional · Facturación Oficial',
+        title: 'Soluciones confiables para que tu <em>empresa o comercio</em> nunca se detenga.',
+        lead: 'Brindamos atención técnica, mantenimiento edilicio, instalaciones y soporte preventivo a medida. Presupuestos claros en el día y garantía escrita.'
+      },
+      estudio: {
+        mark: 'VP',
+        name: 'Vanguardia Profesional',
+        sub: 'Estudio Contable, Jurídico & Consultoría',
+        eyebrow: '⚖️ Asesoramiento Estratégico · DGI · BPS · Empresas',
+        title: 'Respaldo contable y legal claro para hacer <em>crecer tu negocio</em> con tranquilidad.',
+        lead: 'Acompañamos a comerciantes, profesionales y pymes en impuestos, sueldos, apertura de sociedades y habilitaciones sin burocracia.'
+      },
+      logistica: {
+        mark: 'LX',
+        name: 'LogiXpress B2B',
+        sub: 'Logística, Distribución & Soluciones Industriales',
+        eyebrow: '🚚 Flota Propia · Entregas en el Día · Cobertura Nacional',
+        title: 'Operativa logística e industrial puntual para <em>potenciar tu cadena</em> comercial.',
+        lead: 'Rutas dedicadas, distribución mayorista, almacenaje y mantenimiento industrial con trazabilidad completa y atención ejecutiva.'
+      }
+    };
+
+    const themeBtns = document.querySelectorAll('[data-set-theme]');
+    themeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const theme = btn.getAttribute('data-set-theme');
+        document.documentElement.setAttribute('data-theme', theme);
+        themeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const p = themeProfiles[theme];
+        if (p) {
+          document.getElementById('brandMark').textContent = p.mark;
+          document.getElementById('brandName').textContent = p.name;
+          document.getElementById('brandSub').textContent = p.sub;
+          document.getElementById('heroEyebrow').textContent = p.eyebrow;
+          document.getElementById('heroTitle').innerHTML = p.title;
+          document.getElementById('heroLead').textContent = p.lead;
+        }
+      });
+    });
+
+    // 2. Menú móvil
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+
+    // 3. Cotizador Express del Hero -> WhatsApp
+    let selectedUrgency = 'Normal (Esta semana)';
+    const urgBtns = document.querySelectorAll('#urgencyPills .urg-btn');
+    urgBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        urgBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedUrgency = btn.getAttribute('data-urg');
+      });
+    });
+
+    const btnSendQuote = document.getElementById('btnSendQuote');
+    if (btnSendQuote) {
+      btnSendQuote.addEventListener('click', () => {
+        const srv = document.getElementById('qService').value;
+        const cli = document.getElementById('qClientType').value;
+        const det = document.getElementById('qDetail').value.trim();
+
+        let msg = `Hola! Quiero solicitar un presupuesto sin cargo:\n• Servicio: ${srv}\n• Tipo de cliente: ${cli}\n• Prioridad: ${selectedUrgency}`;
+        if (det) {
+          msg += `\n• Detalle/Zona: ${det}`;
+        }
+        window.open(`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+      });
+    }
+
+    // 4. Filtro de Servicios en vivo
+    const filterBtns = document.querySelectorAll('#serviceFilters .filter-btn');
+    const srvCards = document.querySelectorAll('#servicesGrid .srv-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-filter');
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        srvCards.forEach(card => {
+          const cardCat = card.getAttribute('data-cat');
+          card.style.display = (cat === 'todos' || cardCat === cat) ? 'flex' : 'none';
+        });
+      });
+    });
+
+    // 5. Acordeón de FAQ
+    const faqItems = document.querySelectorAll('#faqList .faq-item');
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-q');
+      btn.addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+  })();
+</script>
+</body>
+</html>

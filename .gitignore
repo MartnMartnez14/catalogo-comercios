@@ -1,0 +1,37 @@
+# ==============================================================================
+# 🔒 PRIVACIDAD LOCAL — Archivos de negocio que NUNCA se suben a GitHub Pages
+# Solo se publican los index.html e imágenes de demostración para clientes.
+# ==============================================================================
+
+# Planillas financieras, precios y estrategia comercial interna
+*.xlsm
+*.xlsx
+MEMORY.md
+INSTAGRAM_VENTAS.md
+ARQUITECTURA_Y_DIAGRAMAS.md
+CONEXIONES.md
+CONTRATO.md
+AGENTS.md
+SKILL.md
+roadmap.md
+.agents/
+.worktrees/
+
+# Datos reales y proyectos vendidos a clientes
+clientes/
+
+# Pruebas privadas con datos reales (100% Offline, invisibles en el catálogo público)
+comercio-demo\ supermercado/supermercado-luan/
+venta\ comida\ rapida\ demo/
+
+# Scripts internos, activos de marca personal y borradores locales
+tools/
+Gemini_Generated_Images_*/
+imagenes\ logotipos\ capturas\ redes\ sociales\ seguimiento*/
+**/README.md
+
+# Archivos temporales o de sistema
+.DS_Store
+Thumbs.db
+.env
+*.log

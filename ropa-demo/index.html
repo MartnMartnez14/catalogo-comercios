@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<!-- ===========================================================================
+  PROYECTO / RUBRO : Tienda de Ropa, Boutique & Indumentaria (3 en 1)
+  VERSIÓN          : v1.0 (Estático HTML5 + CSS3 + JS Vanilla — Inmune a PHP)
+  TIPO             : PROTOTIPO DEMO ANÓNIMO (Catálogo Bluffer 23)
+  CONFIGURACIÓN RÁPIDA:
+    - Teléfono WhatsApp : Buscar constante CONFIG_COMERCIO en [SECCIÓN 08]
+    - Colores de Marca  : Buscar :root y [data-theme] en [SECCIÓN 02]
+    - Prendas y Talles  : Buscar tarjetas .fashion-card en [SECCIÓN 06]
+============================================================================ -->
+<html lang="es" data-theme="urbana">
+<head>
+<!-- ========================================================================
+     [SECCIÓN 01: CABECERA, META TAGS & SEO LOCAL]
+     ======================================================================== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vértice Studio | Indumentaria Urbana, Boutique & Calzado</title>
+<meta name="description" content="Nueva temporada de indumentaria urbana, boutique y calzado. Elegí tu prenda, talle (S, M, L, XL) y color y consultá stock o reservá directo por WhatsApp.">
+<meta name="keywords" content="tienda de ropa, boutique, indumentaria urbana, zapatería, ropa deportiva, comprar por whatsapp, uruguay">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%234f46e5%22/><text x=%2250%22 y=%2268%22 font-size=%2252%22 text-anchor=%22middle%22>👗</text></svg>">
+<meta name="theme-color" content="#4f46e5">
+
+<meta property="og:title" content="Vértice Studio — Nueva Temporada, Lookbook & Sale">
+<meta property="og:description" content="Seleccioná talle y color desde tu celular y pedí con envío a todo el país o retiro en local por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_UY">
+<meta property="og:site_name" content="Vértice Studio">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+<style>
+  /* ==========================================================================
+     [SECCIÓN 02: VARIABLES CSS Y PALETAS DE TEMAS 3 EN 1 (:root / data-theme)]
+     Aquí se definen colores, gradientes multicapa (mesh), sombras y tipografías.
+     ========================================================================== */
+
+  /* MODO 1: MODA URBANA & STREETWEAR UNISEX (Índigo Eléctrico, Carbón & Perla) */
+  :root,
+  [data-theme="urbana"] {
+    --brand:      #4f46e5;
+    --brand-d:    #4338ca;
+    --brand-l:    #e0e7ff;
+    --accent:     #e11d48;
+    --accent-l:   #ffe4e6;
+    --ink:        #09090b;
+    --ink2:       #3f3f46;
+    --ink3:       #71717a;
+    --bg:         #ffffff;
+    --surface:    #f8fafc;
+    --card-bg:    #ffffff;
+    --line:       #e4e4e7;
+    --header-bg:  rgba(255, 255, 255, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 12% 18%, rgba(79, 70, 229, 0.14), transparent 42%),
+      radial-gradient(circle at 86% 22%, rgba(225, 29, 72, 0.10), transparent 38%),
+      radial-gradient(circle at 50% 88%, rgba(99, 102, 241, 0.08), transparent 46%),
+      linear-gradient(135deg, #ffffff 0%, #f5f3ff 55%, #fff1f2 100%);
+    --radius:     18px;
+    --shadow:     0 12px 32px rgba(9, 9, 11, 0.06);
+    --sans:       'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --serif:      'Playfair Display', Georgia, serif;
+  }
+
+  /* MODO 2: BOUTIQUE MUJER & COLECCIÓN CÁPSULA (Rosa Terracota, Dorado & Lino) */
+  [data-theme="boutique"] {
+    --brand:      #be185d;
+    --brand-d:    #9d174d;
+    --brand-l:    #fce7f3;
+    --accent:     #b45309;
+    --accent-l:   #fef3c7;
+    --ink:        #1c1917;
+    --ink2:       #57534e;
+    --ink3:       #78716c;
+    --bg:         #fffdf9;
+    --surface:    #faf5f0;
+    --card-bg:    #ffffff;
+    --line:       #e7e0d8;
+    --header-bg:  rgba(255, 253, 249, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 15% 20%, rgba(190, 24, 93, 0.13), transparent 45%),
+      radial-gradient(circle at 85% 25%, rgba(180, 83, 9, 0.12), transparent 40%),
+      linear-gradient(135deg, #fffdf9 0%, #fdf2f8 55%, #faf5ee 100%);
+    --shadow:     0 12px 32px rgba(28, 25, 23, 0.06);
+  }
+
+  /* MODO 3: INDUMENTARIA DEPORTIVA & CALZADO (Esmeralda Activo & Azul) */
+  [data-theme="deportivo"] {
+    --brand:      #059669;
+    --brand-d:    #047857;
+    --brand-l:    #d1fae5;
+    --accent:     #0284c7;
+    --accent-l:   #e0f2fe;
+    --ink:        #0f172a;
+    --ink2:       #334155;
+    --ink3:       #64748b;
+    --bg:         #ffffff;
+    --surface:    #f0fdf4;
+    --card-bg:    #ffffff;
+    --line:       #d1fae5;
+    --header-bg:  rgba(255, 255, 255, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 15% 20%, rgba(5, 150, 105, 0.15), transparent 42%),
+      radial-gradient(circle at 85% 22%, rgba(2, 132, 199, 0.12), transparent 38%),
+      linear-gradient(135deg, #ffffff 0%, #f0fdf4 55%, #f0f9ff 100%);
+    --shadow:     0 12px 32px rgba(15, 23, 42, 0.07);
+  }
+
+  /* ==========================================================================
+     [SECCIÓN 03: ESTILOS DE COMPONENTES (HEADER, SELECTOR TALLE/COLOR, MODAL)]
+     Estilos visuales reutilizables y reglas de adaptación móvil (@media).
+     ========================================================================== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 135px; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  button, input, select { font: inherit; }
+
+  .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2.25rem); }
+
+  /* BARRA SELECTORA DE MODO DEMO 3 EN 1 */
+  .theme-switcher-bar {
+    background: #09090b;
+    color: #fafafa;
+    padding: 0.5rem 0;
+    font-size: 0.78rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+  }
+  .theme-switcher-inner {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+  .ts-label {
+    display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: #a5b4fc;
+  }
+  .ts-buttons { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .ts-btn {
+    background: rgba(255,255,255,0.08);
+    color: #e4e4e7;
+    border: 1px solid rgba(255,255,255,0.14);
+    padding: 0.26rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .ts-btn:hover { background: rgba(255,255,255,0.16); }
+  .ts-btn.active {
+    background: #818cf8;
+    color: #09090b;
+    border-color: #818cf8;
+  }
+
+  /* TOPBAR PROMOCIONAL */
+  .topbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    font-size: 0.8rem;
+    color: var(--ink2);
+    padding: 0.45rem 0;
+  }
+  .topbar-inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-weight: 600;
+  }
+
+  /* HEADER STICKY */
+  header.site-header {
+    position: sticky;
+    top: 39px;
+    z-index: 1000;
+    background: var(--header-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 1rem;
+  }
+  .brand { display: flex; align-items: center; gap: 0.75rem; }
+  .brand-mark {
+    width: 44px; height: 44px; border-radius: 13px;
+    background: var(--brand); color: #ffffff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.25rem;
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.22);
+  }
+  .brand-text strong { display: block; font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .brand-text span { font-size: 0.74rem; color: var(--ink3); font-weight: 600; }
+
+  .nav-links { display: flex; align-items: center; gap: 1.5rem; font-size: 0.9rem; font-weight: 600; color: var(--ink2); }
+  .nav-links a:hover, .nav-links button:hover { color: var(--brand); }
+  .nav-btn-link {
+    background: none; border: none; color: var(--ink2); font-weight: 700; cursor: pointer;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 0.68rem 1.25rem; border-radius: 100px; font-weight: 700; font-size: 0.88rem;
+    border: 1px solid transparent; cursor: pointer; transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--brand); color: #ffffff; box-shadow: 0 8px 20px rgba(79, 70, 229, 0.22); }
+  .btn-primary:hover { background: var(--brand-d); }
+  .btn-wa { background: #16a34a; color: #ffffff; box-shadow: 0 8px 20px rgba(22, 163, 74, 0.25); }
+  .btn-wa:hover { background: #15803d; }
+  .btn-outline { background: transparent; border-color: var(--line); color: var(--ink); }
+  .btn-outline:hover { border-color: var(--brand); color: var(--brand); }
+
+  /* HERO DINÁMICO */
+  .hero {
+    background: var(--hero-mesh);
+    padding: clamp(2.5rem, 6vw, 4.75rem) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(1.75rem, 4vw, 3rem);
+    align-items: center;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--brand-l); color: var(--brand);
+    padding: 0.35rem 0.9rem; border-radius: 100px;
+    font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.15rem, 4.5vw, 3.45rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .hero h1 em { color: var(--brand); font-style: italic; }
+  .hero p.lead {
+    font-size: clamp(1rem, 1.4vw, 1.12rem);
+    color: var(--ink2);
+    max-width: 580px;
+    margin-bottom: 1.65rem;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2rem; }
+  .trust-row {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem;
+    padding-top: 1.35rem; border-top: 1px solid var(--line);
+  }
+  .trust-item strong { display: block; font-size: 1rem; font-weight: 800; color: var(--ink); }
+  .trust-item span { font-size: 0.78rem; color: var(--ink3); }
+
+  /* TARJETA DESTACADA DE OUTFIT / ASESORÍA DE TALLE EN HERO */
+  .look-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) + 4px);
+    padding: clamp(1.35rem, 3vw, 1.85rem);
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .look-badge {
+    position: absolute; top: -12px; right: 20px;
+    background: var(--accent); color: #ffffff;
+    font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
+    padding: 0.28rem 0.8rem; border-radius: 100px; letter-spacing: 0.05em;
+  }
+  .look-card h2 { font-size: 1.25rem; font-weight: 800; margin-bottom: 0.25rem; }
+  .look-card > p { font-size: 0.84rem; color: var(--ink2); margin-bottom: 1.1rem; }
+  .form-group { margin-bottom: 0.9rem; }
+  .form-group label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--ink2); margin-bottom: 0.35rem; }
+  .form-control {
+    width: 100%; padding: 0.65rem 0.85rem; border-radius: 12px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    font-size: 0.88rem; font-weight: 500;
+  }
+
+  /* SECCIONES GENERALES */
+  section { padding: clamp(3rem, 6vw, 4.75rem) 0; }
+  .section-alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .sec-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;
+  }
+  .sec-header h2 { font-family: var(--serif); font-size: clamp(1.65rem, 3vw, 2.35rem); line-height: 1.15; }
+  .sec-header p { color: var(--ink2); max-width: 520px; font-size: 0.94rem; }
+
+  /* BARRA DE FILTROS DEL LOOKBOOK */
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.85rem; align-items: center; justify-content: space-between; }
+  .filter-group { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .filter-btn {
+    padding: 0.55rem 1.05rem; border-radius: 100px;
+    border: 1px solid var(--line); background: var(--card-bg); color: var(--ink2);
+    font-size: 0.84rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--brand); color: #ffffff; border-color: var(--brand);
+  }
+
+  /* GRILLA DE PRENDAS CON SELECTOR DE TALLE Y COLOR */
+  .fashion-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.25rem;
+  }
+  .fashion-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.35rem;
+    display: flex; flex-direction: column; justify-content: space-between; gap: 1rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .fashion-card:hover { transform: translateY(-4px); border-color: var(--brand); }
+  .fashion-card.featured {
+    border: 2px solid var(--brand);
+    background: linear-gradient(180deg, var(--brand-l) 0%, var(--card-bg) 38%);
+  }
+  .fc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
+  .fc-emoji {
+    width: 48px; height: 48px; border-radius: 14px;
+    background: var(--surface); border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center; font-size: 1.55rem;
+  }
+  .fc-tag {
+    font-size: 0.7rem; font-weight: 800; padding: 0.22rem 0.65rem; border-radius: 100px;
+    background: var(--brand-l); color: var(--brand); text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .fc-tag.sale { background: var(--accent-l); color: var(--accent); }
+  .fashion-card h3 { font-size: 1.08rem; font-weight: 800; margin-top: 0.65rem; }
+  .fashion-card p { font-size: 0.84rem; color: var(--ink2); margin-top: 0.25rem; }
+
+  /* SELECTOR INTERACTIVO DE TALLE Y COLOR DENTRO DE CADA TARJETA */
+  .variant-box {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .v-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap;
+  }
+  .v-label { font-size: 0.72rem; font-weight: 800; color: var(--ink3); text-transform: uppercase; }
+  .size-chips, .color-chips { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+  .s-chip, .c-chip {
+    padding: 0.22rem 0.52rem; border-radius: 6px;
+    border: 1px solid var(--line); background: var(--card-bg); color: var(--ink2);
+    font-size: 0.72rem; font-weight: 800; cursor: pointer; transition: all 0.15s;
+  }
+  .s-chip.active, .c-chip.active {
+    background: var(--brand); color: #ffffff; border-color: var(--brand);
+  }
+
+  .fc-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 0.85rem; border-top: 1px dashed var(--line); gap: 0.75rem;
+  }
+  .fc-price { font-size: 0.76rem; color: var(--ink3); }
+  .fc-price strong { display: block; font-size: 1.2rem; font-weight: 800; color: var(--ink); }
+  .fc-price del { color: var(--ink3); font-size: 0.8rem; margin-left: 4px; }
+
+  /* BENTO DE ENVÍOS Y CAMBIOS */
+  .bento-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+  }
+  .bento-item {
+    background: var(--card-bg); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .bento-item.span-2 { grid-column: span 2; }
+  .bento-icon { font-size: 1.8rem; margin-bottom: 0.65rem; }
+  .bento-item h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .bento-item p { font-size: 0.88rem; color: var(--ink2); }
+
+  /* MODAL DE GUÍA DE TALLES Y MEDIDAS */
+  .modal-backdrop {
+    position: fixed; inset: 0; z-index: 2000;
+    background: rgba(9, 9, 11, 0.65); backdrop-filter: blur(4px);
+    display: none; align-items: center; justify-content: center; padding: 1rem;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal-box {
+    background: var(--card-bg); color: var(--ink);
+    border: 1px solid var(--line); border-radius: 20px;
+    max-width: 600px; width: 100%; padding: 1.75rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  }
+  .modal-head {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;
+  }
+  .modal-close {
+    background: var(--surface); border: 1px solid var(--line);
+    width: 36px; height: 36px; border-radius: 50%; font-weight: 800; cursor: pointer;
+  }
+  .size-table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.86rem;
+  }
+  .size-table th, .size-table td {
+    padding: 0.65rem; border: 1px solid var(--line); text-align: center;
+  }
+  .size-table th { background: var(--surface); font-weight: 800; }
+
+  /* FAQ Y UBICACIÓN */
+  .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
+  details.faq-item {
+    background: var(--card-bg); border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.25rem;
+  }
+  details.faq-item summary {
+    font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  }
+  details.faq-item p { margin-top: 0.65rem; font-size: 0.88rem; color: var(--ink2); }
+
+  .loc-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 1.5rem; align-items: stretch; }
+  .loc-card {
+    background: var(--card-bg); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 1.65rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1.25rem;
+  }
+  .hours-list li {
+    display: flex; justify-content: space-between; padding: 0.55rem 0;
+    border-bottom: 1px dashed var(--line); font-size: 0.88rem;
+  }
+  .map-frame {
+    width: 100%; min-height: 320px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  }
+
+  footer.site-footer {
+    background: #09090b; color: #d4d4d8; padding: 2.5rem 0; font-size: 0.84rem;
+  }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .wa-float {
+    position: fixed; bottom: 22px; right: 22px; z-index: 999;
+    background: #16a34a; color: #ffffff;
+    padding: 0.8rem 1.25rem; border-radius: 100px;
+    font-weight: 800; font-size: 0.88rem;
+    box-shadow: 0 10px 26px rgba(22, 163, 74, 0.4);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid, .loc-grid, .bento-grid { grid-template-columns: 1fr; }
+    .bento-item.span-2 { grid-column: span 1; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================================================
+     [SECCIÓN 04: BARRA SUPERIOR, SELECTOR 3 EN 1 Y NAVEGACIÓN PRINCIPAL]
+     ======================================================================== -->
+<div class="theme-switcher-bar">
+  <div class="container theme-switcher-inner">
+    <span class="ts-label">🎨 DEMO ADAPTABLE 3 EN 1 · Probá el estilo para tu tienda:</span>
+    <div class="ts-buttons" id="themeButtons">
+      <button type="button" class="ts-btn active" data-set-theme="urbana">🧥 1. Moda Urbana & Unisex</button>
+      <button type="button" class="ts-btn" data-set-theme="boutique">👗 2. Boutique & Femenino</button>
+      <button type="button" class="ts-btn" data-set-theme="deportivo">👟 3. Deportivo & Calzado</button>
+    </div>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>🚚 Envíos a todo el país en 24/48 hs · Retiro en local sin cargo</span>
+    <span>💳 Hasta 6 cuotas sin recargo · Cambios garantizados por 30 días</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <div class="brand-mark" id="brandMark">VS</div>
+      <div class="brand-text">
+        <strong id="brandTitle">Vértice Studio</strong>
+        <span id="brandSub">Indumentaria Urbana, Boutique & Calzado</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#lookbook">Colección & Talles</a>
+      <button type="button" class="nav-btn-link" id="btnOpenSizeModalTop">📏 Guía de Talles</button>
+      <a href="#beneficios">Envíos & Cambios</a>
+      <a href="#ubicacion">Local</a>
+    </nav>
+    <a href="https://wa.me/59899123456?text=Hola%20V%C3%A9rtice%20Studio!%20Quiero%20consultar%20por%20una%20prenda" target="_blank" rel="noopener" class="btn btn-wa">
+      💬 Consultar Talle WA
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- ========================================================================
+       [SECCIÓN 05: HERO DINÁMICO Y ASESOR RÁPIDO DE OUTFIT / TALLE]
+       ======================================================================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow" id="heroEyebrow">✨ Nueva Colección & Cápsula de Temporada</span>
+        <h1 id="heroHeadline">Elegí tu prenda, <em>seleccioná tu talle</em> y reservá en un clic.</h1>
+        <p class="lead" id="heroLead">
+          Prendas con calce real, telas seleccionadas y stock actualizado. Tocá tu talle (<strong>S, M, L, XL</strong>) y color en cada tarjeta para enviarnos tu pedido listo por WhatsApp con retiro en tienda o envío en el día.
+        </p>
+        <div class="hero-actions">
+          <a href="#lookbook" class="btn btn-primary">👗 Ver Lookbook & Precios →</a>
+          <button type="button" class="btn btn-outline" id="btnOpenSizeModalHero">📏 Abrir Tabla de Medidas</button>
+        </div>
+        <div class="trust-row">
+          <div class="trust-item">
+            <strong>Talles S al XXL</strong>
+            <span>Guía en cm para comprar seguro</span>
+          </div>
+          <div class="trust-item">
+            <strong>Cambios Fáciles</strong>
+            <span>30 días en local o por encomienda</span>
+          </div>
+          <div class="trust-item">
+            <strong>Envío Express</strong>
+            <span>Cadetería zonal y DAC a todo el país</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TARJETA RÁPIDA: RESERVAR PRENDA O CONSULTAR TALLE -->
+      <aside class="look-card" aria-label="Consulta rápida de talle y stock">
+        <span class="look-badge">🛍️ Atención Personalizada</span>
+        <h2>¿Buscás un Look o Talle Especial?</h2>
+        <p>Contanos qué prenda buscás y te mandamos fotos reales y medidas exactas por WhatsApp.</p>
+
+        <div class="form-group">
+          <label for="lkCategory">1. ¿Qué estás buscando hoy?</label>
+          <select id="lkCategory" class="form-control">
+            <option value="Abrigos / Camperas / Buzos">🧥 Abrigos, Camperas y Buzos</option>
+            <option value="Vestidos / Blusas / Conjunto Noche">👗 Vestidos, Blusas y Conjuntos</option>
+            <option value="Jeans / Pantalones Cargo / Sastreros">👖 Jeans, Cargo y Pantalones</option>
+            <option value="Calzado Urbano / Deportivo">👟 Calzado Urbano / Deportivo</option>
+            <option value="Gift Card / Regalo de Cumpleaños">🎁 Gift Card / Regalo con Bolsa Especial</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="lkSize">2. Tu talle habitual</label>
+          <select id="lkSize" class="form-control">
+            <option value="Talle M">Talle M (Estándar)</option>
+            <option value="Talle S">Talle S</option>
+            <option value="Talle L">Talle L</option>
+            <option value="Talle XL / XXL">Talle XL / XXL</option>
+            <option value="Calzado (36 al 44)">Calzado (36 al 44)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="lkDelivery">3. ¿Cómo preferís recibirlo?</label>
+          <select id="lkDelivery" class="form-control">
+            <option value="Pasar a probar por el Local">🏪 Pasar a probar por el Local</option>
+            <option value="Envío a Domicilio en el día">🛵 Envío a Domicilio en el día</option>
+            <option value="Envío al Interior (DAC / Correo)">📦 Envío al Interior (DAC)</option>
+          </select>
+        </div>
+
+        <button type="button" id="btnSendLook" class="btn btn-wa" style="width: 100%;">
+          📲 Consultar Disponibilidad por WA →
+        </button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       [SECCIÓN 06: CATÁLOGO CON SELECTOR INTERACTIVO DE TALLE Y COLOR]
+       ======================================================================== -->
+  <section id="lookbook">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">🧥 Tocá tu Talle y Color en cada Prenda</span>
+          <h2>Destacados de Temporada & Sale</h2>
+        </div>
+        <p>Al elegir el <strong>Talle</strong> y <strong>Color</strong> en cualquiera de las tarjetas, el botón de WhatsApp arma tu pedido automáticamente con tu selección.</p>
+      </div>
+
+      <div class="filter-bar">
+        <div class="filter-group" id="fashionFilters">
+          <button type="button" class="filter-btn active" data-filter="todos">Toda la Colección (6)</button>
+          <button type="button" class="filter-btn" data-filter="abrigos">🧥 Camperas & Buzos</button>
+          <button type="button" class="filter-btn" data-filter="prendas">👗 Vestidos & Pantalones</button>
+          <button type="button" class="filter-btn" data-filter="calzado">👟 Calzado</button>
+          <button type="button" class="filter-btn" data-filter="sale">🔥 Liquidación / Sale</button>
+        </div>
+        <button type="button" class="btn btn-outline" id="btnOpenSizeModalCatalog">📏 Ver Tabla de Talles</button>
+      </div>
+
+      <div class="fashion-grid" id="fashionGrid">
+        <!-- Prenda 1 -->
+        <article class="fashion-card featured" data-cat="abrigos" data-name="Campera Puffer Impermeable Térmica" data-price="$ 2.490">
+          <div>
+            <div class="fc-top">
+              <div class="fc-emoji">🧥</div>
+              <span class="fc-tag">⭐ Best Seller Temporada</span>
+            </div>
+            <h3>Campera Puffer Impermeable Térmica</h3>
+            <p>Interior forrado en micropolar suave, capucha desmontable con cierre oculto y bolsillos laterales con cierre impermeable.</p>
+
+            <div class="variant-box">
+              <div class="v-row">
+                <span class="v-label">Talle:</span>
+                <div class="size-chips">
+                  <button type="button" class="s-chip" data-val="S">S</button>
+                  <button type="button" class="s-chip active" data-val="M">M</button>
+                  <button type="button" class="s-chip" data-val="L">L</button>
+                  <button type="button" class="s-chip" data-val="XL">XL</button>
+                </div>
+              </div>
+              <div class="v-row">
+                <span class="v-label">Color:</span>
+                <div class="color-chips">
+                  <button type="button" class="c-chip active" data-val="Negro Mate">Negro</button>
+                  <button type="button" class="c-chip" data-val="Beige Arena">Arena</button>
+                  <button type="button" class="c-chip" data-val="Verde Militar">Oliva</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fc-foot">
+            <div class="fc-price">6 cuotas s/recargo<strong>$ 2.490</strong></div>
+            <button type="button" class="btn btn-primary btn-buy-variant">Pedir Talle WA →</button>
+          </div>
+        </article>
+
+        <!-- Prenda 2 -->
+        <article class="fashion-card" data-cat="abrigos" data-name="Buzo Hoodie Oversize Algodón Peinado" data-price="$ 1.490">
+          <div>
+            <div class="fc-top">
+              <div class="fc-emoji">👕</div>
+              <span class="fc-tag">Unisex · 100% Algodón</span>
+            </div>
+            <h3>Buzo Hoodie Oversize Algodón Peinado</h3>
+            <p>Frisa invisible pesada premium que no hace pelotitas, puños de rib elástico y calce relajado urbano.</p>
+
+            <div class="variant-box">
+              <div class="v-row">
+                <span class="v-label">Talle:</span>
+                <div class="size-chips">
+                  <button type="button" class="s-chip" data-val="S">S</button>
+                  <button type="button" class="s-chip active" data-val="M">M</button>
+                  <button type="button" class="s-chip" data-val="L">L</button>
+                  <button type="button" class="s-chip" data-val="XL">XL</button>
+                </div>
+              </div>
+              <div class="v-row">
+                <span class="v-label">Color:</span>
+                <div class="color-chips">
+                  <button type="button" class="c-chip active" data-val="Gris Melange">Melange</button>
+                  <button type="button" class="c-chip" data-val="Azul Noche">Azul</button>
+                  <button type="button" class="c-chip" data-val="Crudo">Crudo</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fc-foot">
+            <div class="fc-price">Precio contado / tarjeta<strong>$ 1.490</strong></div>
+            <button type="button" class="btn btn-outline btn-buy-variant">Pedir Talle WA →</button>
+          </div>
+        </article>
+
+        <!-- Prenda 3 -->
+        <article class="fashion-card" data-cat="prendas" data-name="Pantalón Cargo Gabardina Elastizada" data-price="$ 1.690">
+          <div>
+            <div class="fc-top">
+              <div class="fc-emoji">👖</div>
+              <span class="fc-tag">Calce Cómodo</span>
+            </div>
+            <h3>Pantalón Cargo Gabardina Elastizada</h3>
+            <p>Gabardina de alto gramaje con 3% spandex para máxima comodidad, 6 bolsillos funcionales y tiro medio.</p>
+
+            <div class="variant-box">
+              <div class="v-row">
+                <span class="v-label">Talle:</span>
+                <div class="size-chips">
+                  <button type="button" class="s-chip" data-val="S (38)">S (38)</button>
+                  <button type="button" class="s-chip active" data-val="M (40-42)">M (40)</button>
+                  <button type="button" class="s-chip" data-val="L (44)">L (44)</button>
+                  <button type="button" class="s-chip" data-val="XL (46)">XL (46)</button>
+                </div>
+              </div>
+              <div class="v-row">
+                <span class="v-label">Color:</span>
+                <div class="color-chips">
+                  <button type="button" class="c-chip active" data-val="Camel">Camel</button>
+                  <button type="button" class="c-chip" data-val="Negro">Negro</button>
+                  <button type="button" class="c-chip" data-val="Verde Cargo">Verde</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fc-foot">
+            <div class="fc-price">Precio contado / tarjeta<strong>$ 1.690</strong></div>
+            <button type="button" class="btn btn-outline btn-buy-variant">Pedir Talle WA →</button>
+          </div>
+        </article>
+
+        <!-- Prenda 4 -->
+        <article class="fashion-card" data-cat="prendas" data-name="Conjunto Sastrero Lino & Blazer" data-price="$ 2.890">
+          <div>
+            <div class="fc-top">
+              <div class="fc-emoji">👗</div>
+              <span class="fc-tag">Cápsula Boutique</span>
+            </div>
+            <h3>Conjunto Sastrero Lino & Blazer Forrado</h3>
+            <p>Ideal para oficina o eventos: blazer entallado con botones carey y pantalón palazzo de caída fluida.</p>
+
+            <div class="variant-box">
+              <div class="v-row">
+                <span class="v-label">Talle:</span>
+                <div class="size-chips">
+                  <button type="button" class="s-chip" data-val="S">S</button>
+                  <button type="button" class="s-chip active" data-val="M">M</button>
+                  <button type="button" class="s-chip" data-val="L">L</button>
+                  <button type="button" class="s-chip" data-val="XL">XL</button>
+                </div>
+              </div>
+              <div class="v-row">
+                <span class="v-label">Color:</span>
+                <div class="color-chips">
+                  <button type="button" class="c-chip active" data-val="Lino Natural">Natural</button>
+                  <button type="button" class="c-chip" data-val="Terracota">Terracota</button>
+                  <button type="button" class="c-chip" data-val="Negro">Negro</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fc-foot">
+            <div class="fc-price">Conjunto 2 piezas<strong>$ 2.890</strong></div>
+            <button type="button" class="btn btn-outline btn-buy-variant">Pedir Talle WA →</button>
+          </div>
+        </article>
+
+        <!-- Prenda 5 -->
+        <article class="fashion-card" data-cat="calzado" data-name="Championes Urbanos Cuero & Suela TR" data-price="$ 2.290">
+          <div>
+            <div class="fc-top">
+              <div class="fc-emoji">👟</div>
+              <span class="fc-tag">Plantilla Memory Foam</span>
+            </div>
+            <h3>Championes Urbanos Cuero & Suela Antideslizante</h3>
+            <p>Capellada combinada fácil de limpiar, plantilla acolchada anatómica y suela cosida liviana para todo el día.</p>
+
+            <div class="variant-box">
+              <div class="v-row">
+                <span class="v-label">N° Calzado:</span>
+                <div class="size-chips">
+                  <button type="button" class="s-chip" data-val="37-38">37/38</button>
+                  <button type="button" class="s-chip active" data-val="39-40">39/40</button>
+                  <button type="button" class="s-chip" data-val="41-42">41/42</button>
+                  <button type="button" class="s-chip" data-val="43-44">43/44</button>
+                </div>
+              </div>
+              <div class="v-row">
+                <span class="v-label">Color:</span>
+                <div class="color-chips">
+                  <button type="button" class="c-chip active" data-val="Blanco / Gris">Blanco</button>
+                  <button type="button" class="c-chip" data-val="Total Black">Negro</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fc-foot">
+            <div class="fc-price">Par en caja<strong>$ 2.290</strong></div>
+            <button type="button" class="btn btn-outline btn-buy-variant">Pedir Talle WA →</button>
+          </div>
+        </article>
+
+        <!-- Prenda 6 -->
+        <article class="fashion-card" data-cat="sale" data-name="Pack x2 Remeras Básicas Heavy Cotton (SALE)" data-price="$ 990">
+          <div>
+            <div class="fc-top">
+              <div class="fc-emoji">🏷️</div>
+              <span class="fc-tag sale">🔥 30% OFF · SALE</span>
+            </div>
+            <h3>Pack x2 Remeras Básicas Heavy Cotton</h3>
+            <p>Algodón 24/1 peinado con cuello redondo reforzado que no se estira. Podés combinar dos colores a elección en tu talle.</p>
+
+            <div class="variant-box">
+              <div class="v-row">
+                <span class="v-label">Talle:</span>
+                <div class="size-chips">
+                  <button type="button" class="s-chip" data-val="S">S</button>
+                  <button type="button" class="s-chip active" data-val="M">M</button>
+                  <button type="button" class="s-chip" data-val="L">L</button>
+                  <button type="button" class="s-chip" data-val="XL">XL</button>
+                </div>
+              </div>
+              <div class="v-row">
+                <span class="v-label">Combinación:</span>
+                <div class="color-chips">
+                  <button type="button" class="c-chip active" data-val="Blanca + Negra">Blanca + Negra</button>
+                  <button type="button" class="c-chip" data-val="2 Negras">2 Negras</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fc-foot">
+            <div class="fc-price">Promo Pack x2<strong>$ 990 <del>$1.420</del></strong></div>
+            <button type="button" class="btn btn-primary btn-buy-variant">Aprovechar Sale →</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       [SECCIÓN 07: MODAL DE GUÍA DE TALLES, BENEFICIOS, MAPA Y FOOTER]
+       ======================================================================== -->
+
+  <!-- MODAL INTERACTIVO DE GUÍA DE TALLES -->
+  <div class="modal-backdrop" id="sizeModal" role="dialog" aria-modal="true" aria-labelledby="sizeModalTitle">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3 id="sizeModalTitle" style="font-size: 1.25rem; font-weight: 800;">📏 Guía de Talles y Medidas (en cm)</h3>
+        <button type="button" class="modal-close" id="btnCloseSizeModal" aria-label="Cerrar tabla">✕</button>
+      </div>
+      <p style="font-size: 0.86rem; color: var(--ink2);">
+        Medí una prenda tuya extendida sobre una mesa de axila a axila (Pecho) y desde el hombro hasta el ruedo (Largo):
+      </p>
+      <table class="size-table">
+        <thead>
+          <tr>
+            <th>Talle</th>
+            <th>Ancho de Pecho (cm)</th>
+            <th>Cintura (cm)</th>
+            <th>Largo Total (cm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>S</strong></td><td>50 – 52 cm</td><td>38 – 40 cm</td><td>68 cm</td></tr>
+          <tr><td><strong>M</strong></td><td>53 – 55 cm</td><td>42 – 44 cm</td><td>71 cm</td></tr>
+          <tr><td><strong>L</strong></td><td>56 – 58 cm</td><td>46 – 48 cm</td><td>74 cm</td></tr>
+          <tr><td><strong>XL</strong></td><td>60 – 62 cm</td><td>50 – 52 cm</td><td>77 cm</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.82rem; color: var(--ink3); margin-bottom: 1rem;">
+        💡 ¿Tenés dudas entre dos talles? Escribinos tu altura y peso aproximado por WhatsApp y te recomendamos el calce ideal.
+      </p>
+      <button type="button" class="btn btn-primary" id="btnCloseSizeModalBottom" style="width: 100%;">Entendido, volver al catálogo</button>
+    </div>
+  </div>
+
+  <!-- BENTO DE ENVÍOS Y CAMBIOS -->
+  <section id="beneficios" class="section-alt">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">🛍️ Comprá con Total Confianza</span>
+          <h2>Beneficios de nuestra tienda online y física</h2>
+        </div>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-item span-2">
+          <div class="bento-icon">🔄</div>
+          <h3>Primer Cambio de Talle o Modelo 100% Garantizado (30 Días)</h3>
+          <p>Si compraste para regalo o elegiste un talle desde tu casa y preferís uno más holgado o entallado, tenés 30 días corridos para cambiarlo en nuestro local en 2 minutos o coordinar el cambio por cadetería.</p>
+        </div>
+        <div class="bento-item">
+          <div class="bento-icon">📦</div>
+          <h3>Despachos Diarios por DAC</h3>
+          <p>Armamos tu paquete en el día y te pasamos el número de rastreo por WhatsApp para que lo recibas en cualquier punto del país.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN Y HORARIOS -->
+  <section id="ubicacion">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">📍 Probadores y Retiro Gratis</span>
+          <h2>Visitanos en nuestro local</h2>
+        </div>
+      </div>
+      <div class="loc-grid">
+        <div class="loc-card">
+          <div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.4rem;">Vértice Studio — Showroom & Tienda</h3>
+            <p style="color: var(--ink2); font-size: 0.9rem; margin-bottom: 1.25rem;">Av. Principal 1234, Ciudad Ejemplo</p>
+            <ul class="hours-list">
+              <li><span>Lunes a Viernes</span><strong>09:30 a 19:30 hs</strong></li>
+              <li><span>Sábados</span><strong>09:30 a 18:00 hs</strong></li>
+              <li><span>Retiro de Pedidos Web</span><strong>Sin cargo en el acto</strong></li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20consultar%20por%20una%20prenda%20para%20pasar%20a%20probar" target="_blank" rel="noopener" class="btn btn-wa">💬 Escribir a la Tienda</a>
+          </div>
+        </div>
+        <div class="map-frame">
+          <iframe
+            title="Mapa de ubicación de Vértice Studio"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-56.2300%2C-34.7350%2C-56.2050%2C-34.7200&amp;layer=mapnik"
+            style="width:100%; height:100%; border:0; min-height:320px;"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Vértice Studio</strong> · Prototipo Demostrativo v1.0 (100% Estático &amp; Seguro)
+    </div>
+    <div>
+      Av. Principal 1234, Ciudad Ejemplo · Ventas / WA: 099 123 456
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/59899123456?text=Hola%20V%C3%A9rtice%20Studio!%20Quiero%20consultar%20stock%20de%20un%20talle" target="_blank" rel="noopener" class="wa-float" aria-label="Consultar por WhatsApp">
+  👗 Consultar Talle WA
+</a>
+
+<!-- ==========================================================================
+     [SECCIÓN 08: MOTOR JAVASCRIPT — TALLES/COLORES EN VIVO, MODAL Y TEMAS]
+     ========================================================================== -->
+<script>
+  // --- 8.1 CONFIGURACIÓN CENTRAL DEL COMERCIO (Cambiar aquí al pasar a cliente) ---
+  const CONFIG_COMERCIO = {
+    whatsapp: '59899123456',
+    nombre: 'Vértice Studio',
+    moneda: '$'
+  };
+
+  // --- 8.2 DICCIONARIO DE MODOS 3 EN 1 (Urbana / Boutique / Deportivo) ---
+  const THEME_CONFIG = {
+    urbana: {
+      mark: 'VS',
+      title: 'Vértice Studio',
+      sub: 'Indumentaria Urbana, Streetwear & Calzado',
+      eyebrow: '✨ Nueva Colección & Cápsula de Temporada',
+      headline: 'Elegí tu prenda, <em>seleccioná tu talle</em> y reservá en un clic.',
+      lead: 'Prendas con calce real, telas seleccionadas y stock actualizado. Tocá tu talle (<strong>S, M, L, XL</strong>) y color en cada tarjeta para enviarnos tu pedido listo por WhatsApp.'
+    },
+    boutique: {
+      mark: 'AB',
+      title: 'Aura Boutique',
+      sub: 'Moda Femenina, Sastrería & Eventos',
+      eyebrow: '👗 Colección Cápsula, Lino & Noche',
+      headline: 'Texturas nobles y <em>diseños que realzan</em> tu estilo propio.',
+      lead: 'Conjuntos sastreros, vestidos, blusas y abrigos seleccionados con asesoramiento personalizado de talle y color por WhatsApp.'
+    },
+    deportivo: {
+      mark: 'K1',
+      title: 'Kinetix Sport & Shoes',
+      sub: 'Indumentaria Deportiva, Running & Calzado',
+      eyebrow: '👟 Alto Rendimiento, Confort & Calzado Original',
+      headline: 'Equipate para entrenar o salir con <em>comodidad total</em>.',
+      lead: 'Calzas térmicas, camperas rompeviento, conjuntos deportivos y calzado urbano/running del 36 al 44. Consultá tu talle en segundos por WhatsApp.'
+    }
+  };
+
+  /**
+   * Construye y abre el enlace oficial de WhatsApp con el mensaje pre-armado.
+   * @param {string} detallePedido - Texto descriptivo de la prenda, talle y color.
+   */
+  function abrirWhatsApp(detallePedido) {
+    const mensaje = `Hola ${CONFIG_COMERCIO.nombre}! ${detallePedido}`;
+    const url = `https://wa.me/${CONFIG_COMERCIO.whatsapp}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
+  // --- 8.3 CAMBIO DE TEMA 3 EN 1 EN VIVO ---
+  document.querySelectorAll('[data-set-theme]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const theme = btn.getAttribute('data-set-theme');
+      document.documentElement.setAttribute('data-theme', theme);
+      document.querySelectorAll('[data-set-theme]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cfg = THEME_CONFIG[theme];
+      if (cfg) {
+        document.getElementById('brandMark').textContent = cfg.mark;
+        document.getElementById('brandTitle').textContent = cfg.title;
+        document.getElementById('brandSub').textContent = cfg.sub;
+        document.getElementById('heroEyebrow').textContent = cfg.eyebrow;
+        document.getElementById('heroHeadline').innerHTML = cfg.headline;
+        document.getElementById('heroLead').innerHTML = cfg.lead;
+        CONFIG_COMERCIO.nombre = cfg.title;
+      }
+    });
+  });
+
+  // --- 8.4 SELECTOR INTERACTIVO DE TALLE Y COLOR EN CADA TARJETA ---
+  document.querySelectorAll('.fashion-card').forEach(card => {
+    card.querySelectorAll('.s-chip').forEach(sBtn => {
+      sBtn.addEventListener('click', () => {
+        card.querySelectorAll('.s-chip').forEach(b => b.classList.remove('active'));
+        sBtn.classList.add('active');
+      });
+    });
+
+    card.querySelectorAll('.c-chip').forEach(cBtn => {
+      cBtn.addEventListener('click', () => {
+        card.querySelectorAll('.c-chip').forEach(b => b.classList.remove('active'));
+        cBtn.classList.add('active');
+      });
+    });
+
+    const buyBtn = card.querySelector('.btn-buy-variant');
+    if (buyBtn) {
+      buyBtn.addEventListener('click', () => {
+        const prenda = card.getAttribute('data-name');
+        const precio = card.getAttribute('data-price');
+        const talleEl = card.querySelector('.s-chip.active');
+        const colorEl = card.querySelector('.c-chip.active');
+        const talle = talleEl ? talleEl.getAttribute('data-val') : 'M';
+        const color = colorEl ? colorEl.getAttribute('data-val') : 'A elección';
+        abrirWhatsApp(`Quiero consultar stock / encargar:\n• Prenda: *${prenda}* (${precio})\n• Talle elegido: *${talle}*\n• Color: *${color}*`);
+      });
+    }
+  });
+
+  // --- 8.5 ASESOR RÁPIDO DEL HERO ---
+  document.getElementById('btnSendLook').addEventListener('click', () => {
+    const cat = document.getElementById('lkCategory').value;
+    const size = document.getElementById('lkSize').value;
+    const deliv = document.getElementById('lkDelivery').value;
+    abrirWhatsApp(`Busco asesoramiento en *${cat}* — Mi talle es *${size}* (${deliv}).`);
+  });
+
+  // --- 8.6 FILTRADO DEL CATÁLOGO DE MODA ---
+  document.querySelectorAll('#fashionFilters .filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#fashionFilters .filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+
+      document.querySelectorAll('#fashionGrid .fashion-card').forEach(card => {
+        const cat = card.getAttribute('data-cat');
+        card.style.display = (filter === 'todos' || cat === filter) ? 'flex' : 'none';
+      });
+    });
+  });
+
+  // --- 8.7 MODAL DE GUÍA DE TALLES ---
+  const sizeModal = document.getElementById('sizeModal');
+  function toggleModal(open) {
+    sizeModal.classList.toggle('open', open);
+  }
+  ['btnOpenSizeModalTop', 'btnOpenSizeModalHero', 'btnOpenSizeModalCatalog'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', () => toggleModal(true));
+  });
+  ['btnCloseSizeModal', 'btnCloseSizeModalBottom'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', () => toggleModal(false));
+  });
+  sizeModal.addEventListener('click', e => {
+    if (e.target === sizeModal) toggleModal(false);
+  });
+</script>
+</body>
+</html>

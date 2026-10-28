@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<!-- ===========================================================================
+  PROYECTO / RUBRO : Electrónica, Celulares, PC Gaming & Servicio Técnico (3 en 1)
+  VERSIÓN          : v1.0 (Estático HTML5 + CSS3 + JS Vanilla — Inmune a PHP)
+  TIPO             : PROTOTIPO DEMO ANÓNIMO (Catálogo Bluffer 23)
+  CONFIGURACIÓN RÁPIDA:
+    - Teléfono WhatsApp : Buscar constante CONFIG_COMERCIO en [SECCIÓN 08]
+    - Colores de Marca  : Buscar :root y [data-theme] en [SECCIÓN 02]
+    - Equipos y Precios : Buscar tarjetas .tech-card en [SECCIÓN 06]
+============================================================================ -->
+<html lang="es" data-theme="celulares">
+<head>
+<!-- ========================================================================
+     [SECCIÓN 01: CABECERA, META TAGS & SEO LOCAL]
+     ======================================================================== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexTech Digital | Celulares, Notebooks, Gaming & Servicio Técnico</title>
+<meta name="description" content="Tienda de tecnología, smartphones libres con garantía, notebooks, armado de PC Gamer, Plan Recambio y laboratorio de Servicio Técnico express con diagnóstico por WhatsApp.">
+<meta name="keywords" content="tienda de celulares, servicio tecnico celulares, reparacion pc, notebooks, plan recambio, electronica uruguay">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%230284c7%22/><text x=%2250%22 y=%2268%22 font-size=%2252%22 text-anchor=%22middle%22>📱</text></svg>">
+<meta name="theme-color" content="#0284c7">
+
+<meta property="og:title" content="NexTech Digital — Smartphones, PC & Servicio Técnico Express">
+<meta property="og:description" content="Equipos libres con garantía oficial, Plan Recambio de usados y simulador de presupuesto de reparación en vivo por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_UY">
+<meta property="og:site_name" content="NexTech Digital">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ==========================================================================
+     [SECCIÓN 02: VARIABLES CSS Y PALETAS DE TEMAS 3 EN 1 (:root / data-theme)]
+     Aquí se definen colores, gradientes multicapa (mesh), sombras y tipografías.
+     ========================================================================== */
+
+  /* MODO 1: TIENDA MOBILE, SMARTPHONES & PLAN RECAMBIO (Azul Cian Tech & Índigo) */
+  :root,
+  [data-theme="celulares"] {
+    --brand:      #0284c7;
+    --brand-d:    #0369a1;
+    --brand-l:    #e0f2fe;
+    --accent:     #6366f1;
+    --accent-l:   #e0e7ff;
+    --ink:        #0f172a;
+    --ink2:       #334155;
+    --ink3:       #64748b;
+    --bg:         #ffffff;
+    --surface:    #f8fafc;
+    --card-bg:    #ffffff;
+    --line:       #e2e8f0;
+    --header-bg:  rgba(255, 255, 255, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 14% 18%, rgba(2, 132, 199, 0.16), transparent 42%),
+      radial-gradient(circle at 86% 20%, rgba(99, 102, 241, 0.14), transparent 40%),
+      radial-gradient(circle at 50% 88%, rgba(14, 165, 233, 0.10), transparent 46%),
+      linear-gradient(135deg, #ffffff 0%, #f0f9ff 55%, #eef2ff 100%);
+    --radius:     18px;
+    --shadow:     0 12px 32px rgba(15, 23, 42, 0.06);
+    --sans:       'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --mono:       'JetBrains Mono', monospace;
+  }
+
+  /* MODO 2: INFORMÁTICA, NOTEBOOKS & PC GAMING (Violeta Neón & Cian) */
+  [data-theme="informatica"] {
+    --brand:      #7c3aed;
+    --brand-d:    #6d28d9;
+    --brand-l:    #ede9fe;
+    --accent:     #0891b2;
+    --accent-l:   #cffafe;
+    --ink:        #09090b;
+    --ink2:       #3f3f46;
+    --ink3:       #71717a;
+    --bg:         #ffffff;
+    --surface:    #faf5ff;
+    --card-bg:    #ffffff;
+    --line:       #e4e4e7;
+    --header-bg:  rgba(255, 255, 255, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 15% 20%, rgba(124, 58, 237, 0.16), transparent 44%),
+      radial-gradient(circle at 85% 24%, rgba(8, 145, 178, 0.14), transparent 40%),
+      linear-gradient(135deg, #ffffff 0%, #f5f3ff 55%, #ecfeff 100%);
+    --shadow:     0 12px 32px rgba(124, 58, 237, 0.07);
+  }
+
+  /* MODO 3: LABORATORIO & SERVICIO TÉCNICO EXPRESS (Esmeralda Precisión & Ámbar) */
+  [data-theme="tecnico"] {
+    --brand:      #059669;
+    --brand-d:    #047857;
+    --brand-l:    #d1fae5;
+    --accent:     #d97706;
+    --accent-l:   #fef3c7;
+    --ink:        #0f172a;
+    --ink2:       #334155;
+    --ink3:       #64748b;
+    --bg:         #ffffff;
+    --surface:    #f0fdf4;
+    --card-bg:    #ffffff;
+    --line:       #d1fae5;
+    --header-bg:  rgba(255, 255, 255, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 14% 20%, rgba(5, 150, 105, 0.15), transparent 44%),
+      radial-gradient(circle at 86% 24%, rgba(217, 119, 6, 0.12), transparent 40%),
+      linear-gradient(135deg, #ffffff 0%, #f0fdf4 55%, #fffbeb 100%);
+    --shadow:     0 12px 32px rgba(5, 150, 105, 0.07);
+  }
+
+  /* ==========================================================================
+     [SECCIÓN 03: ESTILOS BASE, BENTO GRID, SIMULADOR TÉCNICO Y RESPONSIVE]
+     ========================================================================== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  a { color: inherit; text-decoration: none; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  .container { width: min(1200px, 92%); margin-inline: auto; }
+
+  /* BARRA DE MODO 3 EN 1 */
+  .mode-switcher-bar {
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 0.55rem 0;
+    font-size: 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .mode-switcher-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 0.65rem;
+  }
+  .mode-label {
+    display: flex; align-items: center; gap: 0.45rem;
+    font-weight: 700; color: #38bdf8;
+  }
+  .mode-btns { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .mode-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.16);
+    color: #e2e8f0;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .mode-btn:hover { background: rgba(255,255,255,0.16); }
+  .mode-btn.active {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #ffffff;
+    box-shadow: 0 0 14px rgba(2, 132, 199, 0.45);
+  }
+
+  /* TOPBAR INFO */
+  .topbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: var(--ink2);
+    padding: 0.45rem 0;
+  }
+  .topbar-inner {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 0.5rem;
+  }
+  .topbar-items { display: flex; flex-wrap: wrap; gap: 1.15rem; align-items: center; }
+  .status-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #10b981; display: inline-block;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+  }
+
+  /* HEADER STICKY */
+  header {
+    position: sticky; top: 0; z-index: 60;
+    background: var(--header-bg);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.85rem 0; gap: 1rem;
+  }
+  .brand { display: flex; align-items: center; gap: 0.75rem; }
+  .brand-mark {
+    width: 44px; height: 44px; border-radius: 13px;
+    background: linear-gradient(135deg, var(--brand), var(--accent));
+    color: #fff; font-weight: 800; font-size: 1.15rem;
+    display: grid; place-items: center;
+    box-shadow: 0 8px 18px rgba(2, 132, 199, 0.22);
+  }
+  .brand-text strong { display: block; font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
+  .brand-text span { display: block; font-size: 0.74rem; color: var(--ink3); font-weight: 600; }
+  .nav-links { display: flex; align-items: center; gap: 1.35rem; font-size: 0.9rem; font-weight: 600; color: var(--ink2); }
+  .nav-links a:hover { color: var(--brand); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.68rem 1.2rem; border-radius: 999px;
+    font-weight: 700; font-size: 0.88rem; cursor: pointer;
+    border: 1px solid transparent; transition: all 0.2s;
+  }
+  .btn-primary {
+    background: var(--brand); color: #fff;
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.24);
+  }
+  .btn-primary:hover { background: var(--brand-d); transform: translateY(-1px); }
+  .btn-outline {
+    background: var(--card-bg); border-color: var(--line); color: var(--ink);
+  }
+  .btn-outline:hover { border-color: var(--brand); color: var(--brand); }
+  .btn-wa {
+    background: #16a34a; color: #fff;
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.24);
+  }
+  .btn-wa:hover { background: #15803d; transform: translateY(-1px); }
+
+  /* HERO PRINCIPAL */
+  .hero {
+    background: var(--hero-mesh);
+    padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.25rem; align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--brand-l); color: var(--brand-d);
+    padding: 0.35rem 0.9rem; border-radius: 999px;
+    font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 4.2vw, 3.25rem);
+    font-weight: 800; letter-spacing: -0.03em; line-height: 1.12;
+    margin-bottom: 1rem;
+  }
+  .hero h1 em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--brand), var(--accent));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: 1.04rem; color: var(--ink2); max-width: 580px; margin-bottom: 1.65rem;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1.85rem; }
+  .trust-badges {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;
+  }
+  .trust-item {
+    background: rgba(255,255,255,0.8);
+    border: 1px solid var(--line);
+    border-radius: 14px; padding: 0.75rem;
+  }
+  .trust-item strong { display: block; font-size: 0.86rem; font-weight: 800; }
+  .trust-item span { font-size: 0.75rem; color: var(--ink3); }
+
+  /* TARJETA DESTACADA HERO (OFERTA / LABORATORIO EN VIVO) */
+  .hero-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .hero-card-tag {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    background: var(--accent-l); color: var(--accent);
+    font-size: 0.74rem; font-weight: 800; padding: 0.28rem 0.7rem;
+    border-radius: 999px; margin-bottom: 0.85rem;
+  }
+  .hero-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .hero-card p { font-size: 0.88rem; color: var(--ink2); margin-bottom: 1rem; }
+  .spec-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.1rem; }
+  .spec-pill {
+    font-family: var(--mono); font-size: 0.74rem; font-weight: 700;
+    background: var(--surface); border: 1px solid var(--line);
+    padding: 0.3rem 0.65rem; border-radius: 8px; color: var(--ink2);
+  }
+  .hero-price-box {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 0.9rem 1rem; background: var(--surface);
+    border-radius: 14px; border: 1px solid var(--line); margin-bottom: 1rem;
+  }
+  .hero-price-box .price { font-size: 1.55rem; font-weight: 800; color: var(--brand); }
+  .hero-price-box .sub { font-size: 0.76rem; color: var(--ink3); font-weight: 600; }
+
+  /* SECCIONES GENERALES */
+  section { padding: clamp(3rem, 5vw, 4.5rem) 0; }
+  .sec-head {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;
+  }
+  .sec-eyebrow {
+    font-size: 0.76rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--brand); margin-bottom: 0.35rem;
+  }
+  .sec-head h2 { font-size: clamp(1.55rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; }
+  .sec-head p { color: var(--ink2); max-width: 560px; font-size: 0.95rem; }
+
+  /* FILTROS DEL CATÁLOGO */
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.75rem; }
+  .filter-btn {
+    padding: 0.5rem 1rem; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--card-bg);
+    font-size: 0.84rem; font-weight: 700; color: var(--ink2);
+    cursor: pointer; transition: all 0.2s;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--brand); color: #fff; border-color: var(--brand);
+  }
+
+  /* GRILLA DE PRODUCTOS TECH */
+  .catalog-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+    gap: 1.25rem;
+  }
+  .tech-card {
+    background: var(--card-bg); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 1.35rem;
+    display: flex; flex-direction: column; justify-content: space-between;
+    gap: 1rem; box-shadow: var(--shadow);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .tech-card:hover { transform: translateY(-3px); border-color: var(--brand); }
+  .tc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.65rem; }
+  .tc-icon {
+    width: 48px; height: 48px; border-radius: 14px;
+    background: var(--brand-l); color: var(--brand-d);
+    display: grid; place-items: center; font-size: 1.45rem;
+  }
+  .tc-badge {
+    font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
+    padding: 0.25rem 0.6rem; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--line); color: var(--ink2);
+  }
+  .tech-card h3 { font-size: 1.08rem; font-weight: 800; margin-top: 0.5rem; }
+  .tech-card p { font-size: 0.85rem; color: var(--ink2); margin-top: 0.25rem; }
+  .tc-specs {
+    display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.65rem;
+  }
+  .tc-specs span {
+    font-family: var(--mono); font-size: 0.72rem;
+    background: var(--surface); border: 1px solid var(--line);
+    padding: 0.2rem 0.5rem; border-radius: 6px; color: var(--ink2);
+  }
+  .variant-selector { margin-top: 0.8rem; }
+  .variant-selector label {
+    display: block; font-size: 0.74rem; font-weight: 700; color: var(--ink3); margin-bottom: 0.35rem;
+  }
+  .variant-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .v-pill {
+    padding: 0.28rem 0.65rem; border-radius: 8px;
+    border: 1px solid var(--line); background: var(--surface);
+    font-size: 0.75rem; font-weight: 700; cursor: pointer;
+  }
+  .v-pill.active {
+    background: var(--brand-l); border-color: var(--brand); color: var(--brand-d);
+  }
+  .tc-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 0.9rem; border-top: 1px dashed var(--line); gap: 0.75rem;
+  }
+  .tc-price { font-size: 1.25rem; font-weight: 800; color: var(--ink); }
+  .tc-price small { display: block; font-size: 0.7rem; color: var(--ink3); font-weight: 600; }
+
+  /* SIMULADOR INTERACTIVO DE SERVICIO TÉCNICO & PLAN RECAMBIO (NIVEL 4) */
+  .sim-section {
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .sim-grid {
+    display: grid; grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.75rem; align-items: start;
+  }
+  .sim-card {
+    background: var(--card-bg); border: 1px solid var(--line);
+    border-radius: 20px; padding: 1.6rem; box-shadow: var(--shadow);
+  }
+  .form-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.95rem; margin-bottom: 0.95rem;
+  }
+  .form-group { margin-bottom: 0.95rem; }
+  .form-group label {
+    display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--ink2);
+  }
+  .form-control {
+    width: 100%; padding: 0.7rem 0.9rem; border-radius: 12px;
+    border: 1px solid var(--line); background: var(--bg); font-size: 0.9rem;
+  }
+  .form-control:focus { outline: 2px solid var(--brand); border-color: transparent; }
+  .fault-chips {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    gap: 0.5rem; margin-top: 0.35rem;
+  }
+  .fault-chip {
+    padding: 0.6rem 0.75rem; border-radius: 12px;
+    border: 1px solid var(--line); background: var(--surface);
+    font-size: 0.8rem; font-weight: 700; text-align: left;
+    cursor: pointer; transition: all 0.18s;
+  }
+  .fault-chip.active {
+    background: var(--brand-l); border-color: var(--brand); color: var(--brand-d);
+  }
+  .sim-result {
+    background: linear-gradient(145deg, #0f172a, #1e293b);
+    color: #f8fafc; border-radius: 20px; padding: 1.65rem;
+    position: sticky; top: 90px;
+  }
+  .sim-result-badge {
+    display: inline-block; background: rgba(56, 189, 248, 0.16);
+    color: #38bdf8; font-size: 0.72rem; font-weight: 800;
+    padding: 0.25rem 0.65rem; border-radius: 999px; text-transform: uppercase;
+    margin-bottom: 0.85rem;
+  }
+  .sim-result h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .sim-metrics {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1.1rem 0;
+  }
+  .sim-metric {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px; padding: 0.85rem;
+  }
+  .sim-metric span { display: block; font-size: 0.72rem; color: #94a3b8; }
+  .sim-metric strong { font-size: 1.05rem; color: #38bdf8; font-weight: 800; }
+  .sim-summary-list {
+    list-style: none; font-size: 0.85rem; color: #cbd5e1;
+    border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.9rem; margin-bottom: 1.25rem;
+  }
+  .sim-summary-list li { margin-bottom: 0.4rem; }
+
+  /* UBICACIÓN Y FOOTER */
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch;
+  }
+  .info-card {
+    background: var(--card-bg); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 1.5rem;
+  }
+  .map-frame {
+    width: 100%; height: 100%; min-height: 290px;
+    border: 0; border-radius: var(--radius);
+  }
+  footer {
+    background: #0f172a; color: #94a3b8;
+    padding: 2.5rem 0; font-size: 0.85rem;
+  }
+  .wa-float {
+    position: fixed; right: 20px; bottom: 20px; z-index: 80;
+    background: #16a34a; color: #fff;
+    padding: 0.8rem 1.2rem; border-radius: 999px;
+    font-weight: 800; font-size: 0.88rem;
+    box-shadow: 0 12px 28px rgba(22, 163, 74, 0.38);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+
+  @media (max-width: 860px) {
+    .hero-grid, .sim-grid, .contact-grid, .form-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .trust-badges { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================================================
+     [SECCIÓN 04: BARRA INTERACTIVA 3 EN 1 Y NAVEGACIÓN PRINCIPAL]
+     ======================================================================== -->
+<div class="mode-switcher-bar">
+  <div class="container mode-switcher-inner">
+    <div class="mode-label">🎛️ DEMO ADAPTABLE 3 EN 1 (Probá los estilos del rubro):</div>
+    <div class="mode-btns">
+      <button type="button" class="mode-btn active" onclick="cambiarModoTech('celulares', this)">📱 1. Tienda Mobile & Plan Recambio</button>
+      <button type="button" class="mode-btn" onclick="cambiarModoTech('informatica', this)">💻 2. Notebooks & PC Gaming</button>
+      <button type="button" class="mode-btn" onclick="cambiarModoTech('tecnico', this)">🛠️ 3. Laboratorio & Servicio Técnico</button>
+    </div>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-items">
+      <span><i class="status-dot"></i> <strong>Local Abierto:</strong> Lun a Vie 09:30 a 19:00 · Sáb 09:30 a 14:00</span>
+      <span>📍 Av. Principal 1234, Ciudad Ejemplo</span>
+    </div>
+    <div>🛡️ Garantía escrita · Envíos en el día · <strong>WhatsApp: 099 123 456</strong></div>
+  </div>
+</div>
+
+<header>
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <div class="brand-mark" id="brandMark">NX</div>
+      <div class="brand-text">
+        <strong id="brandName">NexTech Digital</strong>
+        <span id="brandSub">Smartphones · Informática · Servicio Técnico</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#catalogo">Equipos & Accesorios</a>
+      <a href="#simulador">Cotizador Servicio Técnico / Recambio</a>
+      <a href="#ubicacion">Ubicación & Horarios</a>
+    </nav>
+    <button type="button" class="btn btn-wa" onclick="abrirWhatsApp('Hola! Quiero hacer una consulta sobre equipos o servicio técnico.')">
+      💬 Consultar por WhatsApp
+    </button>
+  </div>
+</header>
+
+<!-- ========================================================================
+     [SECCIÓN 05: HERO DINÁMICO Y TARJETA DESTACADA]
+     ======================================================================== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-badge" id="heroBadge">⚡ Equipos 100% Libres + Plan Recambio</span>
+      <h1 id="heroTitle">Tecnología con respaldo real y <em>cotización al instante</em> en tu celular.</h1>
+      <p id="heroDesc">Smartphones nuevos y seminuevos garantizados, notebooks listas para trabajar o jugar y laboratorio propio de reparación en el día.</p>
+      <div class="hero-actions">
+        <a href="#catalogo" class="btn btn-primary">Ver Catálogo & Precios</a>
+        <a href="#simulador" class="btn btn-outline">🛠️ Simular Arreglo o Plan Recambio</a>
+      </div>
+      <div class="trust-badges">
+        <div class="trust-item">
+          <strong>🛡️ Garantía Escrita</strong>
+          <span>Hasta 12 meses en equipos y 90 días en taller</span>
+        </div>
+        <div class="trust-item">
+          <strong>🔄 Plan Recambio</strong>
+          <span>Tomamos tu equipo usado como parte de pago</span>
+        </div>
+        <div class="trust-item">
+          <strong>⚡ Taller en el Día</strong>
+          <span>Cambio de pantalla y batería en 60–90 min</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <span class="hero-card-tag" id="heroOfferTag">🔥 Destacado de la Semana</span>
+      <h3 id="heroOfferTitle">iPhone 15 128GB (Libre de Fábrica)</h3>
+      <p id="heroOfferDesc">Disponible en Negro Espacial y Azul. Aceptamos tu iPhone o Samsung anterior en parte de pago.</p>
+      <div class="spec-pills" id="heroSpecs">
+        <span class="spec-pill">OLED 6.1"</span>
+        <span class="spec-pill">Chip A16 Bionic</span>
+        <span class="spec-pill">Cámara 48MP</span>
+        <span class="spec-pill">USB-C</span>
+      </div>
+      <div class="hero-price-box">
+        <div>
+          <div class="price" id="heroOfferPrice">USD 849</div>
+          <div class="sub" id="heroOfferSub">O desde USD 490 entregando tu usado</div>
+        </div>
+        <span style="font-size:0.76rem; font-weight:800; color:#16a34a;">● En Stock</span>
+      </div>
+      <button type="button" class="btn btn-primary" style="width:100%" onclick="consultarDestacadoHero()">
+        📲 Consultar Stock o Plan Recambio por WhatsApp
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     [SECCIÓN 06: CATÁLOGO INTERACTIVO CON SELECTOR DE CAPACIDAD/CONDICIÓN]
+     ======================================================================== -->
+<section id="catalogo">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow">Catálogo con Stock Real</div>
+        <h2>Equipos, Informáticas y Accesorios Originales</h2>
+      </div>
+      <p>Elegí la capacidad o versión en cada tarjeta y tocá el botón para consultar disponibilidad o reservar directo por WhatsApp.</p>
+    </div>
+
+    <div class="filter-bar">
+      <button type="button" class="filter-btn active" onclick="filtrarCatalogo('todos', this)">Todos (6)</button>
+      <button type="button" class="filter-btn" onclick="filtrarCatalogo('smartphones', this)">📱 Smartphones</button>
+      <button type="button" class="filter-btn" onclick="filtrarCatalogo('pc', this)">💻 Notebooks & Gaming</button>
+      <button type="button" class="filter-btn" onclick="filtrarCatalogo('accesorios', this)">🎧 Audio & Carga Rápida</button>
+    </div>
+
+    <div class="catalog-grid" id="catalogGrid">
+      <!-- Item 1 -->
+      <article class="tech-card" data-category="smartphones" data-name="iPhone 14 / 15 Series Libre" data-variant="128GB Nuevo Sellado" data-price="USD 749">
+        <div>
+          <div class="tc-top">
+            <div class="tc-icon">📱</div>
+            <span class="tc-badge">Apto Plan Recambio</span>
+          </div>
+          <h3>iPhone 14 / 15 Series Libre</h3>
+          <p>Equipos libres de fábrica con garantía escrita y film templado de regalo.</p>
+          <div class="tc-specs">
+            <span>5G</span><span>FaceID</span><span>Garantía 1 Año</span>
+          </div>
+          <div class="variant-selector">
+            <label>Elegí versión / capacidad:</label>
+            <div class="variant-pills">
+              <button type="button" class="v-pill active" onclick="seleccionarVariante(this, '128GB Nuevo Sellado', 'USD 749')">128GB Sellado</button>
+              <button type="button" class="v-pill" onclick="seleccionarVariante(this, '256GB Nuevo Sellado', 'USD 849')">256GB Sellado</button>
+              <button type="button" class="v-pill" onclick="seleccionarVariante(this, '128GB Seminuevo Tester (Bat 95%+)', 'USD 560')">Tester 95%+</button>
+            </div>
+          </div>
+        </div>
+        <div class="tc-foot">
+          <div class="tc-price"><span class="price-val">USD 749</span><small>Efectivo / Transferencia / Tarjetas</small></div>
+          <button type="button" class="btn btn-primary" onclick="pedirProductoCard(this)">Consultar →</button>
+        </div>
+      </article>
+
+      <!-- Item 2 -->
+      <article class="tech-card" data-category="smartphones" data-name="Samsung Galaxy Línea A55 / S24" data-variant="A55 5G 256GB" data-price="USD 429">
+        <div>
+          <div class="tc-top">
+            <div class="tc-icon">📲</div>
+            <span class="tc-badge">Homologado Antel</span>
+          </div>
+          <h3>Samsung Galaxy A55 5G / S24</h3>
+          <p>Pantalla Super AMOLED 120Hz, resistencia IP67 al agua y triple cámara con OIS.</p>
+          <div class="tc-specs">
+            <span>AMOLED 120Hz</span><span>8GB RAM</span><span>Dual SIM</span>
+          </div>
+          <div class="variant-selector">
+            <label>Elegí modelo:</label>
+            <div class="variant-pills">
+              <button type="button" class="v-pill active" onclick="seleccionarVariante(this, 'A55 5G 256GB', 'USD 429')">A55 256GB</button>
+              <button type="button" class="v-pill" onclick="seleccionarVariante(this, 'S24 FE 256GB', 'USD 689')">S24 FE 256GB</button>
+              <button type="button" class="v-pill" onclick="seleccionarVariante(this, 'A35 5G 128GB', 'USD 339')">A35 128GB</button>
+            </div>
+          </div>
+        </div>
+        <div class="tc-foot">
+          <div class="tc-price"><span class="price-val">USD 429</span><small>Garantía Oficial 12 meses</small></div>
+          <button type="button" class="btn btn-primary" onclick="pedirProductoCard(this)">Consultar →</button>
+        </div>
+      </article>
+
+      <!-- Item 3 -->
+      <article class="tech-card" data-category="smartphones" data-name="Xiaomi Redmi Note 13 Pro" data-variant="256GB + 8GB RAM" data-price="USD 319">
+        <div>
+          <div class="tc-top">
+            <div class="tc-icon">⚡</div>
+            <span class="tc-badge">Cargador 67W Incluido</span>
+          </div>
+          <h3>Xiaomi Redmi Note 13 Pro</h3>
+          <p>Cámara principal de 200MP, batería de 5100mAh y cargador turbo original en caja.</p>
+          <div class="tc-specs">
+            <span>Cámara 200MP</span><span>Turbo 67W</span><span>NFC</span>
+          </div>
+          <div class="variant-selector">
+            <label>Elegí configuración:</label>
+            <div class="variant-pills">
+              <button type="button" class="v-pill active" onclick="seleccionarVariante(this, '256GB + 8GB RAM', 'USD 319')">256GB / 8GB</button>
+              <button type="button" class="v-pill" onclick="seleccionarVariante(this, '512GB + 12GB RAM', 'USD 369')">512GB / 12GB</button>
+            </div>
+          </div>
+        </div>
+        <div class="tc-foot">
+          <div class="tc-price"><span class="price-val">USD 319</span><small>Entrega inmediata</small></div>
+          <button type="button" class="btn btn-primary" onclick="pedirProductoCard(this)">Consultar →</button>
+        </div>
+      </article>
+
+      <!-- Item 4 -->
+      <article class="tech-card" data-category="pc" data-name="Notebook Ultraliviana Estudio & Oficina" data-variant="Ryzen 5 / 16GB / SSD 512GB" data-price="USD 589">
+        <div>
+          <div class="tc-top">
+            <div class="tc-icon">💻</div>
+            <span class="tc-badge">Lista para Usar</span>
+          </div>
+          <h3>Notebook Estudio & Trabajo</h3>
+          <p>Pantalla 15.6" Full HD antirreflejo, disco sólido NVMe ultrarrápido y teclado en español.</p>
+          <div class="tc-specs">
+            <span>FHD 15.6"</span><span>SSD NVMe</span><span>Windows 11</span>
+          </div>
+          <div class="variant-selector">
+            <label>Elegí procesador / memoria:</label>
+            <div class="variant-pills">
+              <button type="button" class="v-pill active" onclick="seleccionarVariante(this, 'Ryzen 5 / 16GB / SSD 512GB', 'USD 589')">Ryzen 5 · 16GB</button>
+              <button type="button" class="v-pill" onclick="seleccionarVariante(this, 'Core i5 / 16GB / SSD 512GB', 'USD 619')">Core i5 · 16GB</button>
+              <button type="button" class="v-pill" onclick="seleccionarVariante(this, 'Core i3 / 8GB / SSD 256GB', 'USD 439')">Core i3 · 8GB</button>
+            </div>
+          </div>
+        </div>
+        <div class="tc-foot">
+          <div class="tc-price"><span class="price-val">USD 589</span><small>Con paquete inicial instalado</small></div>
+          <button type="button" class="btn btn-primary" onclick="pedirProductoCard(this)">Consultar →</button>
+        </div>
+      </article>
+
+      <!-- Item 5 -->
+      <article class="tech-card" data-category="pc" data-name="PC Gamer / Diseño Armada a Medida" data-variant="Ryzen 5 + RTX 4060 + 16GB" data-price="USD 980">
+        <div>
+          <div class="tc-top">
+            <div class="tc-icon">🎮</div>
+            <span class="tc-badge">Armado & Testeo Gratis</span>
+          </div>
+          <h3>PC Gamer & Diseño Profesional</h3>
+          <p>Gabinete con flujo de aire templado, fuente certificada 80+ Bronze y gráfica dedicada.</p>
+          <div class="tc-specs">
+            <span>16GB DDR4/DDR5</span><span>SSD 1TB</span><span>Fuente 80+</span>
+          </div>
+          <div class="variant-selector">
+            <label>Elegí nivel de armado:</label>
+            <div class="variant-pills">
+              <button type="button" class="v-pill" onclick="seleccionarVariante(this, 'Ryzen 5600G Gráficos Radeon', 'USD 495')">Entrada (5600G)</button>
+              <button type="button" class="v-pill active" onclick="seleccionarVariante(this, 'Ryzen 5 + RTX 4060 + 16GB', 'USD 980')">Full HD Ultra (RTX 4060)</button>
+              <button type="button" class="v-pill" onclick="seleccionarVariante(this, 'Core i7 + RTX 4070 + 32GB', 'USD 1.490')">Pro / 2K (RTX 4070)</button>
+            </div>
+          </div>
+        </div>
+        <div class="tc-foot">
+          <div class="tc-price"><span class="price-val">USD 980</span><small>Podés personalizar cada pieza</small></div>
+          <button type="button" class="btn btn-primary" onclick="pedirProductoCard(this)">Consultar →</button>
+        </div>
+      </article>
+
+      <!-- Item 6 -->
+      <article class="tech-card" data-category="accesorios" data-name="Kit Carga Rápida + Blindaje Hidrogel" data-variant="Cargador 20W/25W Original + Cable" data-price="$ 1.290">
+        <div>
+          <div class="tc-top">
+            <div class="tc-icon">🔌</div>
+            <span class="tc-badge">Colocación sin cargo</span>
+          </div>
+          <h3>Cargadores Originales, Audio & Blindaje</h3>
+          <p>Cabezales de carga rápida certificados para no dañar la batería de tu equipo, auriculares y láminas.</p>
+          <div class="tc-specs">
+            <span>USB-C PD</span><span>Magsafe</span><span>Garantía 6 Meses</span>
+          </div>
+          <div class="variant-selector">
+            <label>Elegí accesorio:</label>
+            <div class="variant-pills">
+              <button type="button" class="v-pill active" onclick="seleccionarVariante(this, 'Cargador 20W/25W Original + Cable', '$ 1.290')">Cargador 20W/25W</button>
+              <button type="button" class="v-pill" onclick="seleccionarVariante(this, 'Combo Funda Impacto + Hidrogel Mate', '$ 790')">Funda + Hidrogel</button>
+              <button type="button" class="v-pill" onclick="seleccionarVariante(this, 'Auriculares Bluetooth ANC In-Ear', '$ 1.690')">Auriculares ANC</button>
+            </div>
+          </div>
+        </div>
+        <div class="tc-foot">
+          <div class="tc-price"><span class="price-val">$ 1.290</span><small>Precios en Pesos Uruguayos</small></div>
+          <button type="button" class="btn btn-primary" onclick="pedirProductoCard(this)">Consultar →</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     [SECCIÓN 07: SIMULADOR DE SERVICIO TÉCNICO / RECAMBIO, MAPA Y FOOTER]
+     ======================================================================== -->
+<section id="simulador" class="sim-section">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow">Interactivo Nivel 4 · Diagnóstico Express</div>
+        <h2>Simulador de Servicio Técnico & Plan Recambio</h2>
+      </div>
+      <p>Seleccioná tu equipo y qué necesitás hacer para ver el tiempo estimado de laboratorio y enviar tu consulta lista al técnico por WhatsApp.</p>
+    </div>
+
+    <div class="sim-grid">
+      <div class="sim-card">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="simTipo">1. Tipo de Dispositivo</label>
+            <select id="simTipo" class="form-control" onchange="actualizarSimuladorTech()">
+              <option value="Celular / Smartphone">📱 Celular / Smartphone</option>
+              <option value="Notebook / PC">💻 Notebook / PC de Escritorio</option>
+              <option value="Consola (PS4 / PS5 / Switch)">🎮 Consola (PS4 / PS5 / Switch)</option>
+              <option value="iPad / Tablet">📟 iPad / Tablet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="simModelo">2. Marca y Modelo (Ej: iPhone 13, Samsung A54, Lenovo)</label>
+            <input type="text" id="simModelo" class="form-control" placeholder="Ej: iPhone 12 / Samsung A53 / Notebook HP" oninput="actualizarSimuladorTech()">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>3. ¿Qué falla presenta o qué gestión buscás?</label>
+          <div class="fault-chips" id="faultChips">
+            <button type="button" class="fault-chip active" data-fault="Cambio de Módulo / Pantalla" data-time="60 a 90 min (En el día)" data-warranty="90 días escrita" data-ref="Desde $ 1.890 UYU según modelo" onclick="elegirFallaTech(this)">📱 Pantalla rota / Sin imagen</button>
+            <button type="button" class="fault-chip" data-fault="Cambio de Batería Nueva" data-time="45 a 60 min (En el día)" data-warranty="90 días escrita" data-ref="Desde $ 1.390 UYU colocada" onclick="elegirFallaTech(this)">🔋 Batería dura poco / Se apaga</button>
+            <button type="button" class="fault-chip" data-fault="Pin de Carga / No carga" data-time="1 a 2 horas" data-warranty="90 días escrita" data-ref="Desde $ 990 UYU" onclick="elegirFallaTech(this)">🔌 Falso contacto / No carga</button>
+            <button type="button" class="fault-chip" data-fault="Mantenimiento + SSD / Formateo PC" data-time="En el día (3 a 4 hs)" data-warranty="180 días escrita" data-ref="Desde $ 1.200 UYU (+ SSD opcional)" onclick="elegirFallaTech(this)">💻 PC lenta / Limpieza térmica</button>
+            <button type="button" class="fault-chip" data-fault="Cotizar Plan Recambio (Entregar mi usado)" data-time="Tasación en 10 min en mostrador" data-warranty="Equipo nuevo con hasta 1 año" data-ref="Tomamos tu equipo al mejor valor" onclick="elegirFallaTech(this)">🔄 Plan Recambio (Entregar usado)</button>
+            <button type="button" class="fault-chip" data-fault="Equipo mojado / No enciende (Placa)" data-time="Diagnóstico en 24 hs" data-warranty="90 días sobre reparación" data-ref="Presupuesto sin cargo en taller" onclick="elegirFallaTech(this)">💧 Se mojó / No enciende</button>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:1rem;">
+          <label for="simNotas">4. Detalles adicionales (Opcional: color, estado de batería o consulta)</label>
+          <input type="text" id="simNotas" class="form-control" placeholder="Ej: Anda el táctil pero tiene el vidrio astillado / Quiero pasar a un iPhone 15..." oninput="actualizarSimuladorTech()">
+        </div>
+      </div>
+
+      <aside class="sim-result">
+        <span class="sim-result-badge">⚡ Estimación en Vivo de Laboratorio</span>
+        <h3 id="resFallaTitulo">Cambio de Módulo / Pantalla</h3>
+        <p style="font-size:0.85rem; color:#cbd5e1;" id="resEquipoSub">Dispositivo: Celular / Smartphone (Modelo a confirmar)</p>
+
+        <div class="sim-metrics">
+          <div class="sim-metric">
+            <span>⏱️ Tiempo estimado</span>
+            <strong id="resTiempo">60 a 90 min (En el día)</strong>
+          </div>
+          <div class="sim-metric">
+            <span>🛡️ Garantía de Taller</span>
+            <strong id="resGarantia">90 días escrita</strong>
+          </div>
+        </div>
+
+        <ul class="sim-summary-list">
+          <li>💵 <strong>Referencia:</strong> <span id="resReferencia">Desde $ 1.890 UYU según modelo</span></li>
+          <li>🔒 <strong>Privacidad de datos:</strong> No borramos tu información en cambios de pantalla o batería.</li>
+          <li>✅ Revisión inicial en mostrador sin costo.</li>
+        </ul>
+
+        <button type="button" class="btn btn-wa" style="width:100%" onclick="enviarDiagnosticoWA()">
+          💬 Enviar Diagnóstico al Técnico por WhatsApp
+        </button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="ubicacion">
+  <div class="container contact-grid">
+    <div class="info-card">
+      <div class="sec-eyebrow">Visitanos o Pedí Envío</div>
+      <h2 style="font-size:1.6rem; font-weight:800; margin-bottom:0.75rem;">Showroom & Laboratorio Técnico</h2>
+      <p style="color:var(--ink2); font-size:0.92rem; margin-bottom:1.15rem;">Estacionamiento cómodo en la cuadra. Recibimos equipos del interior por DAC / Correo Uruguayo y despachamos en el día.</p>
+      <p style="margin-bottom:0.5rem;"><strong>📍 Dirección:</strong> Av. Principal 1234, Ciudad Ejemplo, Uruguay</p>
+      <p style="margin-bottom:0.5rem;"><strong>🕒 Horarios:</strong> Lunes a Viernes de 09:30 a 19:00 hs · Sábados de 09:30 a 14:00 hs</p>
+      <p style="margin-bottom:1.25rem;"><strong>💳 Medios de pago:</strong> Efectivo, Transferencia BROU/Itaú/Santander, Prex, Mercado Pago y Tarjetas hasta 12 cuotas.</p>
+      <button type="button" class="btn btn-primary" onclick="abrirWhatsApp('Hola! Quiero consultar la ubicación del local y si tienen disponible...')">
+        📲 Escribir al Mostrador (099 123 456)
+      </button>
+    </div>
+    <div>
+      <iframe class="map-frame" loading="lazy" title="Mapa de ubicación del local de electrónica" src="https://www.openstreetmap.org/export/embed.html?bbox=-56.22%2C-34.74%2C-56.18%2C-34.71&amp;layer=mapnik"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+    <div><strong>NexTech Digital</strong> — Prototipo Demostrativo Nivel 4 (Inmune a PHP · 100% Estático)</div>
+    <div>Catálogo Bluffer 23 · Datos de demostración (`099 123 456`)</div>
+  </div>
+</footer>
+
+<a href="javascript:void(0)" class="wa-float" onclick="abrirWhatsApp('Hola! Vi la web de electrónica y quiero consultar por...')">
+  💬 WhatsApp Técnico & Ventas
+</a>
+
+<!-- ========================================================================
+     [SECCIÓN 08: MOTOR JAVASCRIPT — CONFIGURACIÓN, 3 EN 1, SIMULADOR Y WA]
+     ======================================================================== -->
+<script>
+  // --- 8.1 CONFIGURACIÓN CENTRAL DEL COMERCIO (Cambiar aquí al pasar a cliente) ---
+  const CONFIG_COMERCIO = {
+    whatsapp: '59899123456',
+    nombre: 'NexTech Digital',
+    moneda: 'USD / $'
+  };
+
+  // --- 8.2 DATOS DE LOS 3 MODOS DEL RUBRO (3 EN 1) ---
+  const MODOS_TECH = {
+    celulares: {
+      mark: 'NX',
+      name: 'NexTech Mobile',
+      sub: 'Smartphones Libres · Plan Recambio · Accesorios',
+      badge: '⚡ Equipos 100% Libres + Plan Recambio',
+      title: 'Tecnología con respaldo real y <em>cotización al instante</em> en tu celular.',
+      desc: 'Smartphones nuevos y seminuevos garantizados, toma de usados al mejor valor y accesorios originales de carga rápida.',
+      offerTag: '🔥 Destacado Plan Recambio',
+      offerTitle: 'iPhone 15 128GB (Libre de Fábrica)',
+      offerDesc: 'Disponible en Negro Espacial y Azul. Aceptamos tu iPhone o Samsung anterior en parte de pago.',
+      offerPrice: 'USD 849',
+      offerSub: 'O desde USD 490 entregando tu usado'
+    },
+    informatica: {
+      mark: 'PC',
+      name: 'Vórtex PC & Gaming',
+      sub: 'Notebooks · Armado de PC Gamer · Monitores',
+      badge: '🎮 Armado a Medida & Notebooks Profesionales',
+      title: 'Potencia real para <em>trabajar, estudiar o jugar</em> al máximo.',
+      desc: 'Notebooks listas para usar en el día, armado de PC Gamer con componentes de primeras marcas y actualización de discos SSD / RAM.',
+      offerTag: '💻 Combo Gamer Destacado',
+      offerTitle: 'PC Gamer Ryzen 5 + RTX 4060 8GB',
+      offerDesc: '16GB RAM, SSD 1TB NVMe, fuente 650W 80+ Bronze y gabinete templado ARGB.',
+      offerPrice: 'USD 980',
+      offerSub: 'Armada, testeada y con 1 año de garantía'
+    },
+    tecnico: {
+      mark: 'ST',
+      name: 'LabTech Servicio Técnico',
+      sub: 'Microelectrónica · Pantallas en el Día · Baterías',
+      badge: '🛠️ Laboratorio Propio · Reparación en 60 Minutos',
+      title: 'Tu celular o notebook <em>como nuevo hoy mismo</em> y con garantía escrita.',
+      desc: 'Cambio de módulos y pantallas en el día, baterías certificadas, pines de carga, limpieza térmica de consolas y notebooks.',
+      offerTag: '⚡ Promo Laboratorio en el Día',
+      offerTitle: 'Cambio de Batería + Limpieza de Pin',
+      offerDesc: 'Recuperá el 100% de autonomía de tu celular en menos de 1 hora sin perder tus fotos ni datos.',
+      offerPrice: '$ 1.390',
+      offerSub: 'Incluye garantía escrita por 90 días'
+    }
+  };
+
+  /**
+   * Construye y abre el enlace oficial de WhatsApp con el mensaje pre-armado.
+   * @param {string} detallePedido - Texto descriptivo del equipo o diagnóstico.
+   */
+  function abrirWhatsApp(detallePedido) {
+    const mensaje = `Hola ${CONFIG_COMERCIO.nombre}! ${detallePedido}`;
+    const url = `https://wa.me/${CONFIG_COMERCIO.whatsapp}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
+  /**
+   * Cambia el tema visual y textos principales entre Mobile, Informática y Servicio Técnico.
+   */
+  function cambiarModoTech(modo, btnEl) {
+    const data = MODOS_TECH[modo];
+    if (!data) return;
+    document.documentElement.setAttribute('data-theme', modo);
+    document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+    if (btnEl) btnEl.classList.add('active');
+
+    CONFIG_COMERCIO.nombre = data.name;
+    document.getElementById('brandMark').textContent = data.mark;
+    document.getElementById('brandName').textContent = data.name;
+    document.getElementById('brandSub').textContent = data.sub;
+    document.getElementById('heroBadge').textContent = data.badge;
+    document.getElementById('heroTitle').innerHTML = data.title;
+    document.getElementById('heroDesc').textContent = data.desc;
+    document.getElementById('heroOfferTag').textContent = data.offerTag;
+    document.getElementById('heroOfferTitle').textContent = data.offerTitle;
+    document.getElementById('heroOfferDesc').textContent = data.offerDesc;
+    document.getElementById('heroOfferPrice').textContent = data.offerPrice;
+    document.getElementById('heroOfferSub').textContent = data.offerSub;
+  }
+
+  /**
+   * Envía consulta por el producto destacado del Hero.
+   */
+  function consultarDestacadoHero() {
+    const titulo = document.getElementById('heroOfferTitle').textContent;
+    const precio = document.getElementById('heroOfferPrice').textContent;
+    abrirWhatsApp(`Quiero consultar disponibilidad por el destacado: *${titulo}* (${precio}).`);
+  }
+
+  /**
+   * Filtra las tarjetas del catálogo por categoría.
+   */
+  function filtrarCatalogo(cat, btnEl) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    if (btnEl) btnEl.classList.add('active');
+    document.querySelectorAll('.tech-card').forEach(card => {
+      const match = (cat === 'todos' || card.dataset.category === cat);
+      card.style.display = match ? 'flex' : 'none';
+    });
+  }
+
+  /**
+   * Actualiza la capacidad/versión y el precio en vivo dentro de una tarjeta del catálogo.
+   */
+  function seleccionarVariante(pillEl, variante, precio) {
+    const card = pillEl.closest('.tech-card');
+    card.querySelectorAll('.v-pill').forEach(p => p.classList.remove('active'));
+    pillEl.classList.add('active');
+    card.dataset.variant = variante;
+    card.dataset.price = precio;
+    card.querySelector('.price-val').textContent = precio;
+  }
+
+  /**
+   * Arma el mensaje de WhatsApp con el producto y la variante elegida en la tarjeta.
+   */
+  function pedirProductoCard(btnEl) {
+    const card = btnEl.closest('.tech-card');
+    const nombre = card.dataset.name;
+    const variante = card.dataset.variant;
+    const precio = card.dataset.price;
+    abrirWhatsApp(`Me interesa consultar por: *${nombre}* — Versión: *${variante}* (${precio}). ¿Tienen stock disponible?`);
+  }
+
+  // --- 8.3 LÓGICA DEL SIMULADOR DE SERVICIO TÉCNICO & PLAN RECAMBIO ---
+  let fallaSeleccionada = {
+    fault: 'Cambio de Módulo / Pantalla',
+    time: '60 a 90 min (En el día)',
+    warranty: '90 días escrita',
+    ref: 'Desde $ 1.890 UYU según modelo'
+  };
+
+  function elegirFallaTech(chipEl) {
+    document.querySelectorAll('.fault-chip').forEach(c => c.classList.remove('active'));
+    chipEl.classList.add('active');
+    fallaSeleccionada = {
+      fault: chipEl.dataset.fault,
+      time: chipEl.dataset.time,
+      warranty: chipEl.dataset.warranty,
+      ref: chipEl.dataset.ref
+    };
+    actualizarSimuladorTech();
+  }
+
+  function actualizarSimuladorTech() {
+    const tipo = document.getElementById('simTipo').value;
+    const modelo = document.getElementById('simModelo').value.trim() || 'Modelo a confirmar';
+    document.getElementById('resFallaTitulo').textContent = fallaSeleccionada.fault;
+    document.getElementById('resEquipoSub').textContent = `Dispositivo: ${tipo} (${modelo})`;
+    document.getElementById('resTiempo').textContent = fallaSeleccionada.time;
+    document.getElementById('resGarantia').textContent = fallaSeleccionada.warranty;
+    document.getElementById('resReferencia').textContent = fallaSeleccionada.ref;
+  }
+
+  function enviarDiagnosticoWA() {
+    const tipo = document.getElementById('simTipo').value;
+    const modelo = document.getElementById('simModelo').value.trim() || 'A confirmar';
+    const notas = document.getElementById('simNotas').value.trim();
+    let detalle = `Quiero cotizar en Servicio Técnico / Recambio:\n` +
+      `• *Dispositivo:* ${tipo}\n` +
+      `• *Marca/Modelo:* ${modelo}\n` +
+      `• *Solicitud:* ${fallaSeleccionada.fault}\n` +
+      `• *Tiempo estimado visto en web:* ${fallaSeleccionada.time}`;
+    if (notas) {
+      detalle += `\n• *Detalle adicional:* ${notas}`;
+    }
+    abrirWhatsApp(detalle);
+  }
+</script>
+</body>
+</html>

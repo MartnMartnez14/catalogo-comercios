@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<!-- ===========================================================================
+  PROYECTO / RUBRO : Cafetería de Especialidad, Casa de Té & Brunch (3 en 1)
+  VERSIÓN          : v1.0 (Estático HTML5 + CSS3 + JS Vanilla — Inmune a PHP)
+  TIPO             : PROTOTIPO DEMO ANÓNIMO (Catálogo Bluffer 23)
+  CONFIGURACIÓN RÁPIDA:
+    - Teléfono WhatsApp : Buscar constante CONFIG_COMERCIO en [SECCIÓN 08]
+    - Colores de Marca  : Buscar :root y [data-theme] en [SECCIÓN 02]
+    - Carta y Precios   : Buscar tarjetas .menu-card en [SECCIÓN 06]
+============================================================================ -->
+<html lang="es" data-theme="especialidad">
+<head>
+<!-- ========================================================================
+     [SECCIÓN 01: CABECERA, META TAGS & SEO LOCAL]
+     ======================================================================== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aura Café | Cafetería de Especialidad, Brunch & Pastelería Artesanal</title>
+<meta name="description" content="Café de especialidad recién tostado, brunch todo el día, pastelería artesanal y opciones Sin TACC y Veganas. Reservá tu mesa o pedí Take Away sin fila por WhatsApp.">
+<meta name="keywords" content="cafetería de especialidad, brunch, casa de té, pastelería artesanal, sin tacc, vegano, take away whatsapp, uruguay">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%2392400e%22/><text x=%2250%22 y=%2268%22 font-size=%2252%22 text-anchor=%22middle%22>☕</text></svg>">
+<meta name="theme-color" content="#92400e">
+
+<meta property="og:title" content="Aura Café — Especialidad, Brunch & Pastelería de Autor">
+<meta property="og:description" content="Descubrí nuestra carta digital con opciones Sin TACC y Veganas, combos de merienda y reserva de mesa o Take Away por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_UY">
+<meta property="og:site_name" content="Aura Café">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+<style>
+  /* ==========================================================================
+     [SECCIÓN 02: VARIABLES CSS Y PALETAS DE TEMAS 3 EN 1 (:root / data-theme)]
+     Aquí se definen colores, gradientes multicapa (mesh), sombras y tipografías.
+     ========================================================================== */
+
+  /* MODO 1: CAFÉ DE ESPECIALIDAD & TOSTADURÍA (Espresso, Caramelo & Crema Cálida) */
+  :root,
+  [data-theme="especialidad"] {
+    --brand:      #92400e;
+    --brand-d:    #78350f;
+    --brand-l:    #fef3c7;
+    --accent:     #0d9488;
+    --accent-l:   #ccfbf1;
+    --ink:        #1c1917;
+    --ink2:       #57534e;
+    --ink3:       #78716c;
+    --bg:         #fffdf9;
+    --surface:    #faf5ee;
+    --card-bg:    #ffffff;
+    --line:       #e7e0d6;
+    --header-bg:  rgba(255, 253, 249, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 12% 18%, rgba(217, 119, 6, 0.16), transparent 42%),
+      radial-gradient(circle at 86% 22%, rgba(13, 148, 136, 0.12), transparent 38%),
+      radial-gradient(circle at 50% 88%, rgba(146, 64, 14, 0.09), transparent 46%),
+      linear-gradient(135deg, #fffdf9 0%, #fef7ed 55%, #f5ebe1 100%);
+    --radius:     18px;
+    --shadow:     0 12px 32px rgba(28, 25, 23, 0.06);
+    --sans:       'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --serif:      'Playfair Display', Georgia, serif;
+  }
+
+  /* MODO 2: CASA DE TÉ, PASTELERÍA & BRUNCH (Matcha Salvia, Frambuesa & Marfil) */
+  [data-theme="brunch"] {
+    --brand:      #0f766e;
+    --brand-d:    #115e59;
+    --brand-l:    #ccfbf1;
+    --accent:     #e11d48;
+    --accent-l:   #ffe4e6;
+    --ink:        #1e293b;
+    --ink2:       #475569;
+    --ink3:       #64748b;
+    --bg:         #ffffff;
+    --surface:    #f8faf9;
+    --card-bg:    #ffffff;
+    --line:       #e2e8f0;
+    --header-bg:  rgba(255, 255, 255, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 15% 20%, rgba(15, 118, 110, 0.14), transparent 45%),
+      radial-gradient(circle at 85% 25%, rgba(225, 29, 72, 0.12), transparent 40%),
+      linear-gradient(135deg, #ffffff 0%, #f0fdfa 55%, #fff1f2 100%);
+    --shadow:     0 12px 32px rgba(15, 23, 42, 0.06);
+  }
+
+  /* MODO 3: CAFÉ RESTÓ & VERMUTERÍA NOCTURNA (Oscuro Carbón, Ámbar Dorado & Cobre) */
+  [data-theme="nocturno"] {
+    --brand:      #f59e0b;
+    --brand-d:    #d97706;
+    --brand-l:    rgba(245, 158, 11, 0.16);
+    --accent:     #fb7185;
+    --accent-l:   rgba(251, 113, 133, 0.18);
+    --ink:        #fafaf9;
+    --ink2:       #d6d3d1;
+    --ink3:       #a8a29e;
+    --bg:         #141210;
+    --surface:    #1f1c18;
+    --card-bg:    #26221e;
+    --line:       #38322c;
+    --header-bg:  rgba(20, 18, 16, 0.94);
+    --hero-mesh:
+      radial-gradient(circle at 15% 20%, rgba(245, 158, 11, 0.18), transparent 42%),
+      radial-gradient(circle at 85% 22%, rgba(251, 113, 133, 0.14), transparent 38%),
+      linear-gradient(135deg, #141210 0%, #1c1917 60%, #26221e 100%);
+    --shadow:     0 14px 36px rgba(0, 0, 0, 0.42);
+  }
+
+  /* ==========================================================================
+     [SECCIÓN 03: ESTILOS DE COMPONENTES (HEADER, HERO, BENTO GRID, CARTA)]
+     Estilos visuales reutilizables y reglas de adaptación móvil (@media).
+     ========================================================================== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 135px; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  button, input, select { font: inherit; }
+
+  .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2.25rem); }
+
+  /* BARRA SELECTORA DE MODO DEMO 3 EN 1 */
+  .theme-switcher-bar {
+    background: #1c1917;
+    color: #f5f5f4;
+    padding: 0.5rem 0;
+    font-size: 0.78rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+  }
+  .theme-switcher-inner {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+  .ts-label {
+    display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: #fcd34d;
+  }
+  .ts-buttons { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .ts-btn {
+    background: rgba(255,255,255,0.08);
+    color: #e7e5e4;
+    border: 1px solid rgba(255,255,255,0.14);
+    padding: 0.26rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .ts-btn:hover { background: rgba(255,255,255,0.16); }
+  .ts-btn.active {
+    background: #f59e0b;
+    color: #1c1917;
+    border-color: #f59e0b;
+  }
+
+  /* TOPBAR INFORMATIVA */
+  .topbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    font-size: 0.8rem;
+    color: var(--ink2);
+    padding: 0.45rem 0;
+  }
+  .topbar-inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;
+  }
+  .topbar-badges { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .topbar-badge { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
+
+  /* HEADER STICKY */
+  header.site-header {
+    position: sticky;
+    top: 39px;
+    z-index: 1000;
+    background: var(--header-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 1rem;
+  }
+  .brand { display: flex; align-items: center; gap: 0.75rem; }
+  .brand-mark {
+    width: 44px; height: 44px; border-radius: 13px;
+    background: var(--brand); color: #ffffff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.25rem;
+    box-shadow: 0 6px 16px rgba(146, 64, 14, 0.22);
+  }
+  .brand-text strong { display: block; font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .brand-text span { font-size: 0.74rem; color: var(--ink3); font-weight: 600; }
+
+  .nav-links { display: flex; align-items: center; gap: 1.5rem; font-size: 0.9rem; font-weight: 600; color: var(--ink2); }
+  .nav-links a:hover { color: var(--brand); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 0.68rem 1.25rem; border-radius: 100px; font-weight: 700; font-size: 0.88rem;
+    border: 1px solid transparent; cursor: pointer; transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--brand); color: #ffffff; box-shadow: 0 8px 20px rgba(146, 64, 14, 0.22); }
+  .btn-primary:hover { background: var(--brand-d); }
+  .btn-wa { background: #16a34a; color: #ffffff; box-shadow: 0 8px 20px rgba(22, 163, 74, 0.25); }
+  .btn-wa:hover { background: #15803d; }
+  .btn-outline { background: transparent; border-color: var(--line); color: var(--ink); }
+  .btn-outline:hover { border-color: var(--brand); color: var(--brand); }
+
+  /* HERO DINÁMICO */
+  .hero {
+    background: var(--hero-mesh);
+    padding: clamp(2.5rem, 6vw, 4.75rem) 0;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(1.75rem, 4vw, 3rem);
+    align-items: center;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--brand-l); color: var(--brand);
+    padding: 0.35rem 0.9rem; border-radius: 100px;
+    font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.15rem, 4.5vw, 3.45rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .hero h1 em { color: var(--brand); font-style: italic; }
+  .hero p.lead {
+    font-size: clamp(1rem, 1.4vw, 1.12rem);
+    color: var(--ink2);
+    max-width: 580px;
+    margin-bottom: 1.65rem;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2rem; }
+  .trust-row {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem;
+    padding-top: 1.35rem; border-top: 1px solid var(--line);
+  }
+  .trust-item strong { display: block; font-size: 1rem; font-weight: 800; color: var(--ink); }
+  .trust-item span { font-size: 0.78rem; color: var(--ink3); }
+
+  /* TARJETA INTERACTIVA DE RESERVA / TAKE AWAY EN HERO */
+  .booking-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) + 4px);
+    padding: clamp(1.35rem, 3vw, 1.85rem);
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .booking-badge {
+    position: absolute; top: -12px; right: 20px;
+    background: var(--accent); color: #ffffff;
+    font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
+    padding: 0.28rem 0.8rem; border-radius: 100px; letter-spacing: 0.05em;
+  }
+  .booking-card h2 { font-size: 1.25rem; font-weight: 800; margin-bottom: 0.25rem; }
+  .booking-card > p { font-size: 0.84rem; color: var(--ink2); margin-bottom: 1.1rem; }
+  .form-group { margin-bottom: 0.9rem; }
+  .form-group label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--ink2); margin-bottom: 0.35rem; }
+  .form-control {
+    width: 100%; padding: 0.65rem 0.85rem; border-radius: 12px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    font-size: 0.88rem; font-weight: 500;
+  }
+  .mode-pills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.45rem; }
+  .mode-pill {
+    padding: 0.5rem 0.4rem; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--ink2); font-size: 0.76rem; font-weight: 700;
+    cursor: pointer; text-align: center; transition: all 0.18s;
+  }
+  .mode-pill.active {
+    background: var(--brand-l); border-color: var(--brand); color: var(--brand);
+  }
+
+  /* SECCIONES GENERALES */
+  section { padding: clamp(3rem, 6vw, 4.75rem) 0; }
+  .section-alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .sec-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;
+  }
+  .sec-header h2 { font-family: var(--serif); font-size: clamp(1.65rem, 3vw, 2.35rem); line-height: 1.15; }
+  .sec-header p { color: var(--ink2); max-width: 500px; font-size: 0.94rem; }
+
+  /* CONTROLES DE CARTA DIGITAL (PESTAÑAS + ETIQUETAS DIETARIAS) */
+  .menu-controls {
+    display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.85rem;
+  }
+  .tab-bar, .diet-bar {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;
+  }
+  .tab-btn {
+    padding: 0.55rem 1.05rem; border-radius: 100px;
+    border: 1px solid var(--line); background: var(--card-bg); color: var(--ink2);
+    font-size: 0.84rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+  }
+  .tab-btn.active, .tab-btn:hover {
+    background: var(--brand); color: #ffffff; border-color: var(--brand);
+  }
+  .diet-label { font-size: 0.78rem; font-weight: 700; color: var(--ink3); margin-right: 0.25rem; }
+  .diet-chip {
+    padding: 0.35rem 0.8rem; border-radius: 100px;
+    border: 1px dashed var(--line); background: var(--surface); color: var(--ink2);
+    font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+  }
+  .diet-chip.active {
+    background: var(--accent-l); color: var(--accent); border: 1px solid var(--accent);
+  }
+
+  /* GRILLA DE CARTA DIGITAL */
+  .menu-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.25rem;
+  }
+  .menu-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.35rem;
+    display: flex; flex-direction: column; justify-content: space-between; gap: 1rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .menu-card:hover { transform: translateY(-4px); border-color: var(--brand); }
+  .menu-card.featured {
+    border: 2px solid var(--brand);
+    background: linear-gradient(180deg, var(--brand-l) 0%, var(--card-bg) 38%);
+  }
+  .mc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
+  .mc-emoji {
+    width: 48px; height: 48px; border-radius: 14px;
+    background: var(--surface); border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center; font-size: 1.55rem;
+  }
+  .mc-badges { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: flex-end; }
+  .badge-diet {
+    font-size: 0.68rem; font-weight: 800; padding: 0.2rem 0.55rem; border-radius: 100px;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .b-sintacc { background: #fef3c7; color: #92400e; }
+  .b-vegano { background: #dcfce7; color: #166534; }
+  .b-sinlactosa { background: #e0f2fe; color: #075985; }
+  .b-star { background: var(--brand); color: #ffffff; }
+
+  .menu-card h3 { font-size: 1.08rem; font-weight: 800; margin-top: 0.65rem; }
+  .menu-card p { font-size: 0.85rem; color: var(--ink2); margin-top: 0.3rem; }
+  .mc-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 0.9rem; border-top: 1px dashed var(--line); gap: 0.75rem;
+  }
+  .mc-price { font-size: 0.76rem; color: var(--ink3); }
+  .mc-price strong { display: block; font-size: 1.2rem; font-weight: 800; color: var(--ink); }
+
+  /* BENTO GRID DE EXPERIENCIA (COWORK, PET FRIENDLY, CAFÉ EN GRANO) */
+  .bento-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+  }
+  .bento-item {
+    background: var(--card-bg); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .bento-item.span-2 { grid-column: span 2; }
+  .bento-icon { font-size: 1.8rem; margin-bottom: 0.65rem; }
+  .bento-item h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .bento-item p { font-size: 0.88rem; color: var(--ink2); }
+
+  /* FAQ ACORDEÓN */
+  .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
+  details.faq-item {
+    background: var(--card-bg); border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.25rem;
+  }
+  details.faq-item summary {
+    font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  }
+  details.faq-item p { margin-top: 0.65rem; font-size: 0.88rem; color: var(--ink2); }
+
+  /* UBICACIÓN Y HORARIOS */
+  .loc-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 1.5rem; align-items: stretch; }
+  .loc-card {
+    background: var(--card-bg); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 1.65rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1.25rem;
+  }
+  .hours-list li {
+    display: flex; justify-content: space-between; padding: 0.55rem 0;
+    border-bottom: 1px dashed var(--line); font-size: 0.88rem;
+  }
+  .map-frame {
+    width: 100%; min-height: 320px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  }
+
+  /* FOOTER Y BOTÓN FLOTANTE */
+  footer.site-footer {
+    background: #141210; color: #d6d3d1; padding: 2.5rem 0; font-size: 0.84rem;
+  }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .wa-float {
+    position: fixed; bottom: 22px; right: 22px; z-index: 999;
+    background: #16a34a; color: #ffffff;
+    padding: 0.8rem 1.25rem; border-radius: 100px;
+    font-weight: 800; font-size: 0.88rem;
+    box-shadow: 0 10px 26px rgba(22, 163, 74, 0.4);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid, .loc-grid, .bento-grid { grid-template-columns: 1fr; }
+    .bento-item.span-2 { grid-column: span 1; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================================================
+     [SECCIÓN 04: BARRA SUPERIOR, SELECTOR 3 EN 1 Y NAVEGACIÓN PRINCIPAL]
+     ======================================================================== -->
+<div class="theme-switcher-bar">
+  <div class="container theme-switcher-inner">
+    <span class="ts-label">🎨 DEMO ADAPTABLE 3 EN 1 · Probá el estilo para tu local:</span>
+    <div class="ts-buttons" id="themeButtons">
+      <button type="button" class="ts-btn active" data-set-theme="especialidad">☕ 1. Café de Especialidad</button>
+      <button type="button" class="ts-btn" data-set-theme="brunch">🍵 2. Casa de Té & Brunch</button>
+      <button type="button" class="ts-btn" data-set-theme="nocturno">🍸 3. Café Restó Nocturno</button>
+    </div>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-badges">
+      <span class="topbar-badge">📍 Av. Principal 1234, Ciudad Ejemplo</span>
+      <span class="topbar-badge">🕒 Mar a Dom: 08:30 a 20:30 hs</span>
+    </div>
+    <div class="topbar-badges">
+      <span class="topbar-badge">📶 Wi-Fi Fibra Cowork</span>
+      <span class="topbar-badge">🐾 Espacio Pet Friendly</span>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <div class="brand-mark" id="brandMark">AC</div>
+      <div class="brand-text">
+        <strong id="brandTitle">Aura Café</strong>
+        <span id="brandSub">Especialidad, Brunch & Pastelería</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#carta">Carta Digital</a>
+      <a href="#combos">Combos & Brunch</a>
+      <a href="#espacio">Nuestro Espacio</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+    <a href="https://wa.me/59899123456?text=Hola%20Aura%20Caf%C3%A9!%20Quiero%20hacer%20una%20consulta%20o%20reserva" target="_blank" rel="noopener" class="btn btn-wa">
+      💬 WhatsApp Directo
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- ========================================================================
+       [SECCIÓN 05: HERO DINÁMICO Y TARJETA DE RESERVA / TAKE AWAY EXPRESS]
+       ======================================================================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow" id="heroEyebrow">☕ Tostado Artesanal & Pastelería del Día</span>
+        <h1 id="heroHeadline">El ritual del buen café, <em>hecho a tu medida</em> cada mañana.</h1>
+        <p class="lead" id="heroLead">
+          Granos seleccionados de tueste fresco, laminados artesanales horneados cada mañana y opciones reales <strong>Sin TACC, Veganas y Sin Lactosa</strong>. Pedí para retirar sin fila o reservá tu mesa por WhatsApp.
+        </p>
+        <div class="hero-actions">
+          <a href="#carta" class="btn btn-primary">📖 Ver Carta Digital →</a>
+          <a href="#ubicacion" class="btn btn-outline">📍 Cómo llegar en Google Maps</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-item">
+            <strong>100% Arábica</strong>
+            <span>Molienda en el momento</span>
+          </div>
+          <div class="trust-item">
+            <strong>Inclusivo</strong>
+            <span>Opciones Sin TACC y Veganas</span>
+          </div>
+          <div class="trust-item">
+            <strong>Take Away Express</strong>
+            <span>Pedís por WA y retirás sin fila</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TARJETA INTERACTIVA DE RESERVA / TAKE AWAY -->
+      <aside class="booking-card" aria-label="Reserva de mesa o pedido Take Away">
+        <span class="booking-badge">⚡ Respuesta en minutos</span>
+        <h2>Reserva de Mesa o Take Away</h2>
+        <p>Armá tu solicitud en 3 toques y enviala directo a nuestro mostrador por WhatsApp.</p>
+
+        <div class="form-group">
+          <label>1. ¿Qué te gustaría hacer hoy?</label>
+          <div class="mode-pills" id="bookingModePills">
+            <button type="button" class="mode-pill active" data-mode="Reservar Mesa">🪑 Reservar Mesa</button>
+            <button type="button" class="mode-pill" data-mode="Take Away (Retiro sin fila)">🥡 Take Away</button>
+            <button type="button" class="mode-pill" data-mode="Encargar Box Regalo / Brunch">🎁 Box Regalo</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="bkPeople">2. Cantidad de personas o combo</label>
+          <select id="bkPeople" class="form-control">
+            <option value="2 personas">Mesa / Pedido para 2 personas</option>
+            <option value="1 persona (Cowork / Individual)">1 persona (Mesa con enchufe / Cowork)</option>
+            <option value="3 a 4 personas">Grupo de 3 a 4 personas</option>
+            <option value="5 o más personas (Cumpleaños / Reunión)">Mesa grande (5 o más personas)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="bkTime">3. Turno u horario estimado</label>
+          <select id="bkTime" class="form-control">
+            <option value="Hoy en la mañana (Desayuno / Brunch)">Hoy en la mañana (Desayuno / Brunch)</option>
+            <option value="Hoy al mediodía (Almuerzo ligero)">Hoy al mediodía (12:00 a 15:00 hs)</option>
+            <option value="Hoy en la tarde (Merienda)">Hoy en la tarde (Merienda 16:00 a 20:00 hs)</option>
+            <option value="Fin de semana (Brunch Especial)">Próximo Fin de Semana</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="bkNotes">4. Preferencia dietaria o nota (opcional)</label>
+          <input type="text" id="bkNotes" class="form-control" placeholder="Ej: Terraza con mascota, opción Sin TACC, Flat White...">
+        </div>
+
+        <button type="button" id="btnSendBooking" class="btn btn-wa" style="width: 100%;">
+          📲 Confirmar por WhatsApp →
+        </button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       [SECCIÓN 06: CARTA DIGITAL INTERACTIVA POR PESTAÑAS Y ETIQUETAS]
+       ======================================================================== -->
+  <section id="carta">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">📖 Carta Digital Actualizada</span>
+          <h2>Nuestras especialidades del día</h2>
+        </div>
+        <p>Filtrá por sección o tocá las etiquetas dietarias para ver únicamente opciones <strong>Sin TACC</strong>, <strong>Veganas</strong> o <strong>Sin Lactosa</strong>.</p>
+      </div>
+
+      <div class="menu-controls">
+        <div class="tab-bar" id="menuTabs">
+          <button type="button" class="tab-btn active" data-cat="todos">Todos los ítems (8)</button>
+          <button type="button" class="tab-btn" data-cat="cafe">☕ Cafetería Caliente & Fría</button>
+          <button type="button" class="tab-btn" data-cat="pasteleria">🥐 Pastelería & Laminados</button>
+          <button type="button" class="tab-btn" data-cat="brunch">🥑 Brunch & Salados</button>
+          <button type="button" class="tab-btn" data-cat="combos">🎁 Combos Para Compartir</button>
+        </div>
+
+        <div class="diet-bar" id="dietFilters">
+          <span class="diet-label">Filtro dietario rápido:</span>
+          <button type="button" class="diet-chip active" data-diet="todos">✨ Ver Todo</button>
+          <button type="button" class="diet-chip" data-diet="sintacc">🌾 Sin TACC</button>
+          <button type="button" class="diet-chip" data-diet="vegano">🌱 Vegano</button>
+          <button type="button" class="diet-chip" data-diet="sinlactosa">🥛 Opción Leche Vegetal / Sin Lactosa</button>
+        </div>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Item 1 -->
+        <article class="menu-card featured" data-cat="combos" data-diets="sinlactosa">
+          <div>
+            <div class="mc-top">
+              <div class="mc-emoji">🥂</div>
+              <div class="mc-badges">
+                <span class="badge-diet b-star">⭐ Favorito</span>
+                <span class="badge-diet b-sinlactosa">🥛 Leche Vegetal Disp.</span>
+              </div>
+            </div>
+            <h3>Brunch "Aura" Para Dos Personas</h3>
+            <p>2 cafés de especialidad grandes, 2 exprimidos de naranja natural, tostón de masa madre con palta y huevos revueltos, croissant de manteca, roll de canela y bowl de yogur con granola.</p>
+          </div>
+          <div class="mc-foot">
+            <div class="mc-price">Para 2 personas<strong>$ 1.290</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20pedir%20o%20reservar:%20Brunch%20Aura%20Para%20Dos%20Personas%20($1.290)" target="_blank" rel="noopener" class="btn btn-primary">Pedir por WA →</a>
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="menu-card" data-cat="cafe" data-diets="vegano sinlactosa sintacc">
+          <div>
+            <div class="mc-top">
+              <div class="mc-emoji">☕</div>
+              <div class="mc-badges">
+                <span class="badge-diet b-vegano">🌱 Vegano Disp.</span>
+                <span class="badge-diet b-sinlactosa">🥛 Avena / Almendra</span>
+              </div>
+            </div>
+            <h3>Flat White / Latte de Especialidad</h3>
+            <p>Doble shot de espresso 100% arábica de tueste medio con leche texturizada sedosa (entera, deslactosada o vegetal de avena/almendras).</p>
+          </div>
+          <div class="mc-foot">
+            <div class="mc-price">Taza 240 ml<strong>$ 195</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20pedir%20Take%20Away:%20Flat%20White%20de%20Especialidad%20($195)" target="_blank" rel="noopener" class="btn btn-outline">Pedir →</a>
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="menu-card" data-cat="cafe" data-diets="vegano sinlactosa sintacc">
+          <div>
+            <div class="mc-top">
+              <div class="mc-emoji">🧊</div>
+              <div class="mc-badges">
+                <span class="badge-diet b-vegano">🌱 Vegano</span>
+                <span class="badge-diet b-sintacc">🌾 Sin TACC</span>
+              </div>
+            </div>
+            <h3>Iced Caramel o Matcha Latte Frío</h3>
+            <p>Bebida refrescante preparada en el momento con hielo cristalino, espresso o té verde Matcha ceremonial y leche vegetal o clásica.</p>
+          </div>
+          <div class="mc-foot">
+            <div class="mc-price">Vaso 360 ml<strong>$ 230</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20pedir:%20Iced%20Caramel%20o%20Matcha%20Latte%20Fr%C3%ADo%20($230)" target="_blank" rel="noopener" class="btn btn-outline">Pedir →</a>
+          </div>
+        </article>
+
+        <!-- Item 4 -->
+        <article class="menu-card" data-cat="pasteleria" data-diets="">
+          <div>
+            <div class="mc-top">
+              <div class="mc-emoji">🥐</div>
+              <div class="mc-badges">
+                <span class="badge-diet b-star">Horneado Hoy</span>
+              </div>
+            </div>
+            <h3>Croissant Francés Relleno de Pistacho</h3>
+            <p>Hojaldre laminado con 100% manteca extra, relleno de crema artesanal de pistachos tostados y lluvia de frutos secos.</p>
+          </div>
+          <div class="mc-foot">
+            <div class="mc-price">Unidad grande<strong>$ 240</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20reservar:%20Croissant%20Franc%C3%A9s%20Relleno%20de%20Pistacho%20($240)" target="_blank" rel="noopener" class="btn btn-outline">Pedir →</a>
+          </div>
+        </article>
+
+        <!-- Item 5 -->
+        <article class="menu-card" data-cat="pasteleria" data-diets="sintacc">
+          <div>
+            <div class="mc-top">
+              <div class="mc-emoji">🍰</div>
+              <div class="mc-badges">
+                <span class="badge-diet b-sintacc">🌾 100% Sin TACC</span>
+              </div>
+            </div>
+            <h3>Cheesecake Vasco Cremoso & Frutos Rojos</h3>
+            <p>Porción generosa de tarta de queso horneada a alta temperatura, centro ultra cremoso y compota casera de frutos de estación libre de gluten.</p>
+          </div>
+          <div class="mc-foot">
+            <div class="mc-price">Porción individual<strong>$ 290</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20pedir:%20Cheesecake%20Vasco%20Sin%20TACC%20($290)" target="_blank" rel="noopener" class="btn btn-outline">Pedir →</a>
+          </div>
+        </article>
+
+        <!-- Item 6 -->
+        <article class="menu-card" data-cat="brunch" data-diets="vegano sinlactosa">
+          <div>
+            <div class="mc-top">
+              <div class="mc-emoji">🥑</div>
+              <div class="mc-badges">
+                <span class="badge-diet b-vegano">🌱 Opción Vegana</span>
+                <span class="badge-diet b-sinlactosa">🥛 Sin Lactosa</span>
+              </div>
+            </div>
+            <h3>Avocado Toast en Pan de Masa Madre</h3>
+            <p>Tostón de fermentación natural de 24 hs con palta laminada, tomates cherry confitados, hummus de garbanzos, semillas activadas y aceite de oliva.</p>
+          </div>
+          <div class="mc-foot">
+            <div class="mc-price">Plato completo<strong>$ 360</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20pedir:%20Avocado%20Toast%20en%20Masa%20Madre%20($360)" target="_blank" rel="noopener" class="btn btn-outline">Pedir →</a>
+          </div>
+        </article>
+
+        <!-- Item 7 -->
+        <article class="menu-card" data-cat="brunch" data-diets="sintacc">
+          <div>
+            <div class="mc-top">
+              <div class="mc-emoji">🧀</div>
+              <div class="mc-badges">
+                <span class="badge-diet b-sintacc">🌾 Sin TACC</span>
+              </div>
+            </div>
+            <h3>Porción de Chipá Caliente Relleno (x4)</h3>
+            <p>Panecillos de fécula de mandioca y tres quesos estacionados, horneados en el momento. Crujientes por fuera y elásticos por dentro.</p>
+          </div>
+          <div class="mc-foot">
+            <div class="mc-price">Porción 4 unidades<strong>$ 220</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20pedir:%20Porci%C3%B3n%20de%20Chip%C3%A1%20Sin%20TACC%20($220)" target="_blank" rel="noopener" class="btn btn-outline">Pedir →</a>
+          </div>
+        </article>
+
+        <!-- Item 8 -->
+        <article class="menu-card" data-cat="combos" data-diets="vegano sinlactosa">
+          <div>
+            <div class="mc-top">
+              <div class="mc-emoji">🎁</div>
+              <div class="mc-badges">
+                <span class="badge-diet b-star">Regalo / Merienda</span>
+              </div>
+            </div>
+            <h3>Box Merienda Artesanal a Domicilio</h3>
+            <p>Caja de diseño con 2 cafés o infusiones en hebras, 2 croissants, 1 budín húmedo de limón y amapolas, 1 brownie con nuez y tarjeta personalizada.</p>
+          </div>
+          <div class="mc-foot">
+            <div class="mc-price">Box completo<strong>$ 980</strong></div>
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20encargar:%20Box%20Merienda%20Artesanal%20de%20Regalo%20($980)" target="_blank" rel="noopener" class="btn btn-primary">Encargar →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       [SECCIÓN 07: ESPACIO BENTO, PREGUNTAS FRECUENTES, MAPA Y FOOTER]
+       ======================================================================== -->
+  <section id="espacio" class="section-alt">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">✨ Más que una cafetería</span>
+          <h2>Diseñado para disfrutar sin apuro</h2>
+        </div>
+        <p>Ya sea que vengas a trabajar con tu notebook, a festejar un cumpleaños íntimo o a llevarte café recién molido a casa.</p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-item span-2" id="combos">
+          <div class="bento-icon">💻</div>
+          <h3>Zona Cowork con Wi-Fi Fibra & Enchufes en Cada Mesa</h3>
+          <p>Contamos con mesas amplias, iluminación cálida natural, música a volumen conversacional y conexión de alta velocidad para que trabajes o estudies cómodo mientras tomás un buen café.</p>
+        </div>
+        <div class="bento-item">
+          <div class="bento-icon">🐾</div>
+          <h3>100% Pet Friendly</h3>
+          <p>Nuestro patio interno techado y las mesas de vereda reciben a tu mascota con bebederos de agua fresca siempre listos.</p>
+        </div>
+        <div class="bento-item">
+          <div class="bento-icon">🫘</div>
+          <h3>Café en Grano o Molido</h3>
+          <p>Llevate bolsas de 250g de nuestros granos de origen Brasil, Colombia o Perú molidos en el momento para tu cafetera (Italiana, Prensa Francesa, Filtro o Espresso).</p>
+        </div>
+        <div class="bento-item span-2">
+          <div class="bento-icon">🎂</div>
+          <h3>Reservas para Cumpleaños, Baby Showers y Desayunos Corporativos</h3>
+          <p>Armamos mesas reservadas desde 6 hasta 20 personas con menú cerrado de brunch o merienda libre. Consultá disponibilidad por WhatsApp con 48 hs de anticipación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES -->
+  <section id="faq">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">❓ Dudas Frecuentes</span>
+          <h2>Todo lo que necesitás saber</h2>
+        </div>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>¿Las opciones Sin TACC son aptas para celíacos?</summary>
+          <p>Sí, nuestros productos identificados con el sello 🌾 Sin TACC provienen de elaboración exclusiva libre de gluten y se mantienen sellados hasta el momento de servir para evitar contaminación cruzada.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo funciona el pedido Take Away sin fila?</summary>
+          <p>Nos escribís por WhatsApp indicando qué café o pastelería querés y en cuántos minutos pasás. Lo preparamos recién hecho para que solo entres a retirarlo por mostrador sin hacer fila.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué medios de pago aceptan?</summary>
+          <p>Aceptamos efectivo, todas las tarjetas de débito y crédito, Mercado Pago, transferencia bancaria y tickets de alimentación.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN Y HORARIOS -->
+  <section id="ubicacion" class="section-alt">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <span class="eyebrow">📍 Te Esperamos</span>
+          <h2>Ubicación y horarios de atención</h2>
+        </div>
+      </div>
+      <div class="loc-grid">
+        <div class="loc-card">
+          <div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.4rem;">Aura Café — Casa Central</h3>
+            <p style="color: var(--ink2); font-size: 0.9rem; margin-bottom: 1.25rem;">Av. Principal 1234 esq. Calle del Sol, Ciudad Ejemplo</p>
+            <ul class="hours-list">
+              <li><span>Martes a Viernes</span><strong>08:30 a 20:30 hs</strong></li>
+              <li><span>Sábados y Domingos (Brunch)</span><strong>09:00 a 21:00 hs</strong></li>
+              <li><span>Lunes</span><strong>Cerrado por tueste</strong></li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="https://wa.me/59899123456?text=Hola!%20Quiero%20consultar%20disponibilidad%20de%20mesa%20en%20Aura%20Caf%C3%A9" target="_blank" rel="noopener" class="btn btn-wa">💬 Escribir por WhatsApp</a>
+          </div>
+        </div>
+        <div class="map-frame">
+          <iframe
+            title="Mapa de ubicación de Aura Café"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-56.2300%2C-34.7350%2C-56.2050%2C-34.7200&amp;layer=mapnik"
+            style="width:100%; height:100%; border:0; min-height:320px;"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Aura Café</strong> · Prototipo Demostrativo v1.0 (100% Estático &amp; Seguro)
+    </div>
+    <div>
+      Av. Principal 1234, Ciudad Ejemplo · Tel / WA: 099 123 456
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/59899123456?text=Hola%20Aura%20Caf%C3%A9!%20Quiero%20hacer%20un%20pedido%20o%20reservar%20mesa" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
+  💬 Pedir / Reservar
+</a>
+
+<!-- ==========================================================================
+     [SECCIÓN 08: MOTOR JAVASCRIPT — CONFIGURACIÓN, TEMAS 3 EN 1 Y FILTROS]
+     ========================================================================== -->
+<script>
+  // --- 8.1 CONFIGURACIÓN CENTRAL DEL COMERCIO (Cambiar aquí al pasar a cliente) ---
+  const CONFIG_COMERCIO = {
+    whatsapp: '59899123456',
+    nombre: 'Aura Café',
+    moneda: '$'
+  };
+
+  // --- 8.2 DICCIONARIO DE MODOS 3 EN 1 (Especialidad / Brunch / Nocturno) ---
+  const THEME_CONFIG = {
+    especialidad: {
+      mark: 'AC',
+      title: 'Aura Café',
+      sub: 'Especialidad, Brunch & Pastelería',
+      eyebrow: '☕ Tostado Artesanal & Pastelería del Día',
+      headline: 'El ritual del buen café, <em>hecho a tu medida</em> cada mañana.',
+      lead: 'Granos seleccionados de tueste fresco, laminados artesanales horneados cada mañana y opciones reales <strong>Sin TACC, Veganas y Sin Lactosa</strong>. Pedí para retirar sin fila o reservá tu mesa por WhatsApp.'
+    },
+    brunch: {
+      mark: 'BM',
+      title: 'Botánica Casa de Té',
+      sub: 'Brunch Todo el Día & Pastelería de Autor',
+      eyebrow: '🍵 Infusiones en Hebras, Matcha & Brunch',
+      headline: 'Sabores frescos y mesas soleadas para <em>compartir sin prisa</em>.',
+      lead: 'Brunch servido todo el día, pastelería botánica recién horneada y tés en hebras seleccionados. Contamos con carta inclusiva <strong>Sin TACC y Plant-Based</strong>.'
+    },
+    nocturno: {
+      mark: 'NV',
+      title: 'Nocturna Café & Vermú',
+      sub: 'Café de Tarde, Tapas & Vermutería',
+      eyebrow: '🍸 Del Café de Especialidad al Vermú de Tarde',
+      headline: 'Cafetería de autor de día, <em>encuentros y platitos</em> al caer el sol.',
+      lead: 'Desde un Flat White perfecto por la tarde hasta focaccias de masa madre, tapeo artesanal y vermú tirado a la noche. Reservá tu mesa por WhatsApp.'
+    }
+  };
+
+  /**
+   * Construye y abre el enlace oficial de WhatsApp con el mensaje pre-armado.
+   * @param {string} detallePedido - Texto descriptivo de la reserva o pedido.
+   */
+  function abrirWhatsApp(detallePedido) {
+    const mensaje = `Hola ${CONFIG_COMERCIO.nombre}! ${detallePedido}`;
+    const url = `https://wa.me/${CONFIG_COMERCIO.whatsapp}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
+  // --- 8.3 CAMBIO DE TEMA 3 EN 1 EN VIVO ---
+  document.querySelectorAll('[data-set-theme]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const theme = btn.getAttribute('data-set-theme');
+      document.documentElement.setAttribute('data-theme', theme);
+      document.querySelectorAll('[data-set-theme]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cfg = THEME_CONFIG[theme];
+      if (cfg) {
+        document.getElementById('brandMark').textContent = cfg.mark;
+        document.getElementById('brandTitle').textContent = cfg.title;
+        document.getElementById('brandSub').textContent = cfg.sub;
+        document.getElementById('heroEyebrow').textContent = cfg.eyebrow;
+        document.getElementById('heroHeadline').innerHTML = cfg.headline;
+        document.getElementById('heroLead').innerHTML = cfg.lead;
+        CONFIG_COMERCIO.nombre = cfg.title;
+      }
+    });
+  });
+
+  // --- 8.4 FORMULARIO DE RESERVA / TAKE AWAY A WHATSAPP ---
+  let selectedBookingMode = 'Reservar Mesa';
+  document.querySelectorAll('#bookingModePills .mode-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('#bookingModePills .mode-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      selectedBookingMode = pill.getAttribute('data-mode');
+    });
+  });
+
+  document.getElementById('btnSendBooking').addEventListener('click', () => {
+    const people = document.getElementById('bkPeople').value;
+    const time = document.getElementById('bkTime').value;
+    const notes = document.getElementById('bkNotes').value.trim();
+    const notaTexto = notes ? ` | Nota: ${notes}` : '';
+    abrirWhatsApp(`Quiero *${selectedBookingMode}* (${people}) para *${time}*${notaTexto}.`);
+  });
+
+  // --- 8.5 FILTRADO COMBINADO DE CARTA DIGITAL (CATEGORÍA + ETIQUETA DIETARIA) ---
+  let activeCat = 'todos';
+  let activeDiet = 'todos';
+
+  function actualizarCarta() {
+    document.querySelectorAll('#menuGrid .menu-card').forEach(card => {
+      const cardCat = card.getAttribute('data-cat');
+      const cardDiets = (card.getAttribute('data-diets') || '').split(' ');
+      const matchCat = (activeCat === 'todos' || cardCat === activeCat);
+      const matchDiet = (activeDiet === 'todos' || cardDiets.includes(activeDiet));
+      card.style.display = (matchCat && matchDiet) ? 'flex' : 'none';
+    });
+  }
+
+  document.querySelectorAll('#menuTabs .tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#menuTabs .tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      actualizarCarta();
+    });
+  });
+
+  document.querySelectorAll('#dietFilters .diet-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('#dietFilters .diet-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeDiet = chip.getAttribute('data-diet');
+      actualizarCarta();
+    });
+  });
+</script>
+</body>
+</html>

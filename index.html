@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Prototipos Web para Comercios | Hub Central</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --card: rgba(30, 41, 59, 0.78);
+    --line: rgba(148, 163, 184, 0.16);
+    --ink: #f8fafc;
+    --ink2: #cbd5e1;
+    --ink3: #94a3b8;
+    --brand: #38bdf8;
+    --green: #22c55e;
+    --amber: #f59e0b;
+    --purple: #a855f7;
+    --radius: 16px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.15), transparent 40%),
+      radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.14), transparent 40%),
+      radial-gradient(circle at 50% 85%, rgba(34, 197, 94, 0.1), transparent 45%),
+      var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    line-height: 1.6;
+    padding: clamp(2rem, 4vw, 3.5rem) clamp(1rem, 4vw, 3rem);
+  }
+  .container { max-width: 1220px; margin: 0 auto; }
+  header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    flex-wrap: wrap; gap: 1.5rem;
+    padding-bottom: 2rem; border-bottom: 1px solid var(--line);
+    margin-bottom: 2.5rem;
+  }
+  .badge-top {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3);
+    color: var(--brand); font-size: 0.76rem; font-weight: 700;
+    padding: 0.35rem 0.85rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+  h1 { font-size: clamp(1.85rem, 3.5vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+  header p { color: var(--ink2); max-width: 660px; margin-top: 0.5rem; font-size: 0.98rem; }
+  .sec-title {
+    display: flex; align-items: center; gap: 0.65rem;
+    font-size: 1.15rem; font-weight: 800; margin: 2.25rem 0 1rem;
+  }
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.15rem;
+  }
+  .card {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.35rem;
+    display: flex; flex-direction: column; justify-content: space-between; gap: 1rem;
+    transition: transform .2s, border-color .2s, box-shadow .2s;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(56, 189, 248, 0.45);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  }
+  .card.ready { border-color: rgba(34, 197, 94, 0.35); }
+  .card.custom-wildcard {
+    border-color: rgba(168, 85, 247, 0.45);
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(88, 28, 135, 0.25));
+  }
+  .c-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
+  .c-emoji {
+    width: 46px; height: 46px; border-radius: 12px;
+    background: rgba(255,255,255,0.06);
+    display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+  }
+  .pill {
+    font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;
+    padding: 0.25rem 0.65rem; border-radius: 100px;
+  }
+  .pill-ready { background: rgba(34, 197, 94, 0.16); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); }
+  .pill-custom { background: rgba(168, 85, 247, 0.2); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.4); }
+  .card h3 { font-size: 1.1rem; font-weight: 800; margin-top: 0.65rem; }
+  .card p { font-size: 0.85rem; color: var(--ink2); margin-top: 0.3rem; }
+  .c-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 0.85rem; border-top: 1px dashed var(--line); font-size: 0.8rem;
+  }
+  .folder { font-family: monospace; color: var(--ink3); font-size: 0.75rem; }
+  .btn-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-weight: 700; color: #0f172a; background: var(--brand);
+    padding: 0.45rem 0.95rem; border-radius: 100px; text-decoration: none;
+    font-size: 0.8rem; transition: opacity .2s;
+  }
+  .btn-link:hover { opacity: 0.9; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div>
+      <span class="badge-top">🚀 Hub Central de Demos · 100% Online en GitHub Pages</span>
+      <h1>Catálogo de Prototipos Web para Comercios</h1>
+      <p>Organizado por rubros comerciales y niveles de interactividad. Todos los sitios son 100% rápidos, seguros, listos para Google Maps y conectados directo a WhatsApp.</p>
+    </div>
+    <div id="localDocAction">
+      <a href="./roadmap.md" class="btn-link" style="background:#f8fafc">📄 Ver roadmap.md (Local)</a>
+    </div>
+  </header>
+
+  <div class="sec-title">🟢 Catálogo Oficial Completo (10 Prototipos v1.0 Listos para mostrar en el celular + 1 Comodín a Medida)</div>
+  <div class="grid">
+    <!-- 01. Supermercado -->
+    <article class="card ready">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">🛒</div>
+          <span class="pill pill-ready">🟢 #01 · v1.0 Listo</span>
+        </div>
+        <h3>Supermercado / Autoservice</h3>
+        <p>Mayorista y minorista con fotografías de muestra, ofertas de la semana, categorías y pedidos por WhatsApp.</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">./comercio-demo supermercado/</span>
+        <a href="./comercio-demo%20supermercado/index.html" data-demo-key="supermercado" class="btn-link">Abrir Demo →</a>
+      </div>
+    </article>
+
+    <!-- 02. Peluquería -->
+    <article class="card ready">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">✂️</div>
+          <span class="pill pill-ready">🟢 #02 · v1.0 (3 en 1)</span>
+        </div>
+        <h3>Peluquería & Barbería Adaptable</h3>
+        <p>Selector en vivo para alternar entre Estudio Unisex, Barbería Hombres y Salón Mujer con reserva por WhatsApp.</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">./peluqueria-demo/</span>
+        <a href="./peluqueria-demo/index.html" data-demo-key="peluqueria" class="btn-link">Abrir Demo →</a>
+      </div>
+    </article>
+
+    <!-- 03. Empresa -->
+    <article class="card ready">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">🏢</div>
+          <span class="pill pill-ready">🟢 #03 · v1.0 (3 en 1)</span>
+        </div>
+        <h3>Empresa & Servicios Profesionales</h3>
+        <p>Adaptable a Mantenimiento Integral, Estudio Contable/Jurídico y Logística B2B. Incluye cotizador express y FAQ.</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">./empresa-demo/</span>
+        <a href="./empresa-demo/index.html" data-demo-key="empresa" class="btn-link">Abrir Demo →</a>
+      </div>
+    </article>
+
+    <!-- 04. Cafetería -->
+    <article class="card ready">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">☕</div>
+          <span class="pill pill-ready">🟢 #04 · v1.0 (3 en 1)</span>
+        </div>
+        <h3>Cafetería de Especialidad & Brunch</h3>
+        <p>Adaptable a Café de Especialidad, Casa de Té/Brunch y Café Restó Nocturno. Carta con filtros Sin TACC/Vegano.</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">./cafeteria-demo/</span>
+        <a href="./cafeteria-demo/index.html" data-demo-key="cafeteria" class="btn-link">Abrir Demo →</a>
+      </div>
+    </article>
+
+    <!-- 05. Panadería -->
+    <article class="card ready">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">🥐</div>
+          <span class="pill pill-ready">🟢 #05 · v1.0 (3 en 1)</span>
+        </div>
+        <h3>Panadería & Confitería</h3>
+        <p>Adaptable a Panadería de Masa Madre, Confitería Fina y Rotisería. Cartel de pan caliente y cotizador de tortas/lunch.</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">./panaderia-demo/</span>
+        <a href="./panaderia-demo/index.html" data-demo-key="panaderia" class="btn-link">Abrir Demo →</a>
+      </div>
+    </article>
+
+    <!-- 06. Veterinaria -->
+    <article class="card ready">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">🐾</div>
+          <span class="pill pill-ready">🟢 #06 · v1.0 (3 en 1)</span>
+        </div>
+        <h3>Veterinaria & Pet Shop</h3>
+        <p>Adaptable a Clínica 24 hs, Peluquería Canina y Pet Shop. Barra de Urgencias 24 hs, turnos de baño/consulta y delivery.</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">./veterinaria-demo/</span>
+        <a href="./veterinaria-demo/index.html" data-demo-key="veterinaria" class="btn-link">Abrir Demo →</a>
+      </div>
+    </article>
+
+    <!-- 07. Barraca / Electricidad -->
+    <article class="card ready">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">⚡</div>
+          <span class="pill pill-ready">🟢 #07 · v1.0 (3 en 1)</span>
+        </div>
+        <h3>Electricidad, Ferretería y Barraca</h3>
+        <p>Adaptable a Casa de Electricidad, Ferretería Industrial y Barraca. Incluye armador de lista de materiales de obra.</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">./barraca-demo/</span>
+        <a href="./barraca-demo/index.html" data-demo-key="barraca" class="btn-link">Abrir Demo →</a>
+      </div>
+    </article>
+
+    <!-- 08. Ropa -->
+    <article class="card ready">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">👗</div>
+          <span class="pill pill-ready">🟢 #08 · v1.0 (3 en 1)</span>
+        </div>
+        <h3>Tienda de Ropa & Moda</h3>
+        <p>Adaptable a Moda Urbana, Boutique y Deportivo/Calzado. Tarjetas con selector en vivo de Talle y Color + Guía de Medidas.</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">./ropa-demo/</span>
+        <a href="./ropa-demo/index.html" data-demo-key="ropa" class="btn-link">Abrir Demo →</a>
+      </div>
+    </article>
+
+    <!-- 09. Electrónica -->
+    <article class="card ready">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">📱</div>
+          <span class="pill pill-ready">🟢 #09 · v1.0 (3 en 1)</span>
+        </div>
+        <h3>Electrónica, Celulares y PC</h3>
+        <p>Adaptable a Tienda Mobile, Informática/Gaming y Servicio Técnico. Incluye Simulador en vivo de Reparación y Plan Recambio.</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">./electronica-demo/</span>
+        <a href="./electronica-demo/index.html" data-demo-key="electronica" class="btn-link">Abrir Demo →</a>
+      </div>
+    </article>
+
+    <!-- 10. Pizzería -->
+    <article class="card ready">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">🍕</div>
+          <span class="pill pill-ready">🟢 #10 · v1.0 (3 en 1)</span>
+        </div>
+        <h3>Pizzería, Empanadas y Rotisería</h3>
+        <p>Adaptable a Pizzería al Horno, Casa de Empanadas y Rotisería. Incluye Armador interactivo de gustos y docena con subtotal en vivo.</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">./pizzeria-demo/</span>
+        <a href="./pizzeria-demo/index.html" data-demo-key="pizzeria" class="btn-link">Abrir Demo →</a>
+      </div>
+    </article>
+
+    <!-- 🃏 Comodín: Prototipo Personalizado desde Cero -->
+    <article class="card custom-wildcard">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">🃏</div>
+          <span class="pill pill-custom">✨ Comodín a Medida</span>
+        </div>
+        <h3>Prototipo Personalizado (Desde Cero)</h3>
+        <p>¿Tu negocio es de otro rubro o querés un diseño 100% diferente desde cero? Lo creamos a tu medida con tus colores, secciones y estilo propio.</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">Diseño 100% a medida</span>
+        <a href="https://instagram.com/bluffer23mm" target="_blank" rel="noopener noreferrer" class="btn-link" style="background:#c084fc;">Consultar Idea →</a>
+      </div>
+    </article>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     CONFIGURACIÓN DE LINKS DEL HUB (GITHUB PAGES ONLINE + MODO LOCAL)
+     Cuando se abre en GitHub Pages (github.io), enlaza directo a la URL
+     pública de cada prototipo en GitHub Pages.
+     ========================================================================== -->
+<script>
+  const GITHUB_PAGES_BASE = 'https://martnmartnez14.github.io/catalogo-comercios';
+  const IS_GITHUB_PAGES = window.location.hostname.endsWith('github.io');
+
+  const CONFIG_HUB_LINKS = {
+    'supermercado': IS_GITHUB_PAGES ? `${GITHUB_PAGES_BASE}/comercio-demo%20supermercado/` : './comercio-demo%20supermercado/index.html',
+    'peluqueria':   IS_GITHUB_PAGES ? `${GITHUB_PAGES_BASE}/peluqueria-demo/`              : './peluqueria-demo/index.html',
+    'empresa':      IS_GITHUB_PAGES ? `${GITHUB_PAGES_BASE}/empresa-demo/`                 : './empresa-demo/index.html',
+    'cafeteria':    IS_GITHUB_PAGES ? `${GITHUB_PAGES_BASE}/cafeteria-demo/`               : './cafeteria-demo/index.html',
+    'panaderia':    IS_GITHUB_PAGES ? `${GITHUB_PAGES_BASE}/panaderia-demo/`               : './panaderia-demo/index.html',
+    'veterinaria':  IS_GITHUB_PAGES ? `${GITHUB_PAGES_BASE}/veterinaria-demo/`             : './veterinaria-demo/index.html',
+    'barraca':      IS_GITHUB_PAGES ? `${GITHUB_PAGES_BASE}/barraca-demo/`                 : './barraca-demo/index.html',
+    'ropa':         IS_GITHUB_PAGES ? `${GITHUB_PAGES_BASE}/ropa-demo/`                    : './ropa-demo/index.html',
+    'electronica':  IS_GITHUB_PAGES ? `${GITHUB_PAGES_BASE}/electronica-demo/`             : './electronica-demo/index.html',
+    'pizzeria':     IS_GITHUB_PAGES ? `${GITHUB_PAGES_BASE}/pizzeria-demo/`                : './pizzeria-demo/index.html'
+  };
+
+  document.querySelectorAll('[data-demo-key]').forEach(link => {
+    const key = link.getAttribute('data-demo-key');
+    if (CONFIG_HUB_LINKS[key]) {
+      link.setAttribute('href', CONFIG_HUB_LINKS[key]);
+    }
+  });
+
+  if (IS_GITHUB_PAGES) {
+    const localBtn = document.getElementById('localDocAction');
+    if (localBtn) localBtn.style.display = 'none';
+  }
+</script>
+</body>
+</html>
