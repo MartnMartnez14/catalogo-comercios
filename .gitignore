@@ -29,6 +29,7 @@ tools/
 Gemini_Generated_Images_*/
 imagenes\ logotipos\ capturas\ redes\ sociales\ seguimiento*/
 **/README.md
+!/README.md
 
 # Archivos temporales o de sistema
 .DS_Store
