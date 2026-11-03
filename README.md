@@ -1,5 +1,7 @@
 # 🚀 Catálogo de Prototipos Web para Comercios — Hub Central
 
+> **Prioridad comercial (2026-11-03 · Servicio 100% Online):** web informativa básica por **$3.500 UYU** (85 USD orientativos), en tres reuniones virtuales / rondas de intercambios online y dos rondas de ajustes, sin mensualidad de Bluffer 23. Pagos digitales (**Prex, Mercado Pago, Transferencia o PayPal**). Dominio a cargo del cliente; cambios posteriores aparte. Las otras modalidades se conservan como alternativas futuras bajo demanda. Contacto exclusivo del negocio: WhatsApp **[`092 663 680`](https://wa.me/59892663680)** y correo `mmartinez23bio@hotmail.com`.
+
 > 🌐 **Entrar al Portal Principal en Vivo (GitHub Pages):**  
 > ### 👉 [**https://martnmartnez14.github.io/catalogo-comercios/**](https://martnmartnez14.github.io/catalogo-comercios/)
 
@@ -22,12 +24,14 @@ Catálogo interactivo de prototipos web demostrativos organizados por rubros com
 | **08** | 👗 **Tienda de Ropa & Moda (3 en 1)** | Moda Urbana · Boutique · Deportivo & Calzado | [🔗 Abrir Demo Ropa](https://martnmartnez14.github.io/catalogo-comercios/ropa-demo/) |
 | **09** | 📱 **Electrónica, Celulares y PC (3 en 1)** | Tienda Mobile · Notebooks/Gaming · Servicio Técnico | [🔗 Abrir Demo Electrónica](https://martnmartnez14.github.io/catalogo-comercios/electronica-demo/) |
 | **10** | 🍕 **Pizzería, Empanadas y Rotisería (3 en 1)** | Pizzería al Horno · Empanadas · Rotisería | [🔗 Abrir Demo Pizzería](https://martnmartnez14.github.io/catalogo-comercios/pizzeria-demo/) |
+| **11** | 💊 **Farmacia Ejemplo** | Cuatro categorías, horarios y consultas WA | [🔗 Abrir Demo Farmacia](https://martnmartnez14.github.io/catalogo-comercios/farmacia-demo/) |
 
 ---
 
 ## 📬 Contacto y Medios de Apoyo / Pago
 
-- ✉️ **Correo de contacto:** [`mmartinez23bio@gmail.com`](mailto:mmartinez23bio@gmail.com)
+- 💬 **WhatsApp / Teléfono Exclusivo (Uruguay):** [`092 663 680`](https://wa.me/59892663680?text=Hola%20Bluffer%2023!%20Vi%20el%20cat%C3%A1logo%20de%20prototipos%20y%20quiero%20consultar%20por%20una%20web) *(+598 92 663 680)*
+- ✉️ **Correo de contacto:** [`mmartinez23bio@hotmail.com`](mailto:mmartinez23bio@hotmail.com)
 - 📸 **Instagram:** [`@bluffer23mm`](https://www.instagram.com/bluffer23mm/)
 - ☕ **Ko-fi:** [`ko-fi.com/martinmartinezgarcia`](https://ko-fi.com/martinmartinezgarcia)
 - 💙 **PayPal:** [`paypal.me/blufferedtwitch`](https://www.paypal.com/paypalme/blufferedtwitch)

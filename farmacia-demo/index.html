@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- [SECCIÓN 01: CABECERA & SEO] -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Farmacia Ejemplo: demo ficticia de una web informativa con categorías, horarios y consultas por WhatsApp.">
+<title>Farmacia Ejemplo · Demo informativa</title>
+<style>
+/* [SECCIÓN 02: VARIABLES CSS] */
+:root{--brand:#115e59;--brand-d:#103d3b;--brand-l:#d7efea;--accent:#ffb6a2;--surface:#f7faf7;--card-bg:#fff;--ink:#173d3a;--muted:#4e6661;--line:#d4e3dd}
+/* [SECCIÓN 03: ESTILOS BASE] */
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:6rem}body{margin:0;font-family:system-ui,sans-serif;color:var(--ink);line-height:1.6;background:radial-gradient(ellipse at 90% 10%,#ffe0d1 0,transparent 38%),radial-gradient(ellipse at 0 40%,#d7efea 0,transparent 42%),var(--surface)}a{color:var(--brand);text-underline-offset:.2em}button{font:inherit;cursor:pointer}a,button{touch-action:manipulation}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a63c23;outline-offset:5px}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.08;letter-spacing:-.05em;margin-bottom:1.3rem}h2{font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.2}h3{font-size:1.25rem}main,.wrap{max-width:1120px;margin:auto;padding-inline:24px}section{padding-block:48px}section[id]{scroll-margin-top:1rem}.skip{position:absolute;left:12px;top:-100px;padding:12px;background:white;z-index:10}.skip:focus{top:12px}.demo{background:var(--brand-d);color:#fff;text-align:center;padding:10px 20px;font-size:.85rem}.header{position:sticky;top:0;z-index:5;background:#f7faf7f5;border-bottom:1px solid var(--line)}.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:82px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none}.cross{background:var(--brand);color:#fff;font-size:1.8rem;border-radius:14px;width:44px;height:44px;display:grid;place-items:center}.nav{display:flex;gap:24px;align-items:center}.nav a{text-decoration:none;font-weight:650}.menu{display:none;border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:white;color:var(--ink)}.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:center;padding-block:72px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.75rem;font-weight:800;color:var(--brand);margin-bottom:18px}.lead{font-size:1.1rem;color:var(--muted);max-width:48ch}.btn{display:inline-flex;justify-content:center;align-items:center;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:12px;background:var(--brand);color:white;text-decoration:none;font-weight:700;transition:background .15s,transform .15s}.btn:hover{background:var(--brand-d);transform:translateY(-2px)}.actions{display:flex;flex-wrap:wrap;gap:12px}.secondary{background:white;color:var(--brand);border-color:var(--line)}.secondary:hover{background:var(--brand-l)}.tags{list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0;margin-top:24px;font-size:.8rem;color:var(--muted)}.tags li{border:1px solid var(--line);padding:6px 10px;border-radius:30px}.feature{position:relative;background:var(--brand-d);color:#fff;border-radius:30px;padding:34px;box-shadow:0 22px 45px #103d3b20;overflow:hidden}.feature:before{content:'+';position:absolute;right:10px;top:-80px;color:#ffffff09;font-size:22rem;line-height:1;pointer-events:none}.feature>*{position:relative}.feature .eyebrow{color:var(--accent)}.feature p{color:#d9eae5}.feature .btn{background:var(--accent);color:var(--brand-d)}.symbol{font-size:3.5rem;margin-bottom:24px}.filters{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}.filter{border:1px solid var(--line);border-radius:30px;background:white;color:var(--ink);min-height:44px;padding:9px 16px}.filter[aria-pressed=true]{background:var(--brand);color:white;border-color:var(--brand)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{background:var(--card-bg);border:1px solid var(--line);padding:26px;border-radius:20px;box-shadow:0 8px 24px #173d3a06}.card p{color:var(--muted)}.card .icon{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--brand-l);margin-bottom:18px;font-size:1.4rem}.card:nth-child(2n) .icon{background:#ffede6}.card a{font-weight:700}.count{color:var(--muted);font-size:.9rem}.faq{max-width:780px}details{border-bottom:1px solid var(--line);padding:18px 0}summary{cursor:pointer;font-weight:700;min-height:32px}details p{margin:14px 0 0;color:var(--muted)}.contact{display:grid;grid-template-columns:1fr 1fr;gap:24px;background:#e4f0e9;border-radius:26px;padding:32px}.contact p{margin-bottom:14px}.location{background:#fff8f1;border:1px solid #e7dcd0;border-radius:18px;padding:26px;display:flex;flex-direction:column;justify-content:center}.location .symbol{color:var(--brand);margin:0}.footer{margin-top:50px;border-top:1px solid var(--line);padding:24px 0 86px;color:var(--muted);font-size:.85rem}.footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.wa-float{position:fixed;bottom:18px;right:18px;z-index:4;box-shadow:0 5px 20px #103d3b30}[hidden]{display:none!important}
+@media(max-width:700px){main,.wrap{padding-inline:20px}.header .wrap{flex-wrap:wrap;gap:12px;padding-block:12px;min-height:70px}.menu{display:block}.nav{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:12px}.hero{grid-template-columns:1fr;gap:28px;padding-block:40px}.feature{padding:28px}.grid,.contact{grid-template-columns:1fr}.contact{padding:24px}section{padding-block:30px}.wa-float{font-size:.85rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="demo">DEMO FICTICIA · Dirección, horarios y teléfono de muestra. No corresponde a una farmacia real.</div>
+<!-- [SECCIÓN 04: HEADER & NAVEGACIÓN] -->
+<header class="header"><div class="wrap">
+<a class="brand" href="#inicio"><span class="cross" aria-hidden="true">+</span> Farmacia Ejemplo</a>
+<button class="menu" type="button" aria-expanded="false" aria-controls="navegacion">Menú</button>
+<nav class="nav" id="navegacion" aria-label="Principal"><a href="#categorias">Categorías</a><a href="#preguntas">Preguntas</a><a href="#ubicacion">Horarios y ubicación</a></nav>
+</div></header>
+<main id="contenido">
+<!-- [SECCIÓN 05: HERO PRINCIPAL] -->
+<section class="hero" id="inicio"><div><p class="eyebrow">Cerca de tu día a día</p><h1>Lo cotidiano,<br>bien cuidado.</h1><p class="lead">Conocé nuestras categorías de cuidado personal y encontrá la información para acercarte o hacer una consulta.</p><div class="actions"><a class="btn" href="#categorias">Explorar categorías</a><a class="btn secondary" href="#ubicacion">Ver horarios</a></div><ul class="tags"><li>Atención cercana</li><li>Información clara</li><li>Consulta directa</li></ul></div>
+<aside class="feature" aria-label="Categoría destacada"><div class="symbol" aria-hidden="true">✦</div><p class="eyebrow">Un momento para vos</p><h2>Cuidado personal</h2><p>Artículos para acompañar tu rutina diaria. Consultá opciones y disponibilidad.</p><a class="btn" data-consulta="Cuidado personal" href="https://wa.me/59899123456?text=Hola%2C%20quisiera%20consultar%20por%20Cuidado%20personal.">Consultar por WhatsApp</a></aside></section>
+<!-- [SECCIÓN 06: CATÁLOGO / SERVICIOS] -->
+<section id="categorias" aria-labelledby="titulo-categorias"><p class="eyebrow">Una selección simple</p><h2 id="titulo-categorias">¿Qué estás buscando?</h2><p>Explorá por categoría. La disponibilidad se confirma al consultar.</p>
+<div class="filters" role="group" aria-label="Filtrar categorías"><button class="filter" type="button" data-filter="todas" aria-pressed="true">Todas</button><button class="filter" type="button" data-filter="higiene" aria-pressed="false">Higiene</button><button class="filter" type="button" data-filter="cuidado" aria-pressed="false">Cuidado personal</button><button class="filter" type="button" data-filter="dermo" aria-pressed="false">Dermocosmética</button><button class="filter" type="button" data-filter="auxilios" aria-pressed="false">Primeros auxilios</button></div>
+<p class="count" role="status" aria-live="polite" aria-atomic="true" id="resultado">4 categorías disponibles</p>
+<div class="grid">
+<article class="card" data-category="higiene"><span class="icon" aria-hidden="true">◈</span><h3>Higiene</h3><p>Jabones, higiene bucal y artículos de uso cotidiano.</p><a data-consulta="Higiene" href="https://wa.me/59899123456?text=Hola%2C%20quisiera%20consultar%20por%20Higiene.">Consultar higiene →</a></article>
+<article class="card" data-category="cuidado"><span class="icon" aria-hidden="true">✦</span><h3>Cuidado personal</h3><p>Accesorios y productos para tu rutina diaria.</p><a data-consulta="Cuidado personal" href="https://wa.me/59899123456?text=Hola%2C%20quisiera%20consultar%20por%20Cuidado%20personal.">Consultar cuidado personal →</a></article>
+<article class="card" data-category="dermo"><span class="icon" aria-hidden="true">☀</span><h3>Dermocosmética</h3><p>Limpieza cosmética, hidratación y protección solar.</p><a data-consulta="Dermocosmética" href="https://wa.me/59899123456?text=Hola%2C%20quisiera%20consultar%20por%20Dermocosm%C3%A9tica.">Consultar dermocosmética →</a></article>
+<article class="card" data-category="auxilios"><span class="icon" aria-hidden="true">+</span><h3>Primeros auxilios</h3><p>Gasas, vendas y materiales básicos para tu botiquín.</p><a data-consulta="Primeros auxilios" href="https://wa.me/59899123456?text=Hola%2C%20quisiera%20consultar%20por%20Primeros%20auxilios.">Consultar primeros auxilios →</a></article>
+</div></section>
+<section class="faq" id="preguntas"><p class="eyebrow">Antes de acercarte</p><h2>Preguntas frecuentes</h2><details><summary>¿Cómo consulto por un artículo?</summary><p>Elegí una categoría y usá su enlace de WhatsApp. En esta demo, el teléfono es ficticio.</p></details><details><summary>¿Puedo comprar desde esta página?</summary><p>La página es informativa. No procesa compras ni pagos y no muestra stock en tiempo real.</p></details><details><summary>¿Esta página ofrece orientación médica?</summary><p>No. Presenta categorías generales y datos de contacto de muestra; no brinda diagnósticos ni recomendaciones de tratamientos.</p></details></section>
+<!-- [SECCIÓN 07: CONTACTO, UBICACIÓN & FOOTER] -->
+<section id="ubicacion"><div class="contact"><div><p class="eyebrow">Planificá tu visita</p><h2>Horarios y contacto</h2><p><strong>Lunes a viernes:</strong> 9:00 a 19:00<br><strong>Sábados:</strong> 9:00 a 13:00<br>Domingos: cerrado</p><p><strong>WhatsApp de muestra:</strong> 099 123 456</p><a class="btn" data-consulta="horarios y atención" href="https://wa.me/59899123456?text=Hola%2C%20quisiera%20consultar%20por%20horarios%20y%20atenci%C3%B3n.">Consultar atención</a></div><div class="location"><span class="symbol" aria-hidden="true">⌖</span><h3>Ubicación de muestra</h3><p>Av. Principal 1234<br>Ciudad Ejemplo</p><small>Dirección ficticia. Al adaptar la web se incorpora el mapa del comercio real.</small></div></div></section>
+</main>
+<footer class="footer"><div class="wrap"><span>Farmacia Ejemplo · Prototipo demostrativo</span><a href="../index.html">← Volver al catálogo</a><a href="mailto:mmartinez23bio@hotmail.com">Web por Bluffer 23 · Contacto</a></div></footer>
+<a class="btn wa-float" data-consulta="información general" href="https://wa.me/59899123456?text=Hola%2C%20quisiera%20consultar%20por%20informaci%C3%B3n%20general.">WhatsApp · Demo</a>
+<!-- [SECCIÓN 08: MOTOR JAVASCRIPT & WHATSAPP] -->
+<script>
+const CONFIG_COMERCIO = { nombre: 'Farmacia Ejemplo', whatsapp: '59899123456' };
+document.querySelectorAll('[data-consulta]').forEach(enlace => {
+  enlace.href = `https://wa.me/${CONFIG_COMERCIO.whatsapp}?text=${encodeURIComponent('Hola, quisiera consultar por ' + enlace.dataset.consulta + '.')}`;
+});
+const filtros = document.querySelectorAll('[data-filter]');
+const tarjetas = document.querySelectorAll('[data-category]');
+filtros.forEach(boton => boton.addEventListener('click', () => {
+  filtros.forEach(filtro => filtro.setAttribute('aria-pressed', String(filtro === boton)));
+  let cantidad = 0;
+  tarjetas.forEach(tarjeta => {
+    tarjeta.hidden = boton.dataset.filter !== 'todas' && tarjeta.dataset.category !== boton.dataset.filter;
+    if (!tarjeta.hidden) cantidad++;
+  });
+  document.getElementById('resultado').textContent = cantidad === 1 ? '1 categoría disponible' : `${cantidad} categorías disponibles`;
+}));
+const menu = document.querySelector('.menu');
+const navegacion = document.getElementById('navegacion');
+function cerrarMenu(){ menu.setAttribute('aria-expanded', 'false'); navegacion.classList.remove('open'); }
+menu.addEventListener('click', () => {
+  const abierto = menu.getAttribute('aria-expanded') === 'true';
+  menu.setAttribute('aria-expanded', String(!abierto));
+  navegacion.classList.toggle('open', !abierto);
+});
+navegacion.querySelectorAll('a').forEach(enlace => enlace.addEventListener('click', () => {
+  cerrarMenu();
+  const destino = document.querySelector(enlace.hash);
+  destino.setAttribute('tabindex', '-1');
+  destino.focus({preventScroll:true});
+}));
+document.addEventListener('keydown', evento => {
+  if(evento.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true'){ cerrarMenu(); menu.focus(); }
+});
+</script>
+</body>
+</html>

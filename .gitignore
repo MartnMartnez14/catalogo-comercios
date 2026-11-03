@@ -6,6 +6,11 @@
 # Planillas financieras, precios y estrategia comercial interna
 *.xlsm
 *.xlsx
+
+# Apuntes personales y documentos de trabajo (se administran online)
+*.odt
+formulariodocgoogle.md
+nuevo2.txt
 MEMORY.md
 INSTAGRAM_VENTAS.md
 ARQUITECTURA_Y_DIAGRAMAS.md
