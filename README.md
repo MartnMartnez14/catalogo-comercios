@@ -25,9 +25,10 @@ Catálogo interactivo de prototipos web demostrativos organizados por rubros com
 | **09** | 📱 **Electrónica, Celulares y PC (3 en 1)** | Tienda Mobile · Notebooks/Gaming · Servicio Técnico | [🔗 Abrir Demo Electrónica](https://martnmartnez14.github.io/catalogo-comercios/electronica-demo/) |
 | **10** | 🍕 **Pizzería, Empanadas y Rotisería (3 en 1)** | Pizzería al Horno · Empanadas · Rotisería | [🔗 Abrir Demo Pizzería](https://martnmartnez14.github.io/catalogo-comercios/pizzeria-demo/) |
 | **11** | 💊 **Farmacia Ejemplo** | Cuatro categorías, horarios y consultas WA | [🔗 Abrir Demo Farmacia](https://martnmartnez14.github.io/catalogo-comercios/farmacia-demo/) |
-| **12 · Nuevo** | 🏋️ **Gimnasio Ejemplo** | Musculación · Funcional · Movilidad · Horarios y planes | [🔗 Abrir Demo Gimnasio](https://martnmartnez14.github.io/catalogo-comercios/gimnasio-demo/) |
+| **12** | 🏋️ **Gimnasio Ejemplo** | Musculación · Funcional · Movilidad · Horarios y planes | [🔗 Abrir Demo Gimnasio](https://martnmartnez14.github.io/catalogo-comercios/gimnasio-demo/) |
+| **13 · Nuevo** | 🥩 **Carnicería y Granja El Hornero** | Cortes para parrilla · Pulpas desgrasadas · Achuras · Calculador de asado | [🔗 Abrir Demo Carnicería](https://martnmartnez14.github.io/catalogo-comercios/carniceria-demo/) |
 
-**Nuevo prototipo (#12):** [Gimnasio Ejemplo](https://martnmartnez14.github.io/catalogo-comercios/gimnasio-demo/) — musculación, funcional, movilidad, planes y horarios filtrables por actividad y día. El catálogo contiene 12 demos más el comodín.
+**Nuevo prototipo (#13):** [Carnicería y Granja El Hornero](https://martnmartnez14.github.io/catalogo-comercios/carniceria-demo/) — cortes tradicionales uruguayos para la parrilla, pulpas seleccionadas, achuras frescas, granja, y calculador interactivo de asado por comensales con pedidos directos a WhatsApp. El catálogo contiene 13 demos más el comodín a medida.
 
 ---
 
