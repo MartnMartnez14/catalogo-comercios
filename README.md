@@ -26,9 +26,12 @@ Catálogo interactivo de prototipos web demostrativos organizados por rubros com
 | **10** | 🍕 **Pizzería, Empanadas y Rotisería (3 en 1)** | Pizzería al Horno · Empanadas · Rotisería | [🔗 Abrir Demo Pizzería](https://martnmartnez14.github.io/catalogo-comercios/pizzeria-demo/) |
 | **11** | 💊 **Farmacia Ejemplo** | Cuatro categorías, horarios y consultas WA | [🔗 Abrir Demo Farmacia](https://martnmartnez14.github.io/catalogo-comercios/farmacia-demo/) |
 | **12** | 🏋️ **Gimnasio Ejemplo** | Musculación · Funcional · Movilidad · Horarios y planes | [🔗 Abrir Demo Gimnasio](https://martnmartnez14.github.io/catalogo-comercios/gimnasio-demo/) |
-| **13 · Nuevo** | 🥩 **Carnicería y Granja El Hornero** | Cortes para parrilla · Pulpas desgrasadas · Achuras · Calculador de asado | [🔗 Abrir Demo Carnicería](https://martnmartnez14.github.io/catalogo-comercios/carniceria-demo/) |
+| **13** | 🥩 **Carnicería y Granja El Hornero** | Cortes para parrilla · Pulpas desgrasadas · Achuras · Calculador de asado | [🔗 Abrir Demo Carnicería](https://martnmartnez14.github.io/catalogo-comercios/carniceria-demo/) |
+| **14 · Nuevo** | 🦷 **Consultorio Odontológico Robles** | Especialidades · Tecnología 3D · Reserva por WhatsApp (sin BD) | [🔗 Abrir Demo Odontología](https://martnmartnez14.github.io/catalogo-comercios/odontologia-demo/) |
+| **15 · Nuevo** | 🥗 **Lic. Sofía Méndez · Nutrición** | Tabs por objetivo · Presencial/Online · Reserva por WhatsApp | [🔗 Abrir Demo Nutrición](https://martnmartnez14.github.io/catalogo-comercios/nutricion-demo/) |
+| **16 · Nuevo** | 🧠 **Espacio Calma · Psicología** | Primera sesión · Confidencialidad · Reserva por WhatsApp | [🔗 Abrir Demo Psicología](https://martnmartnez14.github.io/catalogo-comercios/psicologia-demo/) |
 
-**Nuevo prototipo (#13):** [Carnicería y Granja El Hornero](https://martnmartnez14.github.io/catalogo-comercios/carniceria-demo/) — cortes tradicionales uruguayos para la parrilla, pulpas seleccionadas, achuras frescas, granja, y calculador interactivo de asado por comensales con pedidos directos a WhatsApp. El catálogo contiene 13 demos más el comodín a medida.
+**Nuevos prototipos de servicios (#14, #15 y #16):** Odontología, Nutrición y Psicología con **solicitud de turno por WhatsApp sin base de datos** (semana preferida, franja horaria, modalidad y consulta general) + filtro por categoría en el Hub Central. El catálogo contiene 16 demos más el comodín a medida.
 
 ---
 
