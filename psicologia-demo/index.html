@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espacio Calma | Psicología Clínica &amp; Acompañamiento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* [SECCIÓN 01: VARIABLES Y RESET — PALETA TERAPÉUTICA] */
+    :root {
+      --bg: #fbf9f5;
+      --surface: #ffffff;
+      --surface-warm: #f4efe8;
+      --ink: #2c302e;
+      --ink-muted: #5c635f;
+      --brand: #60725c;
+      --brand-dark: #495846;
+      --clay: #e8d7ce;
+      --clay-ink: #6e4f41;
+      --line: #e7e2d8;
+      --wa: #16a34a;
+      --wa-dark: #15803d;
+      --radius: 24px;
+      --shadow: 0 14px 36px rgba(44, 48, 46, 0.05);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 8% 10%, rgba(232, 215, 206, 0.35), transparent 40%),
+        radial-gradient(circle at 92% 18%, rgba(96, 114, 92, 0.09), transparent 42%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: 'Lora', Georgia, serif; font-weight: 600; line-height: 1.25; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 1.35rem; }
+
+    /* [SECCIÓN 02: HEADER SERENO] */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(251, 249, 245, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: 1rem 0;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 0.65rem;
+      font-family: 'Lora', Georgia, serif; font-weight: 600; font-size: 1.15rem; color: var(--brand-dark);
+    }
+    .logo-badge {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--clay); color: var(--clay-ink);
+      display: grid; place-items: center; font-size: 1.1rem;
+    }
+    .nav-links { display: flex; gap: 1.6rem; font-size: 0.95rem; font-weight: 500; color: var(--ink-muted); }
+    .nav-links a:hover { color: var(--brand); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.8rem 1.45rem; border-radius: 999px; font-weight: 600; font-size: 0.95rem;
+      border: none; cursor: pointer; transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--brand); color: #fff; }
+    .btn-primary:hover { background: var(--brand-dark); }
+    .btn-wa { background: var(--wa); color: #fff; }
+    .btn-wa:hover { background: var(--wa-dark); }
+    .btn-outline { background: transparent; border: 1.5px solid var(--brand); color: var(--brand-dark); }
+
+    /* [SECCIÓN 03: HERO] */
+    .hero { padding: clamp(3rem, 7vw, 5.25rem) 0; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center;
+    }
+    .eyebrow {
+      display: inline-block; padding: 0.35rem 0.95rem; border-radius: 999px;
+      background: var(--clay); color: var(--clay-ink);
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 1.1rem;
+    }
+    .hero h1 { font-size: clamp(2.05rem, 4.4vw, 3.1rem); margin-bottom: 1.1rem; color: var(--ink); }
+    .hero p { color: var(--ink-muted); font-size: 1.06rem; margin-bottom: 2rem; max-width: 52ch; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+    .hero-card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 2rem; box-shadow: var(--shadow);
+    }
+    .hero-card h3 { font-size: 1.25rem; margin-bottom: 0.9rem; color: var(--brand-dark); }
+    .info-list { list-style: none; display: grid; gap: 0.85rem; font-size: 0.95rem; color: var(--ink-muted); }
+    .info-list li strong { color: var(--ink); }
+
+    /* [SECCIÓN 04: MOTIVOS DE CONSULTA + MODALIDAD] */
+    section { padding: clamp(3rem, 6vw, 4.75rem) 0; }
+    .section-head { text-align: center; max-width: 620px; margin: 0 auto 2.75rem; }
+    .section-head h2 { font-size: clamp(1.7rem, 3.5vw, 2.35rem); margin-bottom: 0.7rem; }
+    .section-head p { color: var(--ink-muted); }
+    .cards-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 1.4rem;
+    }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.75rem; box-shadow: 0 8px 24px rgba(44, 48, 46, 0.03);
+      display: flex; flex-direction: column; gap: 0.65rem;
+    }
+    .card-icon {
+      width: 46px; height: 46px; border-radius: 50%; background: var(--surface-warm);
+      display: grid; place-items: center; font-size: 1.3rem;
+    }
+    .card h3 { font-size: 1.15rem; }
+    .card p { font-size: 0.93rem; color: var(--ink-muted); flex: 1; }
+    .card-link {
+      font-size: 0.88rem; font-weight: 600; color: var(--brand); margin-top: 0.4rem;
+      display: inline-flex; align-items: center; gap: 0.3rem; cursor: pointer;
+      background: none; border: none; padding: 0; text-align: left;
+    }
+
+    /* [SECCIÓN 05: SELECTOR MODALIDAD + PRIMERA SESIÓN] */
+    .split-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;
+    }
+    .panel {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 2rem; box-shadow: var(--shadow);
+    }
+    .panel h3 { font-size: 1.35rem; margin-bottom: 1rem; color: var(--brand-dark); }
+    .mode-toggle {
+      display: inline-flex; background: var(--surface-warm); padding: 0.35rem;
+      border-radius: 999px; margin-bottom: 1.25rem; gap: 0.25rem;
+    }
+    .toggle-btn {
+      border: none; background: transparent; padding: 0.55rem 1.1rem; border-radius: 999px;
+      font-family: inherit; font-size: 0.9rem; font-weight: 600; color: var(--ink-muted); cursor: pointer;
+    }
+    .toggle-btn.active { background: var(--surface); color: var(--brand-dark); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .mode-list { list-style: none; display: grid; gap: 0.65rem; color: var(--ink-muted); font-size: 0.95rem; }
+
+    .faq-item { border-bottom: 1px solid var(--line); padding: 0.85rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-btn {
+      width: 100%; background: none; border: none; text-align: left; cursor: pointer;
+      font-family: inherit; font-size: 0.98rem; font-weight: 600; color: var(--ink);
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    }
+    .faq-body { display: none; padding-top: 0.55rem; font-size: 0.92rem; color: var(--ink-muted); }
+    .faq-item.open .faq-body { display: block; }
+
+    /* [SECCIÓN 06: RESERVA CONFIDENCIAL POR WHATSAPP] */
+    .booking-wrap {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 28px;
+      padding: clamp(1.75rem, 4vw, 3rem); box-shadow: var(--shadow);
+      display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 2.25rem; align-items: start;
+    }
+    .booking-info h2 { font-size: clamp(1.55rem, 3vw, 2.1rem); margin-bottom: 0.75rem; }
+    .booking-info p { color: var(--ink-muted); margin-bottom: 1.25rem; }
+    .trust-note {
+      background: var(--surface-warm); padding: 1rem 1.2rem; border-radius: 16px;
+      font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 1.25rem;
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .field { display: flex; flex-direction: column; gap: 0.35rem; }
+    .field-full { grid-column: 1 / -1; }
+    .field label { font-size: 0.86rem; font-weight: 600; color: var(--ink); }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 0.75rem 0.95rem; border-radius: 12px;
+      border: 1.5px solid var(--line); background: var(--bg);
+      font-family: inherit; font-size: 0.95rem; color: var(--ink);
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; border-color: var(--brand); background: #fff;
+    }
+
+    /* [SECCIÓN 07: FOOTER Y RESPONSIVE] */
+    footer {
+      border-top: 1px solid var(--line); padding: 2.25rem 0; margin-top: 2rem;
+      text-align: center; font-size: 0.9rem; color: var(--ink-muted);
+    }
+    @media (max-width: 840px) {
+      .hero-grid, .split-grid, .booking-wrap { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 540px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <span class="logo-badge">🌿</span>
+        <span>Espacio Calma</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#servicios">Motivos</a>
+        <a href="#primera-sesion">Primera Sesión</a>
+        <a href="#reservar">Solicitar Entrevista</a>
+      </nav>
+      <a href="#reservar" class="btn btn-primary">Coordinar entrevista</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Psicología Clínica &amp; Acompañamiento</span>
+          <h1>Un espacio seguro, cálido y confidencial para vos.</h1>
+          <p>
+            Sesiones individuales presenciales u online, a tu ritmo y sin juicios.
+            Coordiná una primera entrevista o una breve charla de valoración por WhatsApp
+            eligiendo la semana y el horario que mejor te queden.
+          </p>
+          <div class="hero-actions">
+            <a href="#reservar" class="btn btn-wa">💬 Coordinar por WhatsApp</a>
+            <a href="#primera-sesion" class="btn btn-outline">¿Cómo es la primera sesión?</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h3>Información de Atención</h3>
+          <ul class="info-list">
+            <li><strong>📍 Consultorio:</strong> Av. Principal 1234, Ciudad Ejemplo</li>
+            <li><strong>💻 Online:</strong> Videollamada encriptada y privada</li>
+            <li><strong>🕒 Horarios:</strong> Lun a Vie 9:00 a 20:00 hs</li>
+            <li><strong>🔒 Confidencialidad:</strong> Secreto profesional garantizado</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <h2>Motivos Frecuentes de Consulta</h2>
+          <p>No necesitás tener todo claro antes de empezar. Podés elegir un área general para orientar tu consulta.</p>
+        </div>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-icon">🌊</div>
+            <h3>Ansiedad y Estrés</h3>
+            <p>Herramientas prácticas para manejar la sobrecarga diaria, preocupación constante y descanso.</p>
+            <button class="card-link" type="button" onclick="seleccionarMotivo('Ansiedad y Estrés')">Consultar por esto →</button>
+          </article>
+          <article class="card">
+            <div class="card-icon">🪞</div>
+            <h3>Terapia Individual</h3>
+            <p>Proceso terapéutico para autoconocimiento, duelos, cambios vitales y bienestar emocional.</p>
+            <button class="card-link" type="button" onclick="seleccionarMotivo('Terapia Individual')">Consultar por esto →</button>
+          </article>
+          <article class="card">
+            <div class="card-icon">🧭</div>
+            <h3>Orientación y Proyectos</h3>
+            <p>Acompañamiento en toma de decisiones laborales, académicas y transiciones personales.</p>
+            <button class="card-link" type="button" onclick="seleccionarMotivo('Orientación y Proyectos')">Consultar por esto →</button>
+          </article>
+          <article class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Vínculos y Pareja</h3>
+            <p>Espacio de diálogo para mejorar la comunicación y atravesar etapas de cambio.</p>
+            <button class="card-link" type="button" onclick="seleccionarMotivo('Vínculos y Pareja')">Consultar por esto →</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="primera-sesion">
+      <div class="container split-grid">
+        <div class="panel">
+          <h3>Elegí tu modalidad</h3>
+          <div class="mode-toggle" role="tablist">
+            <button type="button" class="toggle-btn active" onclick="switchMode('online', this)">Sesión Online</button>
+            <button type="button" class="toggle-btn" onclick="switchMode('presencial', this)">Presencial</button>
+          </div>
+          <ul id="details-online" class="mode-list">
+            <li>✓ Videollamada privada y encriptada desde tu casa.</li>
+            <li>✓ Sin traslados ni tiempos de espera.</li>
+            <li>✓ Disponible para todo el país y el exterior.</li>
+          </ul>
+          <ul id="details-presencial" class="mode-list" style="display:none;">
+            <li>✓ Consultorio cálido, luminoso y con privacidad total.</li>
+            <li>✓ Ubicación céntrica de fácil acceso.</li>
+            <li>✓ Duración de 50 minutos por encuentro.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>¿Qué pasa en la primera sesión?</h3>
+          <div class="faq-item open">
+            <button type="button" class="faq-btn" onclick="toggleFaq(this)">
+              <span>1. Nos conocemos sin presiones</span><span>−</span>
+            </button>
+            <div class="faq-body">
+              Conversamos sobre qué te trae a consulta hoy y qué esperás del espacio. Vos marcás el ritmo.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-btn" onclick="toggleFaq(this)">
+              <span>2. Definimos objetivos claros</span><span>+</span>
+            </button>
+            <div class="faq-body">
+              Acordamos la frecuencia de los encuentros y cómo vamos a trabajar juntos, sin tecnicismos.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-btn" onclick="toggleFaq(this)">
+              <span>3. Charla previa de 15 min (opcional)</span><span>+</span>
+            </button>
+            <div class="faq-body">
+              Si tenés dudas antes de agendar una sesión completa, podés pedir una breve llamada de valoración.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reservar">
+      <div class="container">
+        <div class="booking-wrap">
+          <div class="booking-info">
+            <h2>Solicitá tu primera entrevista</h2>
+            <p>
+              Solo indicanos tu preferencia de semana, horario y modalidad. Te respondemos por WhatsApp
+              de forma directa y confidencial.
+            </p>
+            <div class="trust-note">
+              🔒 <strong>Privacidad:</strong> No necesitás contar detalles personales en este formulario.
+              Todo el intercambio se realiza de forma privada por WhatsApp.
+            </div>
+          </div>
+
+          <form id="reservaForm" class="form-grid" onsubmit="enviarWhatsApp(event)">
+            <div class="field field-full">
+              <label for="nombre">Tu nombre (o cómo preferís que te llamen)</label>
+              <input type="text" id="nombre" placeholder="Ej. Sofía" required>
+            </div>
+            <div class="field">
+              <label for="motivo">Motivo general</label>
+              <select id="motivo">
+                <option value="Primera Entrevista (50 min)">Primera Entrevista (50 min)</option>
+                <option value="Charla de Valoración (15 min)">Charla de Valoración (15 min)</option>
+                <option value="Ansiedad y Estrés">Ansiedad y Estrés</option>
+                <option value="Terapia Individual">Terapia Individual</option>
+                <option value="Orientación y Proyectos">Orientación y Proyectos</option>
+                <option value="Vínculos y Pareja">Vínculos y Pareja</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="modalidadSelect">Modalidad</label>
+              <select id="modalidadSelect">
+                <option value="Online (Videollamada)">Online (Videollamada)</option>
+                <option value="Presencial">Presencial</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="semana">Semana preferida</label>
+              <select id="semana">
+                <option value="Esta semana">Esta semana</option>
+                <option value="Próxima semana">Próxima semana</option>
+                <option value="En 15 días">En 15 días</option>
+                <option value="A coordinar">A coordinar</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="horario">Horario preferido</label>
+              <select id="horario">
+                <option value="Mañana (9:00 a 12:00)">Mañana (9:00 a 12:00)</option>
+                <option value="Tarde (14:00 a 18:00)">Tarde (14:00 a 18:00)</option>
+                <option value="Última hora (18:00 a 20:00)">Última hora (18:00 a 20:00)</option>
+              </select>
+            </div>
+            <div class="field field-full">
+              <label for="notas">Nota breve (opcional)</label>
+              <textarea id="notas" rows="2" placeholder="Ej. Prefiero coordinar por la tarde..."></textarea>
+            </div>
+            <div class="field field-full">
+              <button type="submit" class="btn btn-wa" style="width: 100%; padding: 0.9rem;">
+                💬 Enviar solicitud confidencial por WhatsApp
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Espacio Calma · Psicología Clínica · Prototipo de demostración anónimo · Datos ficticios</p>
+    </div>
+  </footer>
+
+  <script>
+    /* [SECCIÓN 08: INTERACTIVIDAD Y RESERVA POR WHATSAPP] */
+    function seleccionarMotivo(nombreMotivo) {
+      document.getElementById('motivo').value = nombreMotivo;
+      document.getElementById('reservar').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function switchMode(mode, btn) {
+      document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('details-online').style.display = mode === 'online' ? 'grid' : 'none';
+      document.getElementById('details-presencial').style.display = mode === 'presencial' ? 'grid' : 'none';
+      document.getElementById('modalidadSelect').value = mode === 'online' ? 'Online (Videollamada)' : 'Presencial';
+    }
+
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const isOpen = item.classList.toggle('open');
+      btn.querySelector('span:last-child').textContent = isOpen ? '−' : '+';
+    }
+
+    function enviarWhatsApp(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const motivo = document.getElementById('motivo').value;
+      const modalidad = document.getElementById('modalidadSelect').value;
+      const semana = document.getElementById('semana').value;
+      const horario = document.getElementById('horario').value;
+      const notas = document.getElementById('notas').value.trim();
+
+      let mensaje = `Hola! Soy ${nombre}. Quisiera coordinar una consulta en Espacio Calma:\n`;
+      mensaje += `• Motivo: ${motivo}\n`;
+      mensaje += `• Modalidad: ${modalidad}\n`;
+      mensaje += `• Semana preferida: ${semana}\n`;
+      mensaje += `• Horario preferido: ${horario}`;
+      if (notas) {
+        mensaje += `\n• Nota: ${notas}`;
+      }
+
+      const url = `https://wa.me/59899123456?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank', 'noopener');
+    }
+  </script>
+</body>
+</html>

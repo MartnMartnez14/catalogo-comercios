@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultorio Odontológico Robles | Estudio Dental Moderno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* [SECCIÓN 01: VARIABLES Y RESET — STUDIO DENTAL MODERNO] */
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --navy: #0f172a;
+      --ink: #0f172a;
+      --ink-muted: #475569;
+      --mint: #2dd4bf;
+      --mint-dark: #0d9488;
+      --mint-soft: #ccfbf1;
+      --line: #e2e8f0;
+      --wa: #16a34a;
+      --wa-dark: #15803d;
+      --radius: 18px;
+      --shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: 'Outfit', system-ui, sans-serif; line-height: 1.18; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* [SECCIÓN 02: HEADER] */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: 0.9rem 0;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--navy);
+    }
+    .logo-badge {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--navy); color: var(--mint);
+      display: grid; place-items: center; font-size: 1.15rem;
+    }
+    .nav-links { display: flex; gap: 1.4rem; font-size: 0.95rem; font-weight: 500; color: var(--ink-muted); }
+    .nav-links a:hover { color: var(--mint-dark); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.75rem 1.35rem; border-radius: 999px; font-weight: 600; font-size: 0.94rem;
+      border: none; cursor: pointer; transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--navy); color: #fff; }
+    .btn-wa { background: var(--wa); color: #fff; }
+    .btn-wa:hover { background: var(--wa-dark); }
+    .btn-outline { background: transparent; border: 1.5px solid var(--navy); color: var(--navy); }
+
+    /* [SECCIÓN 03: HERO] */
+    .hero { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2.5rem; align-items: center;
+    }
+    .eyebrow {
+      display: inline-block; padding: 0.35rem 0.9rem; border-radius: 999px;
+      background: var(--mint-soft); color: #115e59;
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 1rem;
+    }
+    .hero h1 { font-size: clamp(2.05rem, 4.5vw, 3.15rem); margin-bottom: 1rem; color: var(--navy); }
+    .hero p { color: var(--ink-muted); font-size: 1.05rem; margin-bottom: 1.75rem; max-width: 54ch; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; }
+    .hero-card {
+      background: var(--navy); color: #f8fafc; border-radius: 22px;
+      padding: 1.85rem; box-shadow: var(--shadow);
+    }
+    .hero-card h3 { font-size: 1.25rem; margin-bottom: 0.85rem; color: var(--mint); }
+    .info-list { list-style: none; display: grid; gap: 0.75rem; font-size: 0.94rem; color: #cbd5e1; }
+    .info-list li strong { color: #ffffff; }
+
+    /* [SECCIÓN 04: BENTO GRID TECNOLÓGICO + ESPECIALIDADES] */
+    section { padding: clamp(2.5rem, 5vw, 4rem) 0; }
+    .section-head { text-align: center; max-width: 620px; margin: 0 auto 2.5rem; }
+    .section-head h2 { font-size: clamp(1.65rem, 3.5vw, 2.35rem); margin-bottom: 0.6rem; }
+    .section-head p { color: var(--ink-muted); }
+
+    .bento-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2.5rem;
+    }
+    .bento-card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.5rem; box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+    }
+    .bento-highlight {
+      background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff;
+    }
+    .bento-highlight p { color: #cbd5e1; }
+    .bento-tag {
+      display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      color: var(--mint-dark); background: var(--mint-soft); padding: 0.2rem 0.6rem;
+      border-radius: 999px; margin-bottom: 0.65rem;
+    }
+
+    .cards-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;
+    }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .card p { font-size: 0.92rem; color: var(--ink-muted); flex: 1; }
+    .card-link {
+      font-size: 0.88rem; font-weight: 700; color: var(--mint-dark); margin-top: 0.4rem;
+      display: inline-flex; align-items: center; gap: 0.3rem; cursor: pointer;
+      background: none; border: none; padding: 0; text-align: left;
+    }
+
+    /* [SECCIÓN 05: RESERVA POR WHATSAPP] */
+    .booking-wrap {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 24px;
+      padding: clamp(1.5rem, 4vw, 2.75rem); box-shadow: var(--shadow);
+      display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 2rem; align-items: start;
+    }
+    .booking-info h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 0.75rem; }
+    .booking-info p { color: var(--ink-muted); margin-bottom: 1.25rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .field { display: flex; flex-direction: column; gap: 0.35rem; }
+    .field-full { grid-column: 1 / -1; }
+    .field label { font-size: 0.86rem; font-weight: 600; color: var(--ink); }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 0.72rem 0.9rem; border-radius: 10px;
+      border: 1.5px solid var(--line); background: var(--bg);
+      font-family: inherit; font-size: 0.95rem; color: var(--ink);
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; border-color: var(--mint-dark); background: #fff;
+    }
+
+    /* [SECCIÓN 06: FOOTER Y RESPONSIVE] */
+    footer {
+      border-top: 1px solid var(--line); padding: 2rem 0; margin-top: 2rem;
+      text-align: center; font-size: 0.9rem; color: var(--ink-muted);
+    }
+    @media (max-width: 820px) {
+      .hero-grid, .bento-grid, .booking-wrap { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 540px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <span class="logo-badge">🦷</span>
+        <span>Consultorio Robles</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#tecnologia">Tecnología</a>
+        <a href="#servicios">Especialidades</a>
+        <a href="#reservar">Solicitar Turno</a>
+      </nav>
+      <a href="#reservar" class="btn btn-primary">Pedir turno</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Estudio Dental Moderno · Sin Esperas</span>
+          <h1>Odontología precisa, indolora y pensada para tu tranquilidad.</h1>
+          <p>
+            Diagnóstico digital claro, atención sin apuros y coordinación directa por WhatsApp.
+            Elegí la semana y el horario que mejor te quede.
+          </p>
+          <div class="hero-actions">
+            <a href="#reservar" class="btn btn-wa">💬 Solicitar turno por WhatsApp</a>
+            <a href="#servicios" class="btn btn-outline">Ver especialidades</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h3>Información del Consultorio</h3>
+          <ul class="info-list">
+            <li><strong>📍 Dirección:</strong> Av. Principal 1234, Ciudad Ejemplo</li>
+            <li><strong>🕒 Horarios:</strong> Lun a Vie 9:00 a 20:00 hs · Sáb 9:00 a 13:00 hs</li>
+            <li><strong>🚨 Urgencias:</strong> Atención prioritaria en el día por dolor agudo</li>
+            <li><strong>💳 Financiación:</strong> Tarjetas y planes en cuotas</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="tecnologia">
+      <div class="container">
+        <div class="bento-grid">
+          <div class="bento-card bento-highlight">
+            <span class="bento-tag">Tecnología 3D</span>
+            <h3>Escáner Intraoral</h3>
+            <p>Ortodoncia y prótesis sin moldes molestos ni pastas incómodas.</p>
+          </div>
+          <div class="bento-card">
+            <span class="bento-tag">Confort</span>
+            <h3>Atención sin dolor</h3>
+            <p>Protocolos suaves pensados para pacientes con ansiedad dental.</p>
+          </div>
+          <div class="bento-card">
+            <span class="bento-tag">Experiencia</span>
+            <h3>+3.500 sonrisas</h3>
+            <p>Equipo multidisciplinario con formación continua y seguimiento cercano.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <h2>Especialidades Odontológicas</h2>
+          <p>Seleccioná el motivo de tu consulta para pre-cargar tu solicitud de turno.</p>
+        </div>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>✨ Limpieza y Control</h3>
+            <p>Profilaxis ultrasónica, remoción de sarro, flúor y revisión general preventiva.</p>
+            <button class="card-link" type="button" onclick="seleccionarServicio('Limpieza y Control')">Solicitar este turno →</button>
+          </article>
+          <article class="card">
+            <h3>😁 Estética y Blanqueamiento</h3>
+            <p>Blanqueamiento dental seguro, resinas estéticas y diseño de sonrisa.</p>
+            <button class="card-link" type="button" onclick="seleccionarServicio('Estética y Blanqueamiento')">Solicitar este turno →</button>
+          </article>
+          <article class="card">
+            <h3>🦷 Ortodoncia</h3>
+            <p>Brackets estéticos, metálicos y alineadores transparentes para jóvenes y adultos.</p>
+            <button class="card-link" type="button" onclick="seleccionarServicio('Ortodoncia')">Solicitar este turno →</button>
+          </article>
+          <article class="card">
+            <h3>🚨 Urgencias y Dolor</h3>
+            <p>Atención rápida para dolor agudo, fracturas dentales o inflamación.</p>
+            <button class="card-link" type="button" onclick="seleccionarServicio('Urgencia / Dolor')">Solicitar este turno →</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reservar">
+      <div class="container">
+        <div class="booking-wrap">
+          <div class="booking-info">
+            <h2>Solicitá tu turno por WhatsApp</h2>
+            <p>
+              Indicá qué semana y horario preferís y te confirmamos disponibilidad real por mensaje.
+            </p>
+          </div>
+
+          <form id="reservaForm" class="form-grid" onsubmit="enviarWhatsApp(event)">
+            <div class="field field-full">
+              <label for="nombre">Tu nombre</label>
+              <input type="text" id="nombre" placeholder="Ej. Martín García" required>
+            </div>
+            <div class="field field-full">
+              <label for="servicio">Motivo de consulta</label>
+              <select id="servicio">
+                <option value="Consulta General">Consulta General</option>
+                <option value="Limpieza y Control">Limpieza y Control</option>
+                <option value="Estética y Blanqueamiento">Estética y Blanqueamiento</option>
+                <option value="Ortodoncia">Ortodoncia</option>
+                <option value="Urgencia / Dolor">Urgencia / Dolor</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="semana">Semana preferida</label>
+              <select id="semana">
+                <option value="Esta semana">Esta semana</option>
+                <option value="Próxima semana">Próxima semana</option>
+                <option value="En 15 días">En 15 días</option>
+                <option value="A coordinar">A coordinar</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="horario">Horario preferido</label>
+              <select id="horario">
+                <option value="Mañana (9:00 a 12:00)">Mañana (9:00 a 12:00)</option>
+                <option value="Tarde (14:00 a 18:00)">Tarde (14:00 a 18:00)</option>
+                <option value="Última hora (18:00 a 20:00)">Última hora (18:00 a 20:00)</option>
+              </select>
+            </div>
+            <div class="field field-full">
+              <label for="notas">Consulta breve (opcional)</label>
+              <textarea id="notas" rows="2" placeholder="Ej. Primera vez, tengo sensibilidad en una muela..."></textarea>
+            </div>
+            <div class="field field-full">
+              <button type="submit" class="btn btn-wa" style="width: 100%; padding: 0.9rem;">
+                💬 Enviar solicitud de turno por WhatsApp
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Consultorio Odontológico Robles · Prototipo de demostración anónimo · Datos ficticios</p>
+    </div>
+  </footer>
+
+  <script>
+    /* [SECCIÓN 08: LÓGICA DE RESERVA POR WHATSAPP] */
+    function seleccionarServicio(nombreServicio) {
+      document.getElementById('servicio').value = nombreServicio;
+      document.getElementById('reservar').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function enviarWhatsApp(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const servicio = document.getElementById('servicio').value;
+      const semana = document.getElementById('semana').value;
+      const horario = document.getElementById('horario').value;
+      const notas = document.getElementById('notas').value.trim();
+
+      let mensaje = `Hola! Soy ${nombre}. Quisiera solicitar un turno en el Consultorio Odontológico:\n`;
+      mensaje += `• Motivo: ${servicio}\n`;
+      mensaje += `• Semana preferida: ${semana}\n`;
+      mensaje += `• Horario preferido: ${horario}`;
+      if (notas) mensaje += `\n• Consulta: ${notas}`;
+
+      window.open(`https://wa.me/59899123456?text=${encodeURIComponent(mensaje)}`, '_blank', 'noopener');
+    }
+  </script>
+</body>
+</html>

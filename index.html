@@ -266,6 +266,20 @@
     font-size: 0.8rem; transition: opacity .2s;
   }
   .btn-link:hover { opacity: 0.9; }
+  .btn-link-service { background: #facc15; color: #0f172a; }
+  .filter-bar {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.65rem;
+    margin-bottom: 1.75rem;
+  }
+  .filter-btn {
+    background: var(--surface); color: var(--ink2); border: 1px solid var(--line);
+    padding: 0.55rem 1.15rem; border-radius: 999px; font-family: inherit;
+    font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease;
+  }
+  .filter-btn:hover { border-color: var(--brand); color: var(--ink); }
+  .filter-btn.active { background: var(--brand); color: #0f172a; border-color: var(--brand); }
+  .filter-btn[data-filter="servicio"].active { background: #facc15; border-color: #facc15; color: #0f172a; }
+  .filter-btn[data-filter="comodin"].active { background: var(--purple); border-color: var(--purple); color: #fff; }
 
   /* ==========================================================================
      [SECCIÓN 03: PIE DE PÁGINA — TARJETAS DE PAGO + ESTILO BEYONDV0ID ASCII]
@@ -569,6 +583,13 @@
        [SECCIÓN 02: GRILLA DE LOS 13 PROTOTIPOS + COMODÍN PERSONALIZADO]
        ======================================================================== -->
   <div id="catalogo-demos" class="sec-title">🟢 Catálogo Oficial Completo (13 Prototipos v1.0 Listos para mostrar en el celular + 1 Comodín a Medida)</div>
+  <div class="filter-bar" role="tablist" aria-label="Filtrar catálogo por tipo">
+    <button type="button" class="filter-btn active" data-filter="todos" onclick="filtrarCatalogo('todos', this)">Todos (17)</button>
+    <button type="button" class="filter-btn" data-filter="comercio" onclick="filtrarCatalogo('comercio', this)">Comercios y Empresas (13)</button>
+    <button type="button" class="filter-btn" data-filter="servicio" onclick="filtrarCatalogo('servicio', this)">Páginas de Servicios (3)</button>
+    <button type="button" class="filter-btn" data-filter="comodin" onclick="filtrarCatalogo('comodin', this)">Comodín (1)</button>
+  </div>
+
   <div class="grid">
     <!-- 01. Supermercado -->
     <article class="card ready">
@@ -760,8 +781,56 @@
       </div>
     </article>
 
+    <!-- 14. Odontología / Consultorio Dental -->
+    <article class="card ready" data-category="servicio">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">🦷</div>
+          <span class="pill pill-ready">🆕 Nuevo · #14 · v1.0</span>
+        </div>
+        <h3>Consultorio Odontológico Robles</h3>
+        <p>Especialidades dentales, atención de urgencias y solicitud de turno por WhatsApp sin base de datos (semana, franja horaria y motivo de consulta).</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">./odontologia-demo/</span>
+        <a href="./odontologia-demo/index.html" data-demo-key="odontologia" class="btn-link btn-link-service">Abrir Demo →</a>
+      </div>
+    </article>
+
+    <!-- 15. Servicio Nutricional -->
+    <article class="card ready" data-category="servicio">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">🥗</div>
+          <span class="pill pill-ready">🆕 Nuevo · #15 · v1.0</span>
+        </div>
+        <h3>Lic. Sofía Méndez · Nutrición</h3>
+        <p>Áreas de acompañamiento clínico y deportivo, modalidad presencial u online y solicitud de turno por WhatsApp (semana, franja horaria y objetivo).</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">./nutricion-demo/</span>
+        <a href="./nutricion-demo/index.html" data-demo-key="nutricion" class="btn-link btn-link-service">Abrir Demo →</a>
+      </div>
+    </article>
+
+    <!-- 16. Servicio de Psicología -->
+    <article class="card ready" data-category="servicio">
+      <div>
+        <div class="c-head">
+          <div class="c-emoji">🧠</div>
+          <span class="pill pill-ready">🆕 Nuevo · #16 · v1.0</span>
+        </div>
+        <h3>Espacio Calma · Psicología</h3>
+        <p>Motivos frecuentes de consulta, modalidad presencial u online y solicitud confidencial de primera entrevista por WhatsApp (semana y franja horaria).</p>
+      </div>
+      <div class="c-foot">
+        <span class="folder">./psicologia-demo/</span>
+        <a href="./psicologia-demo/index.html" data-demo-key="psicologia" class="btn-link btn-link-service">Abrir Demo →</a>
+      </div>
+    </article>
+
     <!-- 🃏 Comodín: Prototipo Personalizado desde Cero -->
-    <article class="card custom-wildcard">
+    <article class="card custom-wildcard" data-category="comodin">
       <div>
         <div class="c-head">
           <div class="c-emoji">🃏</div>
@@ -1006,6 +1075,16 @@
       label.textContent = ok ? 'Copiado ✓' : texto;
       setTimeout(() => { label.textContent = 'Copiar'; }, 1800);
     }
+  }
+</script>
+<script>
+  function filtrarCatalogo(categoria, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.grid .card').forEach(card => {
+      const cat = card.dataset.category || 'comercio';
+      card.style.display = (categoria === 'todos' || cat === categoria) ? '' : 'none';
+    });
   }
 </script>
 </body>
